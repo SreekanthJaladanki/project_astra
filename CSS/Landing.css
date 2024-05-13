@@ -1,0 +1,52 @@
+/* Basic reset */
+body, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.landing-page {
+    background-image: linear-gradient(rgba(136, 68, 29, 0.5), rgba(106, 171, 211, 0.5)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1.5;
+}
+
+.landing-content {
+    color:mediumslateblue;
+}
+
+.landing-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.landing-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: #6db66f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 10px;
+   
+}

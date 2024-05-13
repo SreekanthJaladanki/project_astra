@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../CSS/Landing.css">
+</head>
+<body>
+
+<div class="landing-page">
+    <div class="landing-content">
+        <h1>Welcome to Our Website!</h1>
+        <p>Join our community today!</p>
+        <div class="buttons">
+            <button id="register-btn">Register</button>
+            <button id="login-btn">Login</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>document.getElementById("register-btn").addEventListener("click", function() {
+    window.location.href = "register.html"; // Redirect to register page
+});
+
+document.getElementById("login-btn").addEventListener("click", function() {
+    window.location.href = "login.html"; // Redirect to login page
+});
+</script>
+</body>
+</html>
+
