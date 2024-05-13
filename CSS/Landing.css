@@ -6,7 +6,7 @@ body, ul {
 }
 
 .landing-page {
-    background-image: linear-gradient(rgba(136, 68, 29, 0.5), rgba(106, 171, 211, 0.5)), url('background.jpg');
+    /* background-image: linear-gradient(rgba(136, 68, 29, 0.5), rgba(106, 171, 211, 0.5)), url('background.jpg'); */
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -15,10 +15,11 @@ body, ul {
     justify-content: center;
     text-align: center;
     opacity: 1.5;
+    background-color: black;
 }
 
 .landing-content {
-    color:mediumslateblue;
+    color:white
 }
 
 .landing-content h1 {
@@ -37,7 +38,7 @@ body, ul {
 }
 
 button {
-    background-color: #6db66f;
+    background-color: #12d319;
     color: white;
     border: none;
     padding: 15px 30px;

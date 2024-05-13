@@ -36,10 +36,19 @@
             <label for="designation">Designation:</label>
             <input type="text" id="designation" name="designation" required>
         </div>
-        <div class="form-group">
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
-        </div>
+        <div class="input-group">
+            <label for="subject">Subject</label>
+            <div class="select-wrapper">
+              <select id="subject" name="subject">
+                <optgroup label="Select a subject">
+                <option value="manual-testing">Manual Testing</option>
+                <option value="devops">DevOps</option>
+                <option value="frontend">Frontend Development</option>
+                <option value="java">Java Programming</option></optgroup>
+              </select>
+              <!-- <span class="custom-arrow"></span> -->
+            </div>
+          </div>
         <div class="form-group">
             <label for="date-of-joining">Date of Joining:</label>
             <input type="date" id="date-of-joining" name="date-of-joining" required>
@@ -141,7 +150,7 @@ function closeConfirmation() {
 
 
 document.getElementById("cancel-btn").addEventListener("click", function() {
-    window.location.href = "index.html"; // Redirect to home page
+    window.location.href = "login.html"; // Redirect to login page
 });
 
 </script>

@@ -110,6 +110,45 @@ body {
     margin: 20px auto;
     width: 50px;
 }
+.input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    
+  }
+  
+  .input-group input, .input-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  .select-wrapper {
+    position: relative;
+  }
+ .input-group label{
+    display: block;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .custom-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+  }
+    
 
 
 
