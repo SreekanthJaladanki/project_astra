@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link rel="stylesheet" href="../CSS/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../CSS/login.css">
 </head>
+
 <body>
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="login-form" >
-      <div class="input-group">
-        <label for="emp-id">Emp ID</label>
-        <input type="text" id="emp-id" name="emp-id" required autofocus="on">
-      </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-  </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="emp-id">Employee ID</label>
+                <input type="text" id="emp-id" name="emp-id" required autofocus="on">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
-  <script>
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  // Here you can add the logic to validate the login credentials
-  // For now, I'm just redirecting to the homepage
-  window.location.href = 'Homepage.html';
-});
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
 
+            sessionStorage.setItem('loggedIn', true);
 
+            window.location.href = 'Homepage.html';
+        });
 
+        window.onload = function () {
+            sessionStorage.removeItem('loggedIn');
 
+            if (window.history && window.history.pushState) {
+                window.history.pushState({ page: "login" }, "", "");
 
-
-
-
-
-
-
-
-
-  </script>
+                window.onpopstate = function (event) {
+                    if (event.state && event.state.page === "login") {
+                        window.history.replaceState(null, "", "");
+                    }
+                };
+            }
+        };
+    </script>
 </body>
-</html>
+
+</html

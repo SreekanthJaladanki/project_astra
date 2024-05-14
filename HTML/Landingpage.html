@@ -19,25 +19,32 @@
     </div>
 </div>
 
+<div class="background-overlay"></div>
 
-
-
-<script>document.getElementById("register-btn").addEventListener("click", function() {
-    window.location.href = "Register.html"; // Redirect to register page
-});
-
-document.getElementById("login-btn").addEventListener("click", function() {
-    window.location.href = "login.html"; // Redirect to login page
-});
+<script>
 document.getElementById('register-btn').addEventListener('click', function() {
-  document.querySelector('.container').style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
-});
-
-document.getElementById('login-btn').addEventListener('click', function() {
-  document.querySelector('.container').style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
-});
-
+    decreaseOpacity();
+    setTimeout(function() {
+      window.location.href = 'register.html';
+    }, 1000);
+  });
+  
+  document.getElementById('login-btn').addEventListener('click', function() {
+    decreaseOpacity();
+    setTimeout(function() {
+      window.location.href = 'login.html';
+    }, 1000);
+  });
+  
+  function decreaseOpacity() {
+    var overlay = document.querySelector('.background-overlay');
+    var opacity = parseFloat(window.getComputedStyle(overlay).getPropertyValue('opacity'));
+    if (opacity > 0) {
+      opacity -= 0.1;
+      overlay.style.opacity = opacity;
+      setTimeout(decreaseOpacity, 100);
+    }
+  }
 </script>
 </body>
 </html>
-
