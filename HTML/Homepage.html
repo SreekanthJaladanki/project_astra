@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Interactive Dashboard</title>
+   
     <link rel="stylesheet" href="../CSS/Homepage.css">
+    <link rel="stylesheet" href="../js/script.js">
 </head>
 <body>
+    <div class="navbar">
+        <div class="dashboard-name">Dashboard</div>
+        <div id="datetime"></div>
+    </div>
 
-<nav class="navbar">
-    <!-- No content in the navbar -->
-</nav>
+    <div class="dashboard">
+        <a href="/cards/updates.html" class="card-link">
+            <div class="card">
+                <h2>Daily Updates</h2>
+                <img src="../assests/updates.png" alt="Image 1">
+            </div>
+        </a>
+        <a href="/cards/batches.html" class="card-link">
+            <div class="card">
+                <h2>Batch Details</h2>
+                <img src="../assests/batch.png" alt="Image 2">
+            </div>
+        </a>
+        <a href="/cards/leaves.html" class="card-link">
+            <div class="card">
+                <h2>Leave/WFH</h2>
+                <img src="../assests/WFH.png" alt="Image 3">
+            </div>
+        </a>
+        <a href="/cards/time.html" class="card-link">
+            <div class="card">
+                <h2>Login & Logout</h2>
+                <img src="../assests/time.png" alt="Image 4">
+            </div>
+        </a>
+    </div>
 
-<div class="card-container">
-    <div class="card">
-        <a href="#">
-            <h2>Daily Updates</h2>
-            <img src="https://st.depositphotos.com/57404040/60706/i/450/depositphotos_607063656-stock-photo-devops-devsecops-approach-app-development.jpg" alt="Image 1">
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <h2>Batch Updates</h2>
-            <img src="https://st.depositphotos.com/57404040/60706/i/450/depositphotos_607063656-stock-photo-devops-devsecops-approach-app-development.jpg" alt="Image 2">
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <h2>Leave/WFH</h2>
-            <img src="https://st.depositphotos.com/57404040/60706/i/450/depositphotos_607063656-stock-photo-devops-devsecops-approach-app-development.jpg" alt="Image 3">
-        </a>
-    </div>
-    <div class="card">
-        <a href="#">
-            <h2>Login & Logout</h2>
-            <img src="https://st.depositphotos.com/57404040/60706/i/450/depositphotos_607063656-stock-photo-devops-devsecops-approach-app-development.jpg" alt="Image 4">
-        </a>
-    </div>
-</div>
-
+    <script src="../js/script.js"></script>
 </body>
 </html>
