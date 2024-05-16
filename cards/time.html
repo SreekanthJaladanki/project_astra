@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Status Form</title>
+    <link rel="stylesheet" href="time.css">
+</head>
+<body>
+    <h1>Time Sheet</h1>
+    <form id="employeeForm">
+        <label for="selectDate">Select Date:</label>
+        <input type="date" id="selectDate" name="selectDate" required>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" onchange="showLoginLogoutFields()">
+            <option value="Present">Present</option>
+            <option value="Leave">Leave</option>
+            <option value="Work from Home">Work from Home</option>
+            <option value="Half Day">Half Day</option>
+        </select>
+
+        <div id="loginLogoutFields">
+            <label for="login">Login:</label>
+            <input type="time" id="login" name="login" required>
+
+            <label for="logout">Logout:</label>
+            <input type="time" id="logout" name="logout" required>
+        </div>
+
+        <div id="workFromHomeTaskDiv" style="display:none;">
+            <label for="workFromHomeTask">Work from Home Task:</label>
+            <input type="text" id="workFromHomeTask" name="workFromHomeTask">
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="time.js"></script>
+</body>
+</html>
