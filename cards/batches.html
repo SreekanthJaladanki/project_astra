@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batch Form</title>
+    <link rel="stylesheet" href="batches.css">
+</head>
+<body>
+    <h1>Batch Updates</h1> <!-- Add your heading here -->
+    <form id="batchForm">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" required>
+
+        <label for="batchCode">Batch Code:</label>
+        <input type="text" id="batchCode" name="batchCode" required>
+
+        <label for="timings">Timings:</label>
+        <input type="text" id="timings" name="timings" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" required>
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" required>
+
+        <label for="mocksConducted">No. of Mocks Conducted:</label>
+        <select id="mocksConducted" name="mocksConducted" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="batches.js"></script>
+</body>
+</html>

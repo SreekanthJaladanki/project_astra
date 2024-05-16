@@ -3,6 +3,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: black;
+    background-image: url("../assests/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .landing-page {
