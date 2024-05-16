@@ -3,13 +3,21 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: black;
-    background-image: url("../assests/background.jpg");
+    /* background-image: url("../assests/background.mp4"); */
     background-size: cover;
     background-repeat: no-repeat;
 }
+#videotag{
 
+width: 100%;
+height: 100vh;
+position: fixed;
+
+
+
+}
 .landing-page {
-    background-image: url('background-image.jpg'); /* Set your background image */
+    background-image: url(''); /* Set your background image */
     background-size: cover;
     background-position: center;
     height: 100vh;
