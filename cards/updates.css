@@ -1,59 +1,45 @@
 body {
-    margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: rgb(196, 196, 176);
+    margin: 20px;
+    background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 50px auto;
-    padding: 50px;
-    background-color: #f9f9f9;
-    border-radius: 25px;
-    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 600px; /* Increased height */
 }
 
-h1 {
-    text-align: center;
-}
-
-.time-slots {
+.row {
     display: flex;
     align-items: center;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
+.additional-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.task-pair {
+    display: flex;
+    flex-direction: column;
+}
+
 label {
-    display: block;
-    flex: 0 0 120px; /* Fixed width for labels */
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-right: 10px;
+    font-size: 18px; /* Increased font size */
 }
 
-input[type="text"] {
-    flex: 1; /* Flexible width for text fields */
-    margin-left: 10px; /* Add some space between label and input */
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    margin: 20px auto 0; /* Center the button horizontally */
-    display: block;
-    width: 20%; /* Adjust the width as needed */
+select {
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-form input{
-    width: 200px;
+    border: 1px solid #ccc;
+    width: 200px; /* Increased width */
+    font-size: 16px; /* Increased font size */
 }
