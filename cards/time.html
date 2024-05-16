@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="time.css">
 </head>
 <body>
-    <h1>Time Sheet</h1>
+    <h1>Employee Timesheet</h1>
     <form id="employeeForm">
         <label for="selectDate">Select Date:</label>
         <input type="date" id="selectDate" name="selectDate" required>
 
         <label for="status">Status:</label>
-        <select id="status" name="status" onchange="showLoginLogoutFields()">
+        <select id="status" name="status" onchange="showFields()">
             <option value="Present">Present</option>
             <option value="Leave">Leave</option>
             <option value="Work from Home">Work from Home</option>
@@ -33,8 +33,14 @@
             <input type="text" id="workFromHomeTask" name="workFromHomeTask">
         </div>
 
+        <div id="halfDayReasonDiv" style="display:none;">
+            <label for="halfDayReason">Reason for Half Day:</label>
+            <input type="text" id="halfDayReason" name="halfDayReason">
+        </div>
+
         <input type="submit" value="Submit">
     </form>
+
 
     <script src="time.js"></script>
 </body>
