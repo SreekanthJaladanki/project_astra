@@ -26,9 +26,10 @@
                 <option value="0">--Select Task--</option>
                 <option value="Taking Mock">Taking Mock</option>
                 <option value="Taking batches">Taking Batches</option>
-                <option value="grooming">Taking Grooming</option>
-                <option value="presentation">Taking Presentation</option>
-                <option value="givingkt">Giving KT</option>
+                <option value="Taking grooming">Taking Grooming</option>
+                <option value="Taking Presentation">Taking Presentation</option>
+                <option value="Giving KT">Giving KT</option>
+                <option value="Taking KT">Taking KT</option>
                 <option value="watching">Watching Videos</option>
                 <option value="backup">Taking Backup</option>
                 <option value="selfppt">Self Presentation</option>
@@ -36,6 +37,8 @@
                 <option value="Group ppt">Group Presentation</option>
                 <option value="Taking Interviews">Taking Interviews</option>
                 <option value="Incubation">Incubation</option>
+                <option value="Assessment">Assessment</option>
+                <option value="Others">Others</option>
             </select>
             <button onclick="addTask()">Add Task</button>
         </div>
@@ -69,7 +72,7 @@
             taskInput.readOnly = true;
             taskRow.appendChild(taskInput);
 
-            if (selectedTask === "Takingbatches") {
+            if (selectedTask === "Taking batches") {
                 const batchesSelect = document.createElement("select");
                 batchesSelect.name = "batches";
                 batchesSelect.classList.add("batches-select");
