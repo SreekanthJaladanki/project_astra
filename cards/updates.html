@@ -3,56 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Updates</title>
+    <title>Task Tracker</title>
     <link rel="stylesheet" href="updates.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Daily Updates</h1>
-        <form action="#" method="post">
-            <div class="time-slots">
-                <label for="9am">9am - 10am:</label>
-                <input type="text" id="9am" name="9am" width="200px">
-            </div>
-            <div class="time-slots">
-                <label for="10am">10am - 11am:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="11am">11am - 12pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="12pm">12pm - 1pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <!-- <div class="time-slots">
-                <label for="1pm">1pm - 2pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="2pm">2pm - 3pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="3pm">3pm - 4pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="4pm">4pm - 5pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="5pm">5pm - 6pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div>
-            <div class="time-slots">
-                <label for="6pm">6pm - 7pm:</label>
-                <input type="text" id="10am" name="10am">
-            </div> -->
-            <!-- Add more time slots as needed -->
-            <button type="submit">Submit</button>
-        </form>
+    <h1>Task Tracker</h1>
+    <form id="taskForm">
+        <label for="selectDate">Select Date:</label>
+        <input type="date" id="selectDate" name="selectDate" required>
+
+        <label for="employee">Employee:</label>
+        <select id="employee" name="employee">
+            <option value="Trainer">Trainer</option>
+            <option value="Trainee">Trainee</option>
+        </select>
+
+        <label for="selectTask">Select Task:</label>
+        <select id="selectTask" name="selectTask" onchange="showNoOfBatchesField()">
+            <option value="Taking batches">Taking batches</option>
+            <option value="Taking Mock">Taking Mock</option>
+            <option value="Taking Grooming">Taking Grooming</option>
+            <option value="Taking backup">Taking backup</option>
+            <option value="Taking Presentation">Taking Presentation</option>
+            <option value="Self Study">Self Study</option>
+            <option value="Self Presentation">Self Presentation</option>
+            <option value="Group Presentation">Group Presentation</option>
+            <option value="Taking Interviews">Taking Interviews</option>
+            <option value="Taking Incubation">Taking Incubation</option>
+            <option value="Watching KT videos">Watching KT videos</option>
+            <option value="Giving KT">Giving KT</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <div id="noOfBatchesField" style="display:none;">
+            <label for="noOfBatches">No of Batches:</label>
+            <select id="noOfBatches" name="noOfBatches">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+
+        <button type="button" id="addTaskBtn" onclick="addTask()">Add Task</button>
+
+        <div id="taskList"></div>
+
+        <input type="submit" value="Submit" disabled>
+    </form>
+
+    <div id="submitMessage" style="display:none;">
+        <p>Submitted successfully!</p>
     </div>
+
+    <script src="update.js"></script>
 </body>
 </html>
