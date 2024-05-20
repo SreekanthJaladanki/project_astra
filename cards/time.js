@@ -34,5 +34,11 @@ document.getElementById("employeeForm").addEventListener("submit", function(even
     });
     // Displaying form data
     console.log(formDataJSON);
-    // You can add code to send this data to a server or perform any other action here
+    // Show submission message
+    showSubmissionMessage();
 });
+
+function showSubmissionMessage() {
+    var submitMessage = document.getElementById("submitMessage");
+    submitMessage.style.display = "block";
+}
