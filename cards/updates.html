@@ -1,211 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Updates</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background-color: #f4f4f4;
-      }
+   <link rel="stylesheet" href="../cards/updates.css">
+</head>
 
-      .container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-bottom: 20px;
-        margin-top: 60px;
-      }
-
-      .row label {
-        font-weight: bold;
-        margin-right: 10px;
-        font-size: 18px;
-      }
-
-      .row select,
-      .additional-tasks select {
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        width: 200px;
-        font-size: 16px;
-      }
-
-      .additional-tasks {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        margin-top: 20px;
-        margin-left: 30px;
-      }
-
-      .task-pair {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      #addedTasks {
-        margin-top: 20px;
-        /* border: 1px solid red; */
-        display: flex;
-        flex-direction: column;
-        column-gap: 10px;
-      }
-
-      #addedTasks .task-row {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        margin-left: 120px;
-      }
-
-      #addedTasks .task-row input,
-      #addedTasks .task-row select {
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        width: 178px;
-        font-size: 16px;
-        margin-top: 15px;
-      }
-
-      .remove-task {
-        cursor: pointer;
-        font-size: 10px;
-        color: red;
-      }
-
-      .remove-task:hover {
-        transform: scale(1.2);
-      }
-      .input-2 {
-        margin-left: 77px;
-      }
-      button{
-        background-color: rgb(82, 82, 186);
-       height: 35px;
-       width: 100px;
-        border: none;
-        border-radius: 10px;
-        color: white;
-        font-size: 0.9rem;
-        font-weight: bold;
-      }
-      .container h1{
-        margin-left: 310px;
-      }
-    </style>
-  </head>
-  <body>
+<body>
     <div class="container">
-      <h1>Daily Updates</h1>
-      <div class="row">
-        <label for="employee">Employee:</label>
-        <select id="employee">
-          <option value="trainer">Trainer</option>
-          <option value="trainee">Trainee</option>
-        </select>
-        <label for="task">Task:</label>
-        <select id="task">
-          <option value="kt">KT</option>
-          <option value="Onlineclass">Onlineclass</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-        <button onclick="addTask()">Add Task</button>
-      </div>
-      <div class="row hidden" id="batchesRow">
-        <label for="batches">Number of Batches:</label>
-        <select id="batches">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </div>
-      <div id="addedTasks"></div>
+        <h1>Daily Updates</h1>
+        <div class="row">
+            <label for="selectDate" id="datelabel">Select Date:</label>
+            <input type="date" id="selectDate" name="selectDate" required>
+            <label for="employee">Employee:</label>
+            <select id="employee" required>
+                <option value="0">--Select Employee--</option>
+                <option value="trainer">Trainer</option>
+                <option value="trainee">Trainee</option>
+            </select>
+            <label for="task">Task:</label>
+            <select id="task" required>
+                <option value="0">--Select Task--</option>
+                <option value="kt">KT</option>
+                <option value="Onlineclass">Onlineclass</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div id="addedTasks"></div>
+        <button onclick="submitForm()" id="submitbutn">Submit Form</button>
     </div>
+    <div id="errorMessage" style="color: red; display: none;">Please fill in all fields.</div>
 
     <script>
-      function toggleBatches(selectElement) {
-        const batchesRow = document.getElementById("batchesRow");
-        const mainTask = document.getElementById("task");
+        function addTask() {
+            const employeeSelect = document.getElementById("employee");
+            const taskSelect = document.getElementById("task");
+            const selectedEmployee = employeeSelect.value;
+            const selectedTask = taskSelect.value;
 
-        if (mainTask.value === "Onlineclass") {
-          batchesRow.classList.remove("hidden");
-        } else {
-          batchesRow.classList.add("hidden");
+            const addedTasksContainer = document.getElementById("addedTasks");
+            const taskRow = document.createElement("div");
+            taskRow.classList.add("task-row");
+
+            const employeeInput = document.createElement("input");
+            employeeInput.type = "text";
+            employeeInput.classList.add("input-1")
+            employeeInput.value = selectedEmployee;
+            employeeInput.readOnly = true;
+            taskRow.appendChild(employeeInput);
+
+            const taskInput = document.createElement("input");
+            taskInput.type = "text";
+            taskInput.classList.add("input-2");
+            taskInput.value = selectedTask;
+            taskInput.readOnly = true;
+            taskRow.appendChild(taskInput);
+
+            if (selectedTask === "Onlineclass") {
+                const batchesSelect = document.createElement("select");
+                batchesSelect.name = "batches";
+                batchesSelect.classList.add("batches-select");
+                const optionValues = ["--Select Batches--", 1, 2, 3, 4, 5];
+                optionValues.forEach((value) => {
+                    const option = document.createElement("option");
+                    option.value = value;
+                    option.textContent = value;
+                    batchesSelect.appendChild(option);
+                });
+                taskRow.appendChild(batchesSelect);
+            }
+
+            const removeButton = document.createElement("span");
+            removeButton.classList.add("remove-task");
+            removeButton.innerHTML = "&#10060;";
+            removeButton.onclick = function () {
+                taskRow.remove();
+            };
+            taskRow.appendChild(removeButton);
+
+            addedTasksContainer.appendChild(taskRow);
         }
-      }
 
-      function addTask() {
-        const employeeSelect = document.getElementById("employee");
-        const taskSelect = document.getElementById("task");
-        const selectedEmployee = employeeSelect.value;
-        const selectedTask = taskSelect.value;
+        function submitForm() {
+            const selectDate = document.getElementById("selectDate");
+            const employee = document.getElementById("employee");
+            const task = document.getElementById("task");
+            console.log(task)
 
-        const addedTasksContainer = document.getElementById("addedTasks");
-        const taskRow = document.createElement("div");
-        taskRow.classList.add("task-row");
+            const addedTasksContainer = document.getElementById("addedTasks");
+            const taskRows = addedTasksContainer.getElementsByClassName("task-row");
+            let tasks = "";
 
-        const employeeInput = document.createElement("input");
-        employeeInput.type = "text";
-        employeeInput.value = selectedEmployee;
-        employeeInput.readOnly = true;
-        taskRow.appendChild(employeeInput);
+            for (let i = 0; i < taskRows.length; i++) {
+                const row = taskRows[i];
+                const task = row.children[1].value;
+                // console.log(task)
+                console.log(row.children[2].value)
+                const batches = task === "Onlineclass" ? row.children[2].value : null;
+                tasks = (row.children[2].value)
 
-        const taskInput = document.createElement("input");
-        taskInput.type = "text";
-        taskInput.classList.add("input-2");
-        taskInput.value = selectedTask;
-        taskInput.readOnly = true;
-        taskRow.appendChild(taskInput);
+            }
 
-        if (selectedTask === "Onlineclass") {
-          const batchesSelect = document.createElement("select");
-          batchesSelect.name = "batches";
-          batchesSelect.id = "batches";
-          const optionValues = ["Number of Batches",1, 2, 3, 4];
-          optionValues.forEach((value) => {
-            const option = document.createElement("option");
-            option.value = value;
-            option.textContent = value;
-            batchesSelect.appendChild(option);
-          });
-          taskRow.appendChild(batchesSelect);
+            if (!selectDate.value || employee.value == 0 || !employee.value || !task.value || task.value == 0 || tasks == "--Select Batches--") {
+                alert("Please fill in all fields.");
+                event.preventDefault(); // Prevent form submission if fields are missing
+            } else {
+
+                alert("Form submitted successfully!");
+            }
         }
-
-        const removeButton = document.createElement("span");
-        removeButton.classList.add("remove-task");
-        removeButton.innerHTML = "&#10060;";
-        removeButton.onclick = function () {
-          taskRow.remove();
-        };
-        taskRow.appendChild(removeButton);
-
-        addedTasksContainer.appendChild(taskRow);
-      }
     </script>
-  </body>
+</body>
+
 </html>

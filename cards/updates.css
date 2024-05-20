@@ -9,7 +9,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    min-height: 600px; /* Increased height */
+    max-width: 85%;
+    margin: 0 auto;
 }
 
 .row {
@@ -17,12 +18,30 @@ body {
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
+    margin-top: 60px;
+}
+
+.row label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.row select,
+.additional-tasks select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    font-size: 16px;
 }
 
 .additional-tasks {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
 }
 
 .task-pair {
@@ -30,16 +49,94 @@ body {
     flex-direction: column;
 }
 
-label {
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 18px; /* Increased font size */
+.hidden {
+    display: none;
 }
 
-select {
+#addedTasks {
+    margin-top: 20px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    column-gap: 10px;
+}
+
+#addedTasks .task-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: 120px;
+}
+
+
+#addedTasks .task-row select {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 200px; /* Increased width */
-    font-size: 16px; /* Increased font size */
+    width: 170px;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-left: 7px;
+   
+}
+.input-1{
+  padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 174px;
+    font-size: 16px;
+    margin-top: 15px; 
+    margin-left: 279px; 
+}
+
+.remove-task {
+    cursor: pointer;
+    font-size: 10px;
+    color: red;
+}
+
+.remove-task:hover {
+    transform: scale(1.2);
+}
+
+.input-2 {
+  padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 174px;
+    font-size: 16px;
+    margin-top: 15px;
+  margin-left: 84px;
+
+}
+
+button {
+    background-color: rgb(82, 82, 186);
+    height: 35px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.container h1 {
+    margin-left: 450px;
+}
+
+#submitbutn {
+    height: 40px;
+    width: 110px;
+    background-color: rgb(215, 75, 75);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    margin-top: 160px;
+}
+
+#datelabel {
+    /* border: 2px solid; */
+    width: 110px;
 }
