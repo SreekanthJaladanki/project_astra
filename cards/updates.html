@@ -24,14 +24,14 @@
             <label for="task">Task:</label>
             <select id="task" required>
                 <option value="0">--Select Task--</option>
-                <option value="kt">KT</option>
-                <option value="Onlineclass">Onlineclass</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="KT">Taking Mock</option>
+                <option value="Takingbatches">Taking Batches</option>
+                <option value="grooming">Taking Grooming</option>
+                <option value="presentation">Taking Presentation</option>
+                <option value="givingkt">Giving KT</option>
+                <option value="watching">Watching Videos</option>
+                <option value="backup">Taking Backup</option>
+                <option value="selfppt">Self Presentation</option>
             </select>
             <button onclick="addTask()">Add Task</button>
         </div>
@@ -65,7 +65,7 @@
             taskInput.readOnly = true;
             taskRow.appendChild(taskInput);
 
-            if (selectedTask === "Onlineclass") {
+            if (selectedTask === "Takingbatches") {
                 const batchesSelect = document.createElement("select");
                 batchesSelect.name = "batches";
                 batchesSelect.classList.add("batches-select");
@@ -122,3 +122,4 @@
 </body>
 
 </html>
+
