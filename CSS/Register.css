@@ -4,6 +4,7 @@ body
     background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     margin: 0;
     padding: 0;
+    height: 100vh;
     overflow-y: hidden;
    }
 
@@ -26,7 +27,7 @@ h2 {
     font-size: 2rem;
     text-align: center;
     color: #9662BB;
-    text-decoration: underline;
+    font-family: sans-serif;
 }
 
 .form-row 
