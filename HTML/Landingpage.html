@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="../CSS/Landing.css">
+    <link rel="stylesheet" href="./countdown.css">
     
 </head>
 <body>
-<video src="../assests/background.mp4"  id="videotag" loop muted autoplay></video>
+    <div id="del-countdown">
+        <h1>MEGA EVENT</h1>
+        <div id="clock"></div>
+        <div id="units">
+          <span>Days</span>
+          <span>Hours</span>
+          <span>Minutes</span>
+          <span>Seconds</span>
+        </div>
+<!-- <video src="../assests/background.mp4"  id="videotag" loop muted autoplay></video> -->
 <div class="landing-page">
     <div class="landing-content">
         <h1>Welcome to Team Astra</h1>
@@ -47,5 +57,6 @@ document.getElementById('register-btn').addEventListener('click', function() {
     }
   }
 </script>
+<script src="countdown.js"> </script>
 </body>
 </html>
