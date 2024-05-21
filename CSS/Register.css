@@ -1,7 +1,6 @@
-/* General styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     margin: 0;
     padding: 0;
   }
@@ -19,7 +18,7 @@ body {
     padding-bottom: 10px;
     font-size: 2rem;
     text-align: center;
-    color: #333;
+    color: #9662BB;
     font-size: 2rem;
 
   }
@@ -53,14 +52,19 @@ body {
     margin-right: 10px;
     border-radius: 4px;
     border: none;
-    background-color: #007bff;
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    /* background-color: #007bff; */
     color: #fff;
     cursor: pointer;
+    width: 100%;
+    font-weight: bolder;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
   }
   
-  .buttons button:hover {
+  /* .buttons button:hover {
     background-color: #0056b3;
-  }
+  } */
   
   #cancel-btn {
     background-color: #dc3545;
@@ -69,4 +73,3 @@ body {
   #cancel-btn:hover {
     background-color: #bd2130;
   }
-  
