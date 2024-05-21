@@ -55,7 +55,7 @@ h2 {
 .input-group input,
 .input-group select {
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 10px;
     border: 1px solid #ccc;
    
 }
@@ -70,7 +70,7 @@ h2 {
 {
     padding: 10px 20px;
     margin-right: 10px;
-    border-radius: 20px;
+    border-radius: 15px;
     border: none;
     background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     color: #fff;
