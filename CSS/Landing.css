@@ -46,6 +46,7 @@ width: 120px;
 .landing-content h1 {
     font-size: 5rem;
     margin-bottom: 20px;
+    margin-left: -706px;
 }
 
 .landing-content p {
