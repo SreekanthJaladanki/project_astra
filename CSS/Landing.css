@@ -12,7 +12,13 @@ body {
     position: relative;
     z-index: 2;
 }
-
+/* #preloader {
+    background: #000 url(/assests/pageloader2.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+} */
 
 
   
