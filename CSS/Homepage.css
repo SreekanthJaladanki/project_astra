@@ -1,23 +1,31 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
 }
 
 .navbar {
     height: 70px;
     background-color: #000;
-    color: #fff;
+    color: #9662BB;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
 }
+#datetime{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
 
 .dashboard-name {
     font-size: 24px;
-    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #9662BB;
 }
 
 .dashboard {
@@ -45,8 +53,11 @@ body {
     box-shadow: 0 8px 16px rgba(128, 0, 0, 0.2); /* Green shadow on hover */
 }
 .card h2 {
-    color: #333;
+    color: #9662BB;
     font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .card img {
@@ -56,5 +67,5 @@ body {
 
 #datetime {
     font-size: 18px;
-   color: white;
+    color: #9662BB;
 }
