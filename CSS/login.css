@@ -5,9 +5,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    /* background-color: black; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* background: linear-gradient(135deg, #25485f, #b35992); */
+    background: linear-gradient(135deg, #2191db, #e20892c2);
   }
   
   .login-container {
@@ -57,6 +57,6 @@ body {
   }
   
   button:hover {
-    background-color: #2471a3;
+    background-color: #31688d;
   }
   
