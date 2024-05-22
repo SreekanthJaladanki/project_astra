@@ -8,76 +8,76 @@
   </head>
   <body>
     <div class="register-container">
-      <h2>Registration Form</h2>
-      <form id="register-form">
-        <div class="input-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="input-group">
-          <label for="emp-id">Emp ID:</label>
-          <input type="text" id="emp-id" name="emp-id" required />
-        </div>
-        <div class="input-group">
-          <label for="official-mail">Official Mail:</label>
-          <input type="email" id="official-mail" name="official-mail" required
-          />
-        </div>
-        <div class="input-group">
-          <label for="personal-mail">Personal Mail:</label>
-          <input
-            type="email"
-            id="personal-mail"
-            name="personal-mail"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label for="phone-number">Phone Number:</label>
-          <input type="tel" id="phone-number" name="phone-number" required />
-        </div>
-        <div class="input-group">
-          <label for="designation">Designation:</label>
-          <select id="designation" name="designation">
-            <option value="Select your Designation">
-              Select your Designation
-            </option>
-            <option value="trainer">Trainer</option>
-            <option value="hr">HR</option>
-          </select>
-        </div>
-        <div class="input-group" id="subject-group">
-          <label for="subject">Subject:</label>
-          <select id="subject" name="subject" required>
-            <option value="">Select a Subject</option>
-            <option value="">Devops</option>
-            <option value="">Frontend Development</option>
-            <option value="">Java Programming</option>
-            <option value="">Manual Testing</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="date-of-joining">Date of Joining:</label>
-          <input
-            type="date"
-            id="date-of-joining"
-            name="date-of-joining"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label for="date-of-birth">Date of Birth:</label>
-          <input type="date" id="date-of-birth" name="date-of-birth" required />
-        </div>
-        <div class="input-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <div class="buttons">
-          <button type="submit">Submit</button>
-          <button type="button" id="cancel-btn">Cancel</button>
-        </div>
-      </form>
+
+      
+        <h2>Registration Form</h2>
+        <form id="register-form">
+            <div class="form-row">
+             <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name"/>
+                </div>
+                <div class="input-group">
+                    <label for="emp-id">Emp ID:</label>
+                    <input type="text" id="emp-id" name="emp-id" required placeholder="Enter your EMPID" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="official-mail">Official Mail:</label>
+                    <input type="email" id="official-mail" name="official-mail" required placeholder="Enter your official email"/>
+                </div>
+                <div class="input-group">
+                    <label for="personal-mail">Personal Mail:</label>
+                    <input type="email" id="personal-mail" name="personal-mail" required  placeholder="Enter your personal email"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="phone-number">Phone Number:</label>
+                    <input type="tel" id="phone-number" name="phone-number" required placeholder="Enter your number" />
+                </div>
+                <div class="input-group">
+                    <label for="designation">Designation:</label>
+                    <select id="designation" name="designation">
+                        <option value="Select your Designation">Select your Designation</option>
+                        <option value="trainer">Trainer</option>
+                        <option value="hr">HR</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Select a Subject</option>
+                        <option value="">Devops</option>
+                        <option value="">Frontend Development</option>
+                        <option value="">Java Programming</option>
+                        <option value="">Manual Testing</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="date-of-joining">Date of Joining:</label>
+                    <input type="date" id="date-of-joining" name="date-of-joining" required />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="input-group">
+                    <label for="date-of-birth">Date of Birth:</label>
+                    <input type="date" id="date-of-birth" name="date-of-birth" required />
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password"/>
+                </div>
+            </div>
+            <div class="buttons">
+                <button type="submit" >Register</button>
+                <!-- <button type="button" id="cancel-btn">Cancel</button> -->
+            </div>
+        </form>
+
     </div>
 
     <script>
@@ -117,8 +117,8 @@
           alert("Registration Successful!");
           // Redirect to login page after 3 seconds
           setTimeout(function () {
-            window.location.href = "login.html";
-          }, 3000);
+            window.location.href = "submit.html";
+          }, 2000);
         });
 
       document
