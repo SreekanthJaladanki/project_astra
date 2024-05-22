@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration Page</title>
-    <link rel="stylesheet" href="../CSS/Register.css">
-    
-</head>
-
-<body>
+    <link rel="stylesheet" href="../CSS/Register.css" />
+  </head>
+  <body>
     <div class="register-container">
+
+      
         <h2>Registration Form</h2>
         <form id="register-form">
             <div class="form-row">
-                <div class="input-group">
+             <div class="input-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required placeholder="Enter your name"/>
                 </div>
@@ -78,56 +77,56 @@
                 <!-- <button type="button" id="cancel-btn">Cancel</button> -->
             </div>
         </form>
+
     </div>
 
     <script>
-        document
-            .getElementById("designation")
-            .addEventListener("change", function () {
-                var designation = this.value;
-                var subjectDropdown = document.getElementById("subject");
+      document
+        .getElementById("designation")
+        .addEventListener("change", function () {
+          var designation = this.value;
+          var subjectDropdown = document.getElementById("subject");
 
-                // Clear previous options
-                subjectDropdown.innerHTML = "";
+          // Clear previous options
+          subjectDropdown.innerHTML = "";
 
-                if (designation === "trainer") {
-                    // Add subjects for Trainer designation
-                    var subjects = ["Java", "DevOps", "Manual Testing", "Frontend"];
-                    subjects.forEach(function (subject) {
-                        var option = document.createElement("option");
-                        option.textContent = subject;
-                        option.value = subject.toLowerCase().replace(" ", "-");
-                        subjectDropdown.appendChild(option);
-                    });
-                } else {
-                    // Hide subject dropdown for other designations
-                    var option = document.createElement("option");
-                    option.textContent = "None";
-                    option.value = "none";
-                    subjectDropdown.appendChild(option);
-                }
+          if (designation === "trainer") {
+            // Add subjects for Trainer designation
+            var subjects = ["Java", "DevOps", "Manual Testing", "Frontend"];
+            subjects.forEach(function (subject) {
+              var option = document.createElement("option");
+              option.textContent = subject;
+              option.value = subject.toLowerCase().replace(" ", "-");
+              subjectDropdown.appendChild(option);
             });
+          } else {
+            // Hide subject dropdown for other designations
+            var option = document.createElement("option");
+            option.textContent = "None";
+            option.value = "none";
+            subjectDropdown.appendChild(option);
+          }
+        });
 
-        document
-            .getElementById("register-form")
-            .addEventListener("submit", function (event) {
-                event.preventDefault();
-                // Here you can add the logic to handle the registration process
-                // For demonstration purposes, show a confirmation message
-                alert("Registration Successful!");
-                // Redirect to submit.html page after 2 seconds
-                setTimeout(function () {
-                    window.location.href = "submit.html";
-                }, 2000);
-            });
+      document
+        .getElementById("register-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Here you can add the logic to handle the registration process
+          // For demonstration purposes, show a confirmation message
+          alert("Registration Successful!");
+          // Redirect to login page after 3 seconds
+          setTimeout(function () {
+            window.location.href = "submit.html";
+          }, 2000);
+        });
 
-        document
-            .getElementById("cancel-btn")
-            .addEventListener("click", function () {
-                // Redirect to login page
-                window.location.href = "login.html";
-            });
+      document
+        .getElementById("cancel-btn")
+        .addEventListener("click", function () {
+          // Redirect to login page
+          window.location.href = "login.html";
+        });
     </script>
-</body>
-
+  </body>
 </html>
