@@ -52,6 +52,10 @@ body {
     font-style: normal;
     color:#9d5dd2d8 ;
   }
+  .input-group input:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+  }
   ::placeholder{
     font-size: 0.8rem;
     font-family: "Poppins", sans-serif;
