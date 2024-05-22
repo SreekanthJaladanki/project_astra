@@ -1,14 +1,18 @@
 body {
-    font-family: Arial, sans-serif;
+   
     margin: 0;
     padding: 0;
-    background-color: rgb(203, 203, 184);
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
 }
 h1 {
     font-weight:bolder;
-    text-align: center; /* Center-aligning the heading */
-    margin-top: 50px; /* Adding margin space above the heading */
-    color: #333; /* Setting text color for the heading */
+    text-align: center; 
+    margin-top: 50px; 
+    color: rgb(143, 63, 143);
+   
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 form {
@@ -24,6 +28,11 @@ form {
 label {
     display: block;
     margin-bottom: 10px;
+    color: #9662BB;
+   
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 input[type="text"], select {
@@ -33,6 +42,33 @@ input[type="text"], select {
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    color:#9d5dd2d8 ;
+   
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+input[type="text"]:focus{
+    
+    /* border-color: purple; */
+    outline: none;
+     box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+}
+select:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+}
+input[type="date"]:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+}
+::placeholder{
+    color:#9d5dd2d8 ;
+   
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
 }
 
 input[type="date"] {
@@ -42,15 +78,25 @@ input[type="date"] {
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    color:#9d5dd2d8 ;
+   
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 input[type="submit"] {
-    background-color: #4CAF50;
+   
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
 }
 
 input[type="submit"]:hover {

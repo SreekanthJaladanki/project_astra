@@ -1,8 +1,10 @@
 
 body {
-    font-family: Arial, sans-serif;
+ height: 100vh;
     margin: 20px;
-    background-color: rgb(203, 203, 184);
+    align-content: center;
+    
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
 }
 
 .container {
@@ -25,19 +27,33 @@ body {
 }
 
 .row label {
-    font-weight: bold;
+    color: #9662BB;
     margin-right: 10px;
     font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .row select,
 .additional-tasks select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+     border: 1px solid #ccc; 
     width: 159px;
     font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #9662BB;
+    outline: none;
 }
+.row select:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+}
+
+
 
 .additional-tasks {
     display: flex;
@@ -70,6 +86,16 @@ body {
     align-items: center;
     margin-left: 196px;
 }
+.row #selectDate{
+    color: #9662BB;
+  
+}
+.row #selectDate:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+  
+    
+}
 
 
 #addedTasks .task-row select {
@@ -80,7 +106,15 @@ body {
     font-size: 15px;
     margin-top: 15px;
     margin-left: 7px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #9662BB;
    
+}
+#addedTasks .task-row select :focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
 }
 .input-1{
   padding: 10px;
@@ -90,8 +124,23 @@ body {
     font-size: 15px;
     margin-top: 15px; 
     margin-left: 279px; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #9662BB;
 }
+::placeholder{
+    color:#9d5dd2d8 ;
+   
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 
+}
+.input-1:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
+}
 .remove-task {
     cursor: pointer;
     font-size: 10px;
@@ -112,22 +161,37 @@ body {
     font-size: 15px;
     margin-top: 15px;
   margin-left: 73px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #9662BB;
 
+}
+.input-2:focus{
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.5); 
 }
 
 button {
-    background-color: rgb(82, 82, 186);
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     height: 35px;
     width: 100px;
     border: none;
     border-radius: 10px;
     color: white;
     font-size: 0.9rem;
-    font-weight: bold;
+   
+    font-weight: 700;
+    font-style: normal;
+    
 }
 
 .container h1 {
     margin-left: 450px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #9662BB;
 }
 
 #submitbutn {
