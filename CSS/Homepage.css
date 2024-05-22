@@ -7,7 +7,7 @@ body {
 
 .navbar {
     height: 70px;
-    background-color: #000;
+    background-color: white;
     color: #9662BB;
     display: flex;
     justify-content: space-between;
