@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/Homepage.css">
-    <link rel="stylesheet" href="../js/script.js">
+    
 </head>
 <body>
+    <div id="preloader">
+        <img src="../assests/preloader1.gif" alt="Loading...">
+      
+    </div>
+
     <div class="navbar">
         <div class="dashboard-name">Dashboard</div>
         <div id="datetime"></div>
@@ -20,19 +24,19 @@
     <div class="dashboard">
         <div class="container-card">
             <div class="cards-row">
-                <a href="../cards/updates.html" class="card-link">
+                <a href="#" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
                     <div class="card">
                         <h2>Daily Updates</h2>
                         <img src="../assests/updates.png" alt="Image 1">
                     </div>
                 </a>
-                <a href="../cards/batches.html" class="card-link">
+                <a href="#" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
                     <div class="card">
                         <h2>Batch Details</h2>
                         <img src="../assests/batch.png" alt="Image 2">
                     </div>
                 </a>
-                <a href="../cards/time.html" class="card-link">
+                <a href="#" class="card-link" onclick="showCardPreloader('../cards/time.html')">
                     <div class="card">
                         <h2>TimeSheet</h2>
                         <img src="../assests/time.png" alt="Image 4">

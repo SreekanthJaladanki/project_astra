@@ -1,205 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Page</title>
-  <link rel="stylesheet" href="../CSS/Register.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(to right bottom, #78A7DD, #9662BB);
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow-y: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .register-container {
-      width: 800px;
-      height: 500px;
-      background-color: #fff;
-      padding: 50px;
-      border-radius: 25px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 2;
-    }
-    ::placeholder {
-      color: #9d5dd2d8;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 400;
-    }
-    h2 {
-      font-size: 2rem;
-      text-align: center;
-      color: #9662BB;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-    }
-    .form-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-    }
-    .input-group {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      margin-right: 15px;
-    }
-    input:focus, select:focus {
-      border-color: purple;
-      outline: none;
-      box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
-    }
-    .input-group label {
-      margin-bottom: 5px;
-      color: #9662BB;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-    }
-    .input-group input, .input-group select {
-      padding: 8px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      color: #a46fcfd8;
-    }
-    .buttons {
-      margin-top: 25px;
-      text-align: center;
-    }
-    .buttons button {
-      padding: 10px 20px;
-      border-radius: 15px;
-      border: none;
-      background: linear-gradient(to right bottom, #78A7DD, #9662BB);
-      color: #fff;
-      cursor: pointer;
-      width: 100%;
-      font-weight: bolder;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-    }
-    #cancel-btn {
-      background-color: #dc3545;
-    }
-    #cancel-btn:hover {
-      background-color: #bd2130;
-    }
-    .loader {
-      display: none;
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.8);
-      padding: 50px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .loader img {
-      width: 100px;
-    }
-    .loader p {
-      margin-top: 20px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      color: #9662BB;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="../CSS/Landing.css">
+    <link rel="stylesheet" href="./countdown.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+       
+        
+    </style>
 </head>
 <body>
-  <div class="register-container">
-    <h2>Register Your Details</h2>
-    <form id="register-form">
-      <div class="form-row">
-        <div class="input-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required placeholder="Enter your name">
+    <div id="preloader">
+        <img src="../assests/Hourglass.gif" alt="Loading...">
+    </div>
+    <div id="del-countdown">
+        <h1>COMING SOON!!!</h1>
+        <div id="clock"></div>
+        <div id="units">
+            <span id="days">Days</span>
+            <span id="hours">Hours</span>
+            <span id="min">Minutes</span>
+            <span id="sec">Seconds</span>
         </div>
-        <div class="input-group">
-          <label for="emp-id">Emp ID:</label>
-          <input type="text" id="emp-id" name="emp-id" required placeholder="Enter your EMPID">
+        <video src="../assests/background.mp4" id="videotag" loop muted autoplay></video>
+        <div class="landing-page">
+            <div class="landing-content">
+                <h1>Welcome to Team Astra</h1>
+                <p>Building Bridges to Tech Brilliance!</p>
+                <div class="buttons">
+                    <button id="register-btn">Register</button>
+                    <button id="login-btn">Login</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group">
-          <label for="official-mail">Official Mail:</label>
-          <input type="email" id="official-mail" name="official-mail" required placeholder="Enter your official email">
-        </div>
-        <div class="input-group">
-          <label for="personal-mail">Personal Mail:</label>
-          <input type="email" id="personal-mail" name="personal-mail" required placeholder="Enter your personal email">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group">
-          <label for="phone-number">Phone Number:</label>
-          <input type="tel" id="phone-number" name="phone-number" required placeholder="Enter your number">
-        </div>
-        <div class="input-group">
-          <label for="designation">Designation:</label>
-          <select id="designation" name="designation">
-            <option value="Select your Designation">Select your Designation</option>
-            <option value="trainer">Trainer</option>
-            <option value="hr">HR</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group">
-          <label for="subject">Subject:</label>
-          <select id="subject" name="subject" required>
-            <option value="">Select a Subject</option>
-            <option value="devops">Devops</option>
-            <option value="frontend-development">Frontend Development</option>
-            <option value="java-programming">Java Programming</option>
-            <option value="manual-testing">Manual Testing</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="date-of-joining">Date of Joining:</label>
-          <input type="date" id="date-of-joining" name="date-of-joining" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group">
-          <label for="date-of-birth">Date of Birth:</label>
-          <input type="date" id="date-of-birth" name="date-of-birth" required>
-        </div>
-        <div class="input-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required placeholder="Enter your password">
-        </div>
-      </div>
-      <div class="buttons">
-        <button type="submit">Register</button>
-      </div>
-    </form>
-  </div>
-  <div class="loader" id="loader">
-    <img src="../assests/Hourglass.gif" alt="Loading...">
-    <p>Processing your registration...</p>
-  </div>
-  <script>
-    document.getElementById("register-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      alert("Registration Successful!");
-      document.getElementById("loader").style.display = "block";
-      setTimeout(function () {
-        window.location.href = "submit.html";
-      }, 3000);
-    });
+    </div>
+    <div id="loader" style="display: none;">
+        <img src="../assests/Hourglass.gif" alt="Loading...">
+    </div>
+    <div class="background-overlay"></div>
+    <script>
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('preloader');
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 2000);
+        });
 
-    document.getElementById("cancel-btn").addEventListener("click", function () {
-      window.location.href = "login.html";
-    });
-  </script>
+        document.getElementById('register-btn').addEventListener('click', function() {
+            showLoader();
+            setTimeout(function() {
+                window.location.href = 'register.html';
+            }, 2000);
+        });
+
+        document.getElementById('login-btn').addEventListener('click', function() {
+            showLoader();
+            setTimeout(function() {
+                window.location.href = 'login.html';
+            }, 2000);
+        });
+
+        function showLoader() {
+            const loader = document.getElementById('loader');
+            loader.style.display = 'flex';
+        }
+
+        function decreaseOpacity() {
+            var overlay = document.querySelector('.background-overlay');
+            var opacity = parseFloat(window.getComputedStyle(overlay).getPropertyValue('opacity'));
+            if (opacity > 0) {
+                opacity -= 0.1;
+                overlay.style.opacity = opacity;
+                setTimeout(decreaseOpacity, 100);
+            }
+        }
+    </script>
+    
 </body>
 </html>
