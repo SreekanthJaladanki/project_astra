@@ -1,135 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Page</title>
-    <link rel="stylesheet" href="../CSS/Register.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="register-container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="../CSS/Register.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="register-container">
+    <h2>Register Your Details</h2>
+    <form id="register-form">
+      <div class="form-row">
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
+        </div>
+        <div class="input-group">
+          <label for="emp-id">Emp ID:</label>
+          <input type="text" id="emp-id" name="emp-id" required placeholder="Enter your EMPID">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group">
+          <label for="official-mail">Official Mail:</label>
+          <input type="email" id="official-mail" name="official-mail" required placeholder="Enter your official email">
+        </div>
+        <div class="input-group">
+          <label for="personal-mail">Personal Mail:</label>
+          <input type="email" id="personal-mail" name="personal-mail" required placeholder="Enter your personal email">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group">
+          <label for="phone-number">Phone Number:</label>
+          <input type="tel" id="phone-number" name="phone-number" required placeholder="Enter your number">
+        </div>
+        <div class="input-group">
+          <label for="designation">Designation:</label>
+          <select id="designation" name="designation">
+            <option value="Select your Designation">Select your Designation</option>
+            <option value="trainer">Trainer</option>
+            <option value="hr">HR</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group">
+          <label for="subject">Subject:</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a Subject</option>
+            <option value="devops">Devops</option>
+            <option value="frontend-development">Frontend Development</option>
+            <option value="java-programming">Java Programming</option>
+            <option value="manual-testing">Manual Testing</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="date-of-joining">Date of Joining:</label>
+          <input type="date" id="date-of-joining" name="date-of-joining" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group">
+          <label for="date-of-birth">Date of Birth:</label>
+          <input type="date" id="date-of-birth" name="date-of-birth" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
+      </div>
+      <div class="buttons">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+  <div class="loader" id="loader">
+    <img src="../assests/Hourglass.gif" alt="Loading...">
+    <p>Processing your registration...</p>
+  </div>
+  <script>
+    document.getElementById("register-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Registration Successful!");
+      document.getElementById("loader").style.display = "block";
+      setTimeout(function () {
+        window.location.href = "submit.html";
+      }, 3000);
+    });
 
-      
-        <h2>Register Your Details</h2>
-        <form id="register-form">
-            <div class="form-row">
-             <div class="input-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name" class="pup"/>
-                </div>
-                <div class="input-group">
-                    <label for="emp-id">Emp ID:</label>
-                    <input type="text" id="emp-id" name="emp-id" required placeholder="Enter your EMPID" />
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-group">
-                    <label for="official-mail">Official Mail:</label>
-                    <input type="email" id="official-mail" name="official-mail" required placeholder="Enter your official email"/>
-                </div>
-                <div class="input-group">
-                    <label for="personal-mail">Personal Mail:</label>
-                    <input type="email" id="personal-mail" name="personal-mail" required  placeholder="Enter your personal email"/>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-group">
-                    <label for="phone-number">Phone Number:</label>
-                    <input type="tel" id="phone-number" name="phone-number" required placeholder="Enter your number" />
-                </div>
-                <div class="input-group">
-                    <label for="designation">Designation:</label>
-                    <select id="designation" name="designation">
-                        <option value="Select your Designation">Select your Designation</option>
-                        <option value="trainer">Trainer</option>
-                        <option value="hr">HR</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-group">
-                    <label for="subject">Subject:</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a Subject</option>
-                        <option value="">Devops</option>
-                        <option value="">Frontend Development</option>
-                        <option value="">Java Programming</option>
-                        <option value="">Manual Testing</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="date-of-joining">Date of Joining:</label>
-                    <input type="date" id="date-of-joining" name="date-of-joining" required />
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-group">
-                    <label for="date-of-birth">Date of Birth:</label>
-                    <input type="date" id="date-of-birth" name="date-of-birth" required />
-                </div>
-                <div class="input-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required placeholder="Enter your password"/>
-                </div>
-            </div>
-            <div class="buttons">
-                <button type="submit" >Register</button>
-                <!-- <button type="button" id="cancel-btn">Cancel</button> -->
-            </div>
-        </form>
-
-    </div>
-
-    <script>
-      document
-        .getElementById("designation")
-        .addEventListener("change", function () {
-          var designation = this.value;
-          var subjectDropdown = document.getElementById("subject");
-
-          // Clear previous options
-          subjectDropdown.innerHTML = "";
-
-          if (designation === "trainer") {
-            // Add subjects for Trainer designation
-            var subjects = ["Java", "DevOps", "Manual Testing", "Frontend"];
-            subjects.forEach(function (subject) {
-              var option = document.createElement("option");
-              option.textContent = subject;
-              option.value = subject.toLowerCase().replace(" ", "-");
-              subjectDropdown.appendChild(option);
-            });
-          } else {
-            // Hide subject dropdown for other designations
-            var option = document.createElement("option");
-            option.textContent = "None";
-            option.value = "none";
-            subjectDropdown.appendChild(option);
-          }
-        });
-
-      document
-        .getElementById("register-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          // Here you can add the logic to handle the registration process
-          // For demonstration purposes, show a confirmation message
-          alert("Registration Successful!");
-          // Redirect to login page after 3 seconds
-          setTimeout(function () {
-            window.location.href = "submit.html";
-          }, 2000);
-        });
-
-      document
-        .getElementById("cancel-btn")
-        .addEventListener("click", function () {
-          // Redirect to login page
-          window.location.href = "login.html";
-        });
-    </script>
-  </body>
+    document.getElementById("cancel-btn").addEventListener("click", function () {
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
 </html>
