@@ -1,239 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Dashboard</title>
+    <title>Batch Form</title>
+    <link rel="stylesheet" href="batches.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/Homepage.css">
-   <style>
-
-
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-.navbar {
-    height: 70px;
-    background-color: white;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #87818a;
-    border-radius: 15px;
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
-}
-
-#datetime {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.dashboard-name {
-    font-size: 24px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-}
-
-.dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-    background-color: white;
-}
-
-.container-card {
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.cards-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
-}
-
-.card-link {
-    text-decoration: none;
-}
-
-.card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px rgba(128, 0, 0, 0.2);
-}
-
-.card h2 {
-    color: #9662BB;
-    font-size: 25px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.card img {
-    max-width: 100%;
-    border-radius: 15px;
-}
-
-#datetime {
-    font-size: 18px;
-    color: white;
-}
-
-/* Page Loader */
-#page-loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background-color: rgba(255, 255, 255, 0.7); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: background-color 0.5s ease;
-}
-
-#page-loader img {
-    width: 100px;
-    height: 100px;
-}
-
-
-#loader-text {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #9662BB;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-   </style>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+            font-family: "Poppins", sans-serif;
+            overflow-y: hidden;
+            height: 100vh;
+        }
+        h1 {
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            font-weight: 700;
+            font-style: normal;
+        }
+        form {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            height: 60%;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .form-group:last-child {
+            margin-right: 0;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            color: #9662BB;
+            font-weight: 700;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            color: #9d5dd2d8;
+            font-weight: 400;
+        }
+        input[type="text"]:focus,
+        select:focus,
+        input[type="date"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
+        }
+        ::placeholder {
+            color: #9d5dd2d8;
+            font-weight: 400;
+        }
+        input[type="submit"] {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            width: 100%;
+            font-weight: 700;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #submit-preloader,
+        #refresh-preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        #submit-preloader img,
+        #refresh-preloader img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        #submit-preloader p,
+        #refresh-preloader p {
+            font-weight: 800;
+            color: #9662BB;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        #submit-preloader p {
+            margin-left: -170px;
+            padding-right: 100px;
+        }
+        #refresh-preloader p {
+            margin-left: -130px;
+            margin-top: 150px;
+        }
+    </style>
 </head>
-
 <body>
-    <div id="page-loader">
-        <img src="../assests/preloader1.gif" alt="Loading...">
-        <p id="loader-text">Loading...</p>
+    <div id="submit-preloader" style="display: none;">
+        <img src="../assests/Hourglass.gif" alt="Loading...">
+        <p>Submitting your form...</p>
     </div>
-
-    <div class="navbar">
-        <div class="dashboard-name">Dashboard</div>
-        <div id="datetime"></div>
+    <div id="refresh-preloader" style="display: none;">
+        <img src="../assests/preloader4.gif" alt="Loading...">
+        <p>Wait for a while...</p>
     </div>
-
-    <div class="dashboard">
-        <div class="container-card">
-            <div class="cards-row">
-                <a href="../cards/updates.html" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
-                    <div class="card">
-                        <h2>Daily Updates</h2>
-                        <img src="../assests/updates.png" alt="Image 1">
-                    </div>
-                </a>
-                <a href="../cards/batches.html" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
-                    <div class="card">
-                        <h2>Batch Details</h2>
-                        <img src="../assests/batch.png" alt="Image 2">
-                    </div>
-                </a>
-                <a href="../cards/time.html" class="card-link" onclick="showCardPreloader('../cards/time.html')">
-                    <div class="card">
-                        <h2>TimeSheet</h2>
-                        <img src="../assests/time.png" alt="Image 4">
-                    </div>
-                </a>
+    <h1>Batch Updates</h1>
+    <form id="batchForm">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="batchCode">Batch Code:</label>
+                <input type="text" id="batchCode" name="batchCode" required placeholder="Enter your Batch code ">
             </div>
         </div>
-    </div>
-
+        <div class="form-row">
+            <div class="form-group">
+                <label for="timings">Timings:</label>
+                <input type="text" id="timings" name="timings" required placeholder="Enter your Timings">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required placeholder="Enter your subject">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mocksConducted">No. of Mocks Conducted:</label>
+            <select id="mocksConducted" name="mocksConducted" required style="width: 387px;">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
     <script>
-       window.onload = function () {
-    var pageLoader = document.getElementById('page-loader');
-    pageLoader.style.display = 'none';
-}
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('page-preloader');
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 1000);
+        });
 
-// Function to update time and date
-function updateTimeAndDate() {
-    const datetimeElement = document.getElementById('datetime');
-    const now = new Date();
+        document.getElementById("batchForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const formDataJSON = {};
+            formData.forEach((value, key) => {
+                formDataJSON[key] = value;
+            });
+            console.log(formDataJSON);
+            showSubmitPreloader();
+        });
 
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        hour12: true
-    };
-    const formattedDateTime = now.toLocaleString('en-US', options);
+        function showSubmitPreloader() {
+            const submitPreloader = document.getElementById('submit-preloader');
+            submitPreloader.style.display = 'flex';
+            setTimeout(function () {
+                submitPreloader.style.display = 'none';
+                showSuccessMessage();
+            }, 1000);
+        }
 
-    datetimeElement.textContent = formattedDateTime;
-}
+        function showSuccessMessage() {
+            alert('Form submitted successfully!');
+            // Here you can also redirect the user or perform any other action after successful submission
+        }
 
-// Update time and date every second
-setInterval(updateTimeAndDate, 1000);
-window.onload = function () {
-    setTimeout(function () {
-        document.getElementById('page-loader').style.display = 'none';
-    }, 1000);
-};
-function changeBackgroundColor() {
-        // Generate random RGB values
-        var red = Math.floor(Math.random() * 256);
-        var green = Math.floor(Math.random() * 256);
-        var blue = Math.floor(Math.random() * 256);
+        function showRefreshPreloader() {
+            const refreshPreloader = document.getElementById('refresh-preloader');
+            refreshPreloader.style.display = 'flex';
+            setTimeout(function () {
+                refreshPreloader.style.display = 'none';
+            }, 1000);
+        }
 
-        // Set the new background color
-        var color = 'rgb(' +#9662BB + ',' +#78A7DD + ',' + purple + ')';
-        document.body.style.backgroundColor = color;
-    }
+        showRefreshPreloader();
     </script>
 </body>
-
 </html>
