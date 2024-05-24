@@ -7,7 +7,7 @@ h1 {
     font-weight: bolder;
     text-align: center;
     margin-top: 50px;
-    color: rgb(143, 63, 143);
+    color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -93,6 +93,7 @@ input[type="submit"]:hover {
 }
 #submit-preloader {
     position: fixed;
+  
     left: 0;
     top: 0;
     width: 100%;
@@ -105,13 +106,22 @@ input[type="submit"]:hover {
 }
 #submit-preloader img {
     width: 100px;
+
     border-radius: 50%;
+    margin-left: 100px;
+    margin-top: -50px;
+
 }
 #submit-preloader p {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
+    border: 2px solid;
     color: #9662BB;
     font-size: 1.2rem;
+    margin-top: 140px;
+    margin-left: -170px;
+    padding-right: 100px;
+   
 }
 
 #refresh-preloader {
@@ -138,5 +148,5 @@ input[type="submit"]:hover {
     color: #9662BB;
     font-size: 1.2rem;
     margin-top: 200px;
-    margin-left: -100px;
+    margin-left: -130px;
 }

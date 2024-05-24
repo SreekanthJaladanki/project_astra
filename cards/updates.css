@@ -12,6 +12,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 85%;
     margin: 0 auto;
+    height: 80%;
 }
 
 .row {
@@ -221,6 +222,7 @@ button {
 #preloader img {
     width: 100px;
     border-radius: 50%;
+    margin-top: 10px;
 }
 
 #preloader p {
@@ -228,6 +230,7 @@ button {
     font-family: "Poppins", sans-serif;
     font-size: 1.2rem;
     color: #9662BB;
+    font-weight: bold;
 }
 
 #preloader.submit-loader img {

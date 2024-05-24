@@ -4,7 +4,7 @@ window.addEventListener('load', function () {
     preloader.style.display = 'flex';
     setTimeout(function () {
         preloader.style.display = 'none';
-    }, 2000); // Display preloader for 2 seconds
+    }, 1000); // Display preloader for 2 seconds
 });
 
 function showFields() {
@@ -53,5 +53,5 @@ document.getElementById("employeeForm").addEventListener("submit", function(even
         submitPreloader.style.display = 'none';
         alert("Form submitted successfully!");
         // Add actual form submission logic here, e.g., form.submit();
-    }, 2000); // Simulate form submission delay
+    }, 1000); // Simulate form submission delay
 });

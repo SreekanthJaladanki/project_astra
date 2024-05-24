@@ -103,6 +103,7 @@ input:focus, select:focus {
   transform: translate(-50%, -50%);
   z-index: 1000;
 background-color: white;
+opacity: 0.9;
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -113,7 +114,9 @@ background-color: white;
 }
 
 .loader img, .page-loader img {
-  width: 100px;
+  width: 130px;
+  border-radius: 90px;
+  margin-left: -50px;
 }
 
 .loader p, .page-loader p {
@@ -121,4 +124,6 @@ background-color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #9662BB;
+  font-size: 1.2rem;
+  margin-left: -30px;
 }

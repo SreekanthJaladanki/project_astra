@@ -103,13 +103,16 @@ button:hover {
  {
   width: 100px;
   border-radius: 50%;
-  margin-left: 90px;
+  margin-left: -20px;
 }
 #submit-preloader img{
   width: 100px;
   border-radius: 50%;
   margin-left: -70px;
 }
+
+
+
 
 #page-preloader p
  {
@@ -118,7 +121,7 @@ button:hover {
   color: #9662BB;
   font-size: 1.2rem;
   margin-top: 200px;
-  margin-left:-150px;
+  margin-left:-180px;
 }
 #submit-preloader p{
   font-family: 'Poppins', sans-serif;
