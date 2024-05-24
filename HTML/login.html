@@ -7,11 +7,21 @@
     <title>Login Page</title>
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
 </head>
 
 <body>
+    <div id="page-preloader">
+        <img src="../assests/preloader1.gif" alt="Loading...">
+        <p>Loading while you wait...</p>
+    </div>
+    <div id="submit-preloader">
+        <img src="../assests/Hourglass.gif" alt="Submitting...">
+        <p>Submitting...</p>
+    </div>
+
     <div class="login-container">
         <h2>Login</h2>
         <form id="login-form">
@@ -28,12 +38,24 @@
     </div>
 
     <script>
+        window.addEventListener('load', function () {
+            const preloader = document.getElementById('page-preloader');
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 2000);
+        });
+
         document.getElementById('login-form').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            sessionStorage.setItem('loggedIn', true);
+            const submitPreloader = document.getElementById('submit-preloader');
+            submitPreloader.style.display = 'flex';
 
-            window.location.href = 'Homepage.html';
+            setTimeout(function () {
+                submitPreloader.style.display = 'none';
+                sessionStorage.setItem('loggedIn', true);
+                window.location.href = 'Homepage.html';
+            }, 2000);
         });
 
         window.onload = function () {
@@ -52,4 +74,4 @@
     </script>
 </body>
 
-</html
+</html>

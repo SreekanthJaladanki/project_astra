@@ -1,3 +1,12 @@
+
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'flex';
+    setTimeout(function () {
+        preloader.style.display = 'none';
+    }, 2000); // Display preloader for 2 seconds
+});
+
 function showFields() {
     var status = document.getElementById("status");
     var loginLogoutFields = document.getElementById("loginLogoutFields");
@@ -25,6 +34,10 @@ function showFields() {
 
 document.getElementById("employeeForm").addEventListener("submit", function(event) {
     event.preventDefault();
+    // Show submit preloader
+    const submitPreloader = document.getElementById('submit-preloader');
+    submitPreloader.style.display = 'flex';
+
     // Fetching form data
     const formData = new FormData(this);
     // Converting form data to JSON
@@ -34,11 +47,11 @@ document.getElementById("employeeForm").addEventListener("submit", function(even
     });
     // Displaying form data
     console.log(formDataJSON);
-    // Show submission message
-    showSubmissionMessage();
+    
+    // Simulate form submission process
+    setTimeout(function () {
+        submitPreloader.style.display = 'none';
+        alert("Form submitted successfully!");
+        // Add actual form submission logic here, e.g., form.submit();
+    }, 2000); // Simulate form submission delay
 });
-
-function showSubmissionMessage() {
-    var submitMessage = document.getElementById("submitMessage");
-    submitMessage.style.display = "block";
-}
