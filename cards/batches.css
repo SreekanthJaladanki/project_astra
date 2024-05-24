@@ -2,54 +2,65 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    font-family: "Poppins", sans-serif;
+    overflow-y: hidden;
+    height: 100vh;
 }
 h1 {
     font-weight: bolder;
     text-align: center;
     margin-top: 50px;
     color: white;
-    font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 form {
-    max-width: 600px;
+    max-width: 800px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: white;
+    height: 60%;
 }
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #9662BB;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-input[type="text"], select, input[type="date"] {
-    width: 100%;
-    padding: 8px;
+.form-row {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
+}
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.form-group:last-child {
+    margin-right: 0;
+}
+.form-group label {
+    margin-bottom: 5px;
+    color: #9662BB;
+    font-weight: 700;
+}
+.form-group input,
+.form-group select {
+    padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
     color: #9d5dd2d8;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
-input[type="text"]:focus, select:focus, input[type="date"]:focus {
+input[type="text"]:focus,
+select:focus,
+input[type="date"]:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
 }
 ::placeholder {
     color: #9d5dd2d8;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 input[type="submit"] {
     color: white;
@@ -57,73 +68,15 @@ input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 30px;
     width: 100%;
-    font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-style: normal;
     background: linear-gradient(to right bottom, #78A7DD, #9662BB);
 }
 input[type="submit"]:hover {
     background-color: #45a049;
 }
-#page-preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.7);
-    opacity: 0.4;
-}
-#page-preloader img {
-    width: 100px;
-    border-radius: 50%;
-}
-#page-preloader p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    color: #9662BB;
-    font-size: 1.2rem;
-    margin-top: 200px;
-    margin-left: -30px;
-}
-#submit-preloader {
-    position: fixed;
-  
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-}
-#submit-preloader img {
-    width: 100px;
-
-    border-radius: 50%;
-    margin-left: 100px;
-    margin-top: -50px;
-
-}
-#submit-preloader p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-    border: 2px solid;
-    color: #9662BB;
-    font-size: 1.2rem;
-    margin-top: 140px;
-    margin-left: -170px;
-    padding-right: 100px;
-   
-}
-
+#submit-preloader,
 #refresh-preloader {
     position: fixed;
     left: 0;
@@ -134,19 +87,29 @@ input[type="submit"]:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.7);
-   
+    background-color: rgba(255, 255, 255, 0.9);
 }
-#refresh-preloader img {
+#submit-preloader img
+ {
     width: 100px;
     border-radius: 50%;
-    margin-left: -60px;
 }
-#refresh-preloader p {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
+#refresh-preloader img{
+    width: 100px;
+    border-radius: 50%;
+    margin-top: -80px;
+}
+
+#submit-preloader p {
+    margin-left: -170px;
+    padding-right: 100px;
     color: #9662BB;
     font-size: 1.2rem;
-    margin-top: 200px;
+
+}
+#refresh-preloader p {
     margin-left: -130px;
+    margin-top: 600px;
+    color: #9662BB;
+    font-size: 1.2rem;
 }

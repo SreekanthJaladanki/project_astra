@@ -103,12 +103,14 @@ button:hover {
  {
   width: 100px;
   border-radius: 50%;
-  margin-left: -20px;
+  margin-left: 15px;
+  margin-top: -40px;
 }
 #submit-preloader img{
   width: 100px;
   border-radius: 50%;
   margin-left: -70px;
+  margin-top: -50px;
 }
 
 
@@ -120,15 +122,15 @@ button:hover {
   font-weight: 800;
   color: #9662BB;
   font-size: 1.2rem;
-  margin-top: 200px;
-  margin-left:-180px;
+  margin-top: 140px;
+  margin-left:-163px;
 }
 #submit-preloader p{
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   color: #9662BB;
   font-size: 1.2rem;
-  margin-top: 200px;
+  margin-top: 140px;
   margin-left:-100px;
 }
 #submit-preloader {

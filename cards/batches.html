@@ -7,54 +7,176 @@
     <link rel="stylesheet" href="batches.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-   <style>
-
-
-
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+            font-family: "Poppins", sans-serif;
+            overflow-y: hidden;
+            height: 100vh;
+        }
+        h1 {
+            font-weight: bolder;
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            font-weight: 700;
+            font-style: normal;
+        }
+        form {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            height: 60%;
+        }
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+        .form-group:last-child {
+            margin-right: 0;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            color: #9662BB;
+            font-weight: 700;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            color: #9d5dd2d8;
+            font-weight: 400;
+        }
+        input[type="text"]:focus,
+        select:focus,
+        input[type="date"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
+        }
+        ::placeholder {
+            color: #9d5dd2d8;
+            font-weight: 400;
+        }
+        input[type="submit"] {
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            width: 100%;
+            font-weight: 700;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #submit-preloader,
+        #refresh-preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        #submit-preloader img,
+        #refresh-preloader img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        #submit-preloader p,
+        #refresh-preloader p {
+            font-weight: 800;
+            color: #9662BB;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        #submit-preloader p {
+            margin-left: -170px;
+            padding-right: 100px;
+        }
+        #refresh-preloader p {
+            margin-left: -130px;
+            margin-top: 150px;
+        }
+    </style>
 </head>
 <body>
-    <!-- <div id="page-preloader">
-        <img src="../assests/preloader1.gif" alt="Loading...">
-        <p></p>
-    </div> -->
     <div id="submit-preloader" style="display: none;">
         <img src="../assests/Hourglass.gif" alt="Loading...">
         <p>Submitting your form...</p>
     </div>
     <div id="refresh-preloader" style="display: none;">
-        <img src="../assests/preloader4.gif" alt="Loading...">
+        <img src="../assests/preloader1.gif" alt="Loading...">
         <p>Wait for a while...</p>
     </div>
     <h1>Batch Updates</h1>
     <form id="batchForm">
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" name="startDate" required>
-        <label for="batchCode">Batch Code:</label>
-        <input type="text" id="batchCode" name="batchCode" required>
-        <label for="timings">Timings:</label>
-        <input type="text" id="timings" name="timings" required>
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required>
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" required>
-        <label for="status">Status:</label>
-        <input type="text" id="status" name="status" required>
-        <label for="mocksConducted">No. of Mocks Conducted:</label>
-        <select id="mocksConducted" name="mocksConducted" required>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="batchCode">Batch Code:</label>
+                <input type="text" id="batchCode" name="batchCode" required placeholder="Enter your Batch code ">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="timings">Timings:</label>
+                <input type="text" id="timings" name="timings" required placeholder="Enter your Timings">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required placeholder="Enter your subject">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mocksConducted">No. of Mocks Conducted:</label>
+            <select id="mocksConducted" name="mocksConducted" required style="width: 387px;">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
         <input type="submit" value="Submit">
     </form>
-<script src="batches.js">
-
-
-</script>
+    <script src="batches.js">
+       
+    </script>
 </body>
 </html>
-

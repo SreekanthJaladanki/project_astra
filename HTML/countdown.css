@@ -22,7 +22,8 @@
 #loader img{
   width: 100px;
   border-radius: 50%;
-  margin-left: 150px;
+  margin-left: 50px;
+  margin-top: -100px;
 }
 #preloader p{
   margin-top: 170px;
@@ -34,12 +35,12 @@
 }
 
 #loader p{
-  margin-top: 170px;
+  margin-top: 90px;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: #9662BB;
   font-size: 1.2rem;
-  margin-left: -190px;
+  margin-left: -210px;
 }
 
 h1 {
