@@ -1,4 +1,3 @@
-
 window.addEventListener('load', function () {
     const preloader = document.getElementById('page-preloader');
     setTimeout(function () {
@@ -31,7 +30,6 @@ function showSuccessMessage() {
     // Here you can also redirect the user or perform any other action after successful submission
 }
 
-// Function to show refresh preloader for 2 seconds
 function showRefreshPreloader() {
     const refreshPreloader = document.getElementById('refresh-preloader');
     refreshPreloader.style.display = 'flex';
@@ -40,5 +38,4 @@ function showRefreshPreloader() {
     }, 1000);
 }
 
-// Call the refresh preloader function on page load
 showRefreshPreloader();
