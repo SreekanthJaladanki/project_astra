@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     const preloader = document.getElementById('page-preloader');
     setTimeout(function () {
         preloader.style.display = 'none';
-    }, 2000);
+    }, 1000);
 });
 
 document.getElementById("batchForm").addEventListener("submit", function(event) {
@@ -23,7 +23,7 @@ function showSubmitPreloader() {
     setTimeout(function () {
         submitPreloader.style.display = 'none';
         showSuccessMessage();
-    }, 2000);
+    }, 1000);
 }
 
 function showSuccessMessage() {
@@ -37,7 +37,7 @@ function showRefreshPreloader() {
     refreshPreloader.style.display = 'flex';
     setTimeout(function () {
         refreshPreloader.style.display = 'none';
-    }, 2000);
+    }, 1000);
 }
 
 // Call the refresh preloader function on page load

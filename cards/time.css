@@ -1,7 +1,7 @@
 
 
 body {
-    font-family: Arial, sans-serif;
+  
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,10 +10,11 @@ body {
 
 h1 {
     text-align: center;
-    color: rgb(134, 27, 134);
+    color: white;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
+    margin-top: 90px;
 }
 
 form {
@@ -24,6 +25,7 @@ form {
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: white;
+   
 }
 
 label {
@@ -56,19 +58,36 @@ label {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
-#preloader img, #submit-preloader img {
-    width: 100px;
-    border-radius: 50px;
-}
+#preloader img  {
+    width: 100%;
+    border-radius: 50px ;
+    margin-left: -50px;
+    margin-top: -260px;
+    margin-left: -100px;
 
-#preloader p, #submit-preloader p {
+   
+}
+#submit-preloader img{
+    width: 100px;
+    border-radius: 50px ;
+}
+#submit-preloader p {
     margin-top: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     color: #9662BB;
     font-size: 1.2rem;
 }
+#preloader p{
+    margin-top: -140px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    color: #9662BB;
+    font-size: 1.2rem;
+    margin-left: -90px;
+    margin-top: -250px;
 
+}
 input[type="date"], input[type="time"], input[type="text"], select {
     width: 100%;
     padding: 8px;
@@ -95,6 +114,9 @@ input[type="submit"] {
     width: 100%;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 input[type="submit"]:hover {
