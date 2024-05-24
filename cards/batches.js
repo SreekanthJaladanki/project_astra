@@ -1,13 +1,44 @@
+
+window.addEventListener('load', function () {
+    const preloader = document.getElementById('page-preloader');
+    setTimeout(function () {
+        preloader.style.display = 'none';
+    }, 2000);
+});
+
 document.getElementById("batchForm").addEventListener("submit", function(event) {
     event.preventDefault();
-    // Fetching form data
     const formData = new FormData(this);
-    // Converting form data to JSON
     const formDataJSON = {};
     formData.forEach((value, key) => {
         formDataJSON[key] = value;
     });
-    // Displaying form data
     console.log(formDataJSON);
-    // You can add code to send this data to a server or perform any other action here
+    showSubmitPreloader();
 });
+
+function showSubmitPreloader() {
+    const submitPreloader = document.getElementById('submit-preloader');
+    submitPreloader.style.display = 'flex';
+    setTimeout(function () {
+        submitPreloader.style.display = 'none';
+        showSuccessMessage();
+    }, 2000);
+}
+
+function showSuccessMessage() {
+    alert('Form submitted successfully!');
+    // Here you can also redirect the user or perform any other action after successful submission
+}
+
+// Function to show refresh preloader for 2 seconds
+function showRefreshPreloader() {
+    const refreshPreloader = document.getElementById('refresh-preloader');
+    refreshPreloader.style.display = 'flex';
+    setTimeout(function () {
+        refreshPreloader.style.display = 'none';
+    }, 2000);
+}
+
+// Call the refresh preloader function on page load
+showRefreshPreloader();

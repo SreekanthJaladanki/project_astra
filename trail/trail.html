@@ -1,85 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="../CSS/Landing.css">
-    <link rel="stylesheet" href="./countdown.css">
+    <title>Interactive Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
-       
-        
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Homepage.css">
+   <style>
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    height: 70px;
+    background-color: white;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #87818a;
+    border-radius: 15px;
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+}
+
+#datetime {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dashboard-name {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    background-color: white;
+}
+
+.container-card {
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cards-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(128, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #9662BB;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+#datetime {
+    font-size: 18px;
+    color: white;
+}
+
+/* Page Loader */
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#page-loader img {
+    width: 100px;
+    height: 100px;
+}
+
+
+#loader-text {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #9662BB;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   </style>
 </head>
+
 <body>
-    <div id="preloader">
-        <img src="../assests/Hourglass.gif" alt="Loading...">
+    <div id="page-loader">
+        <img src="../assests/preloader1.gif" alt="Loading...">
+        <p id="loader-text">Loading...</p>
     </div>
-    <div id="del-countdown">
-        <h1>COMING SOON!!!</h1>
-        <div id="clock"></div>
-        <div id="units">
-            <span id="days">Days</span>
-            <span id="hours">Hours</span>
-            <span id="min">Minutes</span>
-            <span id="sec">Seconds</span>
-        </div>
-        <video src="../assests/background.mp4" id="videotag" loop muted autoplay></video>
-        <div class="landing-page">
-            <div class="landing-content">
-                <h1>Welcome to Team Astra</h1>
-                <p>Building Bridges to Tech Brilliance!</p>
-                <div class="buttons">
-                    <button id="register-btn">Register</button>
-                    <button id="login-btn">Login</button>
-                </div>
+
+    <div class="navbar">
+        <div class="dashboard-name">Dashboard</div>
+        <div id="datetime"></div>
+    </div>
+
+    <div class="dashboard">
+        <div class="container-card">
+            <div class="cards-row">
+                <a href="../cards/updates.html" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
+                    <div class="card">
+                        <h2>Daily Updates</h2>
+                        <img src="../assests/updates.png" alt="Image 1">
+                    </div>
+                </a>
+                <a href="../cards/batches.html" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
+                    <div class="card">
+                        <h2>Batch Details</h2>
+                        <img src="../assests/batch.png" alt="Image 2">
+                    </div>
+                </a>
+                <a href="../cards/time.html" class="card-link" onclick="showCardPreloader('../cards/time.html')">
+                    <div class="card">
+                        <h2>TimeSheet</h2>
+                        <img src="../assests/time.png" alt="Image 4">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-    <div id="loader" style="display: none;">
-        <img src="../assests/Hourglass.gif" alt="Loading...">
-    </div>
-    <div class="background-overlay"></div>
+
     <script>
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
-            setTimeout(function () {
-                preloader.style.display = 'none';
-            }, 2000);
-        });
+       window.onload = function () {
+    var pageLoader = document.getElementById('page-loader');
+    pageLoader.style.display = 'none';
+}
 
-        document.getElementById('register-btn').addEventListener('click', function() {
-            showLoader();
-            setTimeout(function() {
-                window.location.href = 'register.html';
-            }, 2000);
-        });
+// Function to update time and date
+function updateTimeAndDate() {
+    const datetimeElement = document.getElementById('datetime');
+    const now = new Date();
 
-        document.getElementById('login-btn').addEventListener('click', function() {
-            showLoader();
-            setTimeout(function() {
-                window.location.href = 'login.html';
-            }, 2000);
-        });
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+    const formattedDateTime = now.toLocaleString('en-US', options);
 
-        function showLoader() {
-            const loader = document.getElementById('loader');
-            loader.style.display = 'flex';
-        }
+    datetimeElement.textContent = formattedDateTime;
+}
 
-        function decreaseOpacity() {
-            var overlay = document.querySelector('.background-overlay');
-            var opacity = parseFloat(window.getComputedStyle(overlay).getPropertyValue('opacity'));
-            if (opacity > 0) {
-                opacity -= 0.1;
-                overlay.style.opacity = opacity;
-                setTimeout(decreaseOpacity, 100);
-            }
-        }
+// Update time and date every second
+setInterval(updateTimeAndDate, 1000);
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById('page-loader').style.display = 'none';
+    }, 1000);
+};
     </script>
-    
 </body>
+
 </html>

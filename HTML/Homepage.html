@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/Homepage.css">
+   <style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
+   </style>
 </head>
+
 <body>
-    <div id="preloader">
+    <div id="page-loader">
+        
         <img src="../assests/preloader1.gif" alt="Loading...">
-      
+        <p id="loader-text">Loading...</p>
+        
     </div>
 
     <div class="navbar">
@@ -24,19 +47,19 @@
     <div class="dashboard">
         <div class="container-card">
             <div class="cards-row">
-                <a href="#" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
+                <a href="../cards/updates.html" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
                     <div class="card">
                         <h2>Daily Updates</h2>
                         <img src="../assests/updates.png" alt="Image 1">
                     </div>
                 </a>
-                <a href="#" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
+                <a href="../cards/batches.html" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
                     <div class="card">
                         <h2>Batch Details</h2>
                         <img src="../assests/batch.png" alt="Image 2">
                     </div>
                 </a>
-                <a href="#" class="card-link" onclick="showCardPreloader('../cards/time.html')">
+                <a href="../cards/time.html" class="card-link" onclick="showCardPreloader('../cards/time.html')">
                     <div class="card">
                         <h2>TimeSheet</h2>
                         <img src="../assests/time.png" alt="Image 4">
@@ -46,6 +69,40 @@
         </div>
     </div>
 
-    <script src="../js/script.js"></script>
+    <script>
+     window.onload = function () {
+    var pageLoader = document.getElementById('page-loader');
+    pageLoader.style.display = 'none';
+}
+
+// Function to update time and date
+function updateTimeAndDate() {
+    const datetimeElement = document.getElementById('datetime');
+    const now = new Date();
+
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+    const formattedDateTime = now.toLocaleString('en-US', options);
+
+    datetimeElement.textContent = formattedDateTime;
+}
+
+// Update time and date every second
+setInterval(updateTimeAndDate, 1000);
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById('page-loader').style.display = 'none';
+    }, 1000);
+};
+    </script>
 </body>
+
 </html>

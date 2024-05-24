@@ -8,10 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
   
+
+  </style>
 </head>
 <body>
-  
+  <div class="page-loader" id="page-preloader">
+    <img src="../assests/preloader1.gif" alt="Loading...">
+    <p>Loading...</p>
+  </div>
+
   <div class="register-container">
     <h2>Register Your Details</h2>
     <form id="register-form">
@@ -80,24 +87,35 @@
       </div>
     </form>
   </div>
-  <div class="loader" id="loader">
-    <img src="../assests/Hourglass.gif" alt="Loading...">
+  
+  <div class="loader" id="submit-loader">
+    <img src="../assests/Hourglass.gif" alt="Submitting...">
     <p>Processing your registration...</p>
   </div>
+
   <script>
+    window.addEventListener('load', function () {
+      const preloader = document.getElementById('page-preloader');
+      preloader.style.display = 'block';
+      setTimeout(function () {
+        preloader.style.display = 'none';
+      }, 2000);
+    });
+
     document.getElementById("register-form").addEventListener("submit", function (event) {
       event.preventDefault();
       alert("Registration Successful!");
-      document.getElementById("loader").style.display = "block";
+      const submitLoader = document.getElementById("submit-loader");
+      submitLoader.style.display = "block";
       setTimeout(function () {
+        submitLoader.style.display = "none";
         window.location.href = "submit.html";
-      }, 3000);
+      }, 2000);
     });
 
     document.getElementById("cancel-btn").addEventListener("click", function () {
       window.location.href = "login.html";
     });
- 
   </script>
 </body>
 </html>
