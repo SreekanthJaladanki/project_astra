@@ -16,13 +16,13 @@
 .logocont{
     width: 12%;
     height: 100%;
-    color: rgba(41, 77, 196, 0.822);
+    color: #8689CE;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .logocont h1{
-    color: rgb(98, 190, 233);
+    color: #8689CE;
 }
 .searchcont{
     width: 60%;
@@ -39,14 +39,14 @@
     position: absolute;
     left: 10px;
     top: 50%;
-    color: #ccc;
+    color: #7a7cbd;
     transform: translateY(-50%);
   }
 
   .search-input {
     width: 100%;
     padding: 7px 40px 6px 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #a9aae4;
     border-radius: 30px;
     font-size: 16px;
     outline: none;
@@ -76,7 +76,7 @@
     top: 10.2vh;
     height: 100%;
     width: 17%;
-    /* background-color: #333; */
+    background-color: #333;
     padding-top: 20px;
     box-shadow: 2px 2px 5px gainsboro;
   }
@@ -89,8 +89,7 @@
 
   .sidebar li {
     padding: 15px 20px;
-    /* color: #fff; */
-    color: black;
+    color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -99,18 +98,21 @@
   }
 
   .sidebar li:hover {
-    background-color: #e7dede;
+    background-color: #838181;
   }
 
   .sidebar li.active {
-    background-color: #4CAF50;
+    background-color: #8689CE;
   }
 
-  /*End of Aside bar  */
+
+
+/*End of Aside bar  */
+
+
+/* Start of main section */
   
-  /* Start of main section */
-  
-  .mainCont {
+.mainCont {
     margin-left: 17%;
     padding: 20px;
     height: 100%;
@@ -171,6 +173,7 @@
     height: 40%;
     /* border: 1px solid; */
     background-color: #fff;
+    color: #8689CE;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -183,34 +186,93 @@
     display: flex;
     justify-content: space-between;
   }
-  .sectiondiv div{
+  .sectiondiv .employee,.companies{
     width: 48%;
-    height: 100%;
+    height: 95%;
     border-radius: 5px;
   }
   .sectiondiv .employee{
     background-color: #3047BB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sectiondiv .employee p,h1{
+    color: white;
+    font-family: sans-serif ;
+    margin-left: 10%;
+  }
+  #icon{
+    background-color: white;
+    width: 18%;
+    border-radius: 5px;
+    height: 70%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #3047BB;
   }
   .sectiondiv .companies{
     background-color: #FF8D08;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-
-
-
-
-
-
-
-
-
-
-
-
+  .sectiondiv .companies p,h1{
+    color: white;
+    font-family: sans-serif ;
+    margin-left: 10%;
+  }
+ 
   .firstSection .rightSect{
     width: 49%;
     height: 100%;
-    border: 1px solid;
   }
+  .rightSect .dashboardHome{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rightSect .dashboardHome section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rightSect .dashboardHome .admin{
+    width: 48%;
+    height: 85%;
+    background-color: #1666D9;
+    border-radius: 5px;
+  }
+  .rightSect .dashboardHome .employee{
+    width: 48%;
+    height: 85%;
+    background-color: #E4E7EC;
+    border-radius: 5px;
+  }
+
+  .rightSect .sectiondiv{
+    width: 100%;
+    height: 48%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .rightSect .sectiondiv section{
+    width: 48%;
+    height: 100%;
+    border-radius: 5px;
+  }
+  .rightSect .sectiondiv .employee{
+    background-color: #DC3546;
+  }
+  .rightSect .sectiondiv .companies{
+    background-color: #00882E;
+  }
+
   /* End first section */
 
 
