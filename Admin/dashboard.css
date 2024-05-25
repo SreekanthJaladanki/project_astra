@@ -178,6 +178,7 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+    box-shadow: 2px 2px 15px gainsboro;
   }
   .sectiondiv{
     width: 100%;
@@ -263,11 +264,13 @@
   }
   .rightSect .sectiondiv section{
     width: 48%;
-    height: 100%;
+    height: 95%;
     border-radius: 5px;
+    box-shadow: 2px 2px 15px gainsboro;
   }
   .rightSect .sectiondiv .employee{
     background-color: #DC3546;
+    box-shadow: 2px 2px 50px gainsboro;
   }
   .rightSect .sectiondiv .companies{
     background-color: #00882E;
@@ -275,6 +278,87 @@
 
   /* End first section */
 
+/* Graph Section */
 
+  .graphSection{
+    width: 100%;
+    height: 50vh;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .pieCont{
+    width: 49%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px gainsboro;
+  }
+  .pieCont header{
+    border-bottom: 1px solid gainsboro;
+    height: 15%;
+    align-content: center;
+    padding-left: 3%;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .barCont header{
+    border-bottom: 1px solid gainsboro;
+    height: 15%;
+    align-content: center;
+    padding-left: 3%;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  #piechart_3d{
+    width: 100%;
+  }
+
+/* Demo Content */
+.programming-stats {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #023047;
+  transition: all 400ms ease;
+}
+
+.programming-stats:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px -7px rgba(0, 0, 0, 0.3);
+}
+
+.programming-stats .details ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.programming-stats .details ul li {
+  font-size: 16px;
+  margin: 12px 10px;
+  text-transform: uppercase;
+}
+
+.programming-stats .details .percentage {
+  font-weight: 700;
+  color: #e63946;
+}
+/* Demo content end */
+
+
+  .barCont{
+    width: 49%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px gainsboro;
+  }
+
+/* Graph Section End */
 
   /* End of main section */
