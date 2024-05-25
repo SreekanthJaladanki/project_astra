@@ -13,6 +13,7 @@ h1 {
     color: white;
     font-weight: 700;
     font-style: normal;
+    margin-left: -31px
 }
 form {
     max-width: 800px;
@@ -89,15 +90,10 @@ input[type="submit"]:hover {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
 }
-#submit-preloader img
- {
+#submit-preloader img,
+#refresh-preloader img {
     width: 100px;
     border-radius: 50%;
-}
-#refresh-preloader img{
-    width: 100px;
-    border-radius: 50%;
-    margin-top: -80px;
 }
 
 #submit-preloader p {
@@ -105,11 +101,12 @@ input[type="submit"]:hover {
     padding-right: 100px;
     color: #9662BB;
     font-size: 1.2rem;
-
+    font-weight: 800;
 }
 #refresh-preloader p {
     margin-left: -130px;
-    margin-top: 600px;
+    margin-top: 250px;
     color: #9662BB;
     font-size: 1.2rem;
+    font-weight: 800;
 }

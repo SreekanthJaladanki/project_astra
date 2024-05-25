@@ -34,6 +34,7 @@ function showFields() {
 
 document.getElementById("employeeForm").addEventListener("submit", function(event) {
     event.preventDefault();
+    console.log("first");
     // Show submit preloader
     const submitPreloader = document.getElementById('submit-preloader');
     submitPreloader.style.display = 'flex';
@@ -55,3 +56,13 @@ document.getElementById("employeeForm").addEventListener("submit", function(even
         // Add actual form submission logic here, e.g., form.submit();
     }, 1000); // Simulate form submission delay
 });
+
+
+const submitFunction=()=>{
+    const preloader = document.getElementById('submit-preloader');
+    preloader.style.display = 'flex';
+    setTimeout(function () {
+        preloader.style.display = 'none';
+    }, 1000)
+    
+}
