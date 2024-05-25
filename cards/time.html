@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="time.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
 </head>
 <body>
@@ -21,14 +21,14 @@
         <img src="../assests/Hourglass.gif" alt="Submitting...">
         <p>Submitting your form, please wait...</p>
     </div>
-
+    
     <h1>Employee Timesheet</h1>
     <form id="employeeForm">
         <label for="selectDate">Select Date:</label>
         <input type="date" id="selectDate" name="selectDate" required>
 
         <label for="status">Status:</label>
-        <select id="status" name="status" onchange="showFields()">
+        <select id="status" name="status" onchange="showFields()" required>
             <option value="Present">Present</option>
             <option value="Leave">Leave</option>
             <option value="Work from Home">Work from Home</option>
@@ -46,15 +46,15 @@
 
         <div id="workFromHomeTaskDiv" style="display:none;">
             <label for="workFromHomeTask">Work from Home Task:</label>
-            <input type="text" id="workFromHomeTask" name="workFromHomeTask">
+            <input type="text" id="workFromHomeTask" name="workFromHomeTask" required>
         </div>
 
         <div id="halfDayReasonDiv" style="display:none;">
             <label for="halfDayReason">Reason for Half Day:</label>
-            <input type="text" id="halfDayReason" name="halfDayReason">
+            <input type="text" id="halfDayReason" name="halfDayReason" required>
         </div>
 
-        <input type="submit" value="Submit" onclick="submitFunction()">
+        <input type="submit" value="Submit" onclick="validateAndSubmit(event)">
     </form>
 
     <div id="submitMessage" style="display:none;">
@@ -62,8 +62,7 @@
     </div>
 
     <script src="time.js">
-
-     
+       
     </script>
 </body>
 </html>
