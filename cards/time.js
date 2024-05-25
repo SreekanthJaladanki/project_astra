@@ -56,7 +56,7 @@ document.getElementById("employeeForm").addEventListener("submit", function(even
         // Add actual form submission logic here, e.g., form.submit();
     }, 1000); // Simulate form submission delay
 });
-
+ 
 
 const submitFunction=()=>{
     const preloader = document.getElementById('submit-preloader');
