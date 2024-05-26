@@ -1,59 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Status Form</title>
-    <link rel="stylesheet" href="time.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../CSS/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: linear-gradient(to right bottom, #78a7dd, #9662bb);
-            overflow-y: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
         }
 
-        h1 {
-            text-align: center;
-            color: white;
-            font-family: "Poppins", sans-serif;
-            font-weight: 700;
-            font-style: normal;
-            margin-top: 59px;
-            margin-left: -47px;
-        }
-
-        form {
-            max-width: 600px;
+        .login-container {
+            background-color: #fff;
             padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 15px;
+            border-radius: 25px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            margin-left: 352px;
+            max-width: 350px;
+            width: 100%;
+            margin-left: -25px;
         }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #9662bb;
+        h2 {
+            text-align: center;
+            font-size: 2rem;
             font-family: "Poppins", sans-serif;
             font-weight: 700;
             font-style: normal;
+            color: #9662BB;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9662BB;
+        }
+
+        .input-group .emp-id-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group .emp-id-container span {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #eaeaea;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9d5dd2d8;
+        }
+
+        .input-group .emp-id-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-radius: 0 5px 5px 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9d5dd2d8;
+            width: 100%;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
         }
 
         ::placeholder {
-            color: #9d5dd2d8;
+            font-size: 0.8rem;
             font-family: "Poppins", sans-serif;
             font-weight: 400;
             font-style: normal;
+            color: #9d5dd2d8;
         }
 
-        #preloader,
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        button:hover {
+            background-color: #31688d;
+        }
+
+        #page-preloader,
         #submit-preloader {
             position: fixed;
             left: 0;
@@ -61,210 +123,174 @@
             width: 100%;
             height: 100%;
             z-index: 9999;
-            display: none;
+            display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: white;
+            /* opacity: 0.6; */
+            /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
         }
 
-        #preloader img {
+        #page-preloader img {
             width: 100px;
-            border-radius: 50px;
-            margin-top: 50px;
-            margin-left: -100px;
+            border-radius: 50%;
+            margin-left: 15px;
+            margin-top: -40px;
         }
 
         #submit-preloader img {
             width: 100px;
-            border-radius: 50px;
+            border-radius: 50%;
+            margin-left: -70px;
+            margin-top: -50px;
+        }
+
+        #page-preloader p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: #9662BB;
+            font-size: 1.2rem;
+            margin-top: 140px;
+            margin-left: -163px;
         }
 
         #submit-preloader p {
-            margin-top: 20px;
-            font-family: "Poppins", sans-serif;
+            font-family: 'Poppins', sans-serif;
             font-weight: 800;
-            color: #9662bb;
+            color: #9662BB;
             font-size: 1.2rem;
+            margin-top: 140px;
+            margin-left: -100px;
         }
 
-        #preloader p {
-            margin-top: 40px;
-            font-family: "Poppins", sans-serif;
-            font-weight: 800;
-            color: #9662bb;
-            font-size: 1.2rem;
-            margin-left: -90px;
+        #submit-preloader {
+            display: none;
         }
 
-        input[type="date"],
-        input[type="time"],
-        input[type="text"],
-        select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-            color: #9d5dd2d8;
+        .error-message {
             font-family: "Poppins", sans-serif;
             font-weight: 400;
             font-style: normal;
+            color: red;
+            font-size: 0.8rem;
+            display: none;
+            margin-top: 5px;
         }
 
-        input[type="date"]:focus,
-        input[type="time"]:focus,
-        input[type="text"]:focus,
-        select:focus {
-            outline: none;
-            box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
+        .input-error {
+            border-color: red;
         }
-
-        input[type="submit"] {
-            background: linear-gradient(to right bottom, #78a7dd, #9662bb);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            width: 100%;
+        .paasword-input{
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            cursor: pointer;
             font-family: "Poppins", sans-serif;
             font-weight: 700;
             font-style: normal;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049;
+            color: #9d5dd2d8;
+            width: 94%;
         }
     </style>
 </head>
+
 <body>
-
-    <div id="preloader">
-        <img src="../assests/preloader1.gif" alt="Loading...">
-        <p>Loading, please wait...</p>
+    <div id="page-preloader">
+        <img src="../assests/preloader6.gif" alt="Loading...">
+        <p>Loading while you wait...</p>
     </div>
-
     <div id="submit-preloader">
         <img src="../assests/Hourglass.gif" alt="Submitting...">
-        <p>Submitting your form, please wait...</p>
-    </div>
-    
-    <h1>Employee Timesheet</h1>
-    <form id="employeeForm">
-        <label for="selectDate">Select Date:</label>
-        <input type="date" id="selectDate" name="selectDate" required>
-
-        <label for="status">Status:</label>
-        <select id="status" name="status" onchange="showFields()" required>
-            <option value="Present">Present</option>
-            <option value="Leave">Leave</option>
-            <option value="Work from Home">Work from Home</option>
-            <option value="Half Day">Half Day</option>
-            <option value="Incubation">Incubation</option>
-        </select>
-
-        <div id="loginLogoutFields">
-            <label for="login">Login:</label>
-            <input type="time" id="login" name="login" required>
-
-            <label for="logout">Logout:</label>
-            <input type="time" id="logout" name="logout" required>
-        </div>
-
-        <div id="workFromHomeTaskDiv" style="display:none;">
-            <label for="workFromHomeTask">Work from Home Task:</label>
-            <input type="text" id="workFromHomeTask" name="workFromHomeTask" required>
-        </div>
-
-        <div id="halfDayReasonDiv" style="display:none;">
-            <label for="halfDayReason">Reason for Half Day:</label>
-            <input type="text" id="halfDayReason" name="halfDayReason" required>
-        </div>
-
-        <input type="submit" value="Submit" onclick="validateAndSubmit(event)">
-    </form>
-
-    <div id="submitMessage" style="display:none;">
-        <p>Submitted successfully <span class="material-icons">check_circle</span></p>
+        <p>Logging in...</p>
     </div>
 
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="emp-id">Employee ID</label>
+                <div class="emp-id-container">
+                    <span>TYP</span>
+                    <input type="text" id="emp-id" name="emp-id" required autofocus="on" placeholder="1234" pattern="\d{4}" maxlength="4" oninput="validateEmpID(this)">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input class="paasword-input" type="password" id="password" name="password" required placeholder="Enter your Password" oninput="validatePassword(this)">
+                <p id="password-error" class="error-message">Password should be at least 8 characters.</p>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
     <script>
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
-            preloader.style.display = 'flex';
-            setTimeout(function () {
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloader = document.getElementById('page-preloader');
+            setTimeout(() => {
                 preloader.style.display = 'none';
-            }, 1000);
+            }, 2000);
+    
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                if (!validateForm()) {
+                    return;
+                }
+    
+                const submitPreloader = document.getElementById('submit-preloader');
+                submitPreloader.style.display = 'flex';
+    
+                setTimeout(() => {
+                    submitPreloader.style.display = 'none';
+                    sessionStorage.setItem('loggedIn', true);
+                    window.location.href = 'Homepage.html';
+                }, 2000);
+            });
         });
-
-        function showFields() {
-            var status = document.getElementById("status").value;
-            var loginLogoutFields = document.getElementById("loginLogoutFields");
-            var workFromHomeTaskDiv = document.getElementById("workFromHomeTaskDiv");
-            var halfDayReasonDiv = document.getElementById("halfDayReasonDiv");
-
-            if (status === "Leave") {
-                loginLogoutFields.style.display = "none";
-                workFromHomeTaskDiv.style.display = "none";
-                halfDayReasonDiv.style.display = "none";
-            } else if (status === "Work from Home") {
-                loginLogoutFields.style.display = "none";
-                workFromHomeTaskDiv.style.display = "block";
-                halfDayReasonDiv.style.display = "none";
-            } else if (status === "Half Day") {
-                loginLogoutFields.style.display = "block";
-                workFromHomeTaskDiv.style.display = "none";
-                halfDayReasonDiv.style.display = "block";
+    
+        function validateEmpID(input) {
+            const pattern = /^\d{0,4}$/;
+            if (!pattern.test(input.value)) {
+                input.value = input.value.slice(0, -1);
+            }
+        }
+    
+        function validatePassword(input) {
+            const passwordError = document.getElementById('password-error');
+            if (input.value.length < 8) {
+                input.classList.add('input-error');
+                passwordError.style.display = 'block';
             } else {
-                loginLogoutFields.style.display = "block";
-                workFromHomeTaskDiv.style.display = "none";
-                halfDayReasonDiv.style.display = "none";
+                input.classList.remove('input-error');
+                passwordError.style.display = 'none';
             }
         }
-
-        function validateAndSubmit(event) {
-            event.preventDefault();
-            if (!validateFields()) {
-                alert("Please fill all the fields.");
-                return;
-            }
-            const submitPreloader = document.getElementById('submit-preloader');
-            submitPreloader.style.display = 'flex';
-            setTimeout(function () {
-                submitPreloader.style.display = 'none';
-                alert("Form submitted successfully!");
-                document.getElementById("employeeForm").submit();
-            }, 1000);
-        }
-
-        function validateFields() {
-            const selectDate = document.getElementById("selectDate").value;
-            const status = document.getElementById("status").value;
-            const login = document.getElementById("login").value;
-            const logout = document.getElementById("logout").value;
-            const workFromHomeTask = document.getElementById("workFromHomeTask").value;
-            const halfDayReason = document.getElementById("halfDayReason").value;
-
-            if (!selectDate || !status) {
+    
+        function validateForm() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.value.length < 8) {
+                passwordInput.classList.add('input-error');
+                document.getElementById('password-error').style.display = 'block';
                 return false;
             }
-
-            if (status === "Present" && (!login || !logout)) {
-                return false;
-            }
-            
-            if (status === "Work from Home" && !workFromHomeTask) {
-                return false;
-            }
-            
-            if (status === "Half Day" && (!login || !logout || !halfDayReason)) {
-                return false;
-            }
-
             return true;
         }
+    
+        window.onload = function () {
+            sessionStorage.removeItem('loggedIn');
+    
+            if (window.history && window.history.pushState) {
+                window.history.pushState({ page: "login" }, "", "");
+    
+                window.onpopstate = function (event) {
+                    if (event.state && event.state.page === "login") {
+                        window.history.replaceState(null, "", "");
+                    }
+                };
+            }
+        };
     </script>
+    
 </body>
+
 </html>

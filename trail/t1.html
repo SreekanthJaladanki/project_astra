@@ -4,237 +4,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Dashboard</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../CSS/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/Homepage.css">
-   <style>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+        }
 
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 100%;
+            margin-left: -25px;
+        }
 
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9662BB;
+        }
 
+        .input-group {
+            margin-bottom: 15px;
+        }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9662BB;
+        }
 
-.navbar {
-    height: 70px;
-    background-color: white;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #87818a;
-    border-radius: 15px;
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
-}
+        .input-group .emp-id-container {
+            display: flex;
+            align-items: center;
+        }
 
-#datetime {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
+        .input-group .emp-id-container span {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #eaeaea;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9d5dd2d8;
+        }
 
-.dashboard-name {
-    font-size: 24px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: white;
-}
+        .input-group .emp-id-container input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-radius: 0 5px 5px 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            color: #9d5dd2d8;
+            width: 100%;
+        }
 
-.dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 80px);
-    background-color: white;
-}
+        .input-group input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
+        }
 
-.container-card {
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 64%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: -11px;
-    justify-content: space-around;
-}
+        ::placeholder {
+            font-size: 0.8rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #9d5dd2d8;
+        }
 
-.cards-row {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
-}
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
 
-.card-link {
-    text-decoration: none;
-}
+        button:hover {
+            background-color: #31688d;
+        }
 
-.card {
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 77%;
-    height: 77%;
-    transition: box-shadow 0.3s ease;
-}
+        #page-preloader,
+        #submit-preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            /* opacity: 0.6; */
+            /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
+        }
 
-.card:hover {
-    box-shadow: 0 8px 16px rgba(128, 0, 0, 0.2);
-}
+        #page-preloader img {
+            width: 100px;
+            border-radius: 50%;
+            margin-left: 15px;
+            margin-top: -40px;
+        }
 
-.card h2 {
-    color: #9662BB;
-    font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
+        #submit-preloader img {
+            width: 100px;
+            border-radius: 50%;
+            margin-left: -70px;
+            margin-top: -50px;
+        }
 
-.card img {
-    max-width: 100%;
-    border-radius: 15px;
-    height: 71%;
-    width: 85%;
-}
+        #page-preloader p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: #9662BB;
+            font-size: 1.2rem;
+            margin-top: 140px;
+            margin-left: -163px;
+        }
 
-#datetime {
-    font-size: 18px;
-    color: white;
-}
+        #submit-preloader p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: #9662BB;
+            font-size: 1.2rem;
+            margin-top: 140px;
+            margin-left: -100px;
+        }
 
-/* Page Loader */
-#page-loader {
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
+        #submit-preloader {
+            display: none;
+        }
 
-#page-loader img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    margin-left: 10px;
-    margin-top: 10px;
-}
+        .error-message {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: red;
+            font-size: 0.8rem;
+            display: none;
+            margin-top: 5px;
+        }
 
-
-#loader-text {
-
-    font-size: 20px;
-    font-weight: bold;
-    color: #9662BB;
-    margin-left: -60px;
-    margin-top: -440px;
-}
-
-
-
-
-
-
-
-
-
-   </style>
-  
+        .input-error {
+            border-color: red;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="page-loader">
-        
-        <img src="../assests/preloader5.gif" alt="Loading...">
-        <p id="loader-text">Loading while you wait...</p>
-        
+    <div id="page-preloader">
+        <img src="../assests/preloader3.gif" alt="Loading...">
+        <p>Loading while you wait...</p>
+    </div>
+    <div id="submit-preloader">
+        <img src="../assests/Hourglass.gif" alt="Submitting...">
+        <p>Logging in...</p>
     </div>
 
-    <div class="navbar">
-        <div class="dashboard-name">Dashboard</div>
-        <div id="datetime"></div>
-    </div>
-
-    <div class="dashboard">
-        <div class="container-card">
-            <div class="cards-row">
-                <a href="../cards/updates.html" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
-                    <div class="card">
-                        <h2>Daily Updates</h2>
-                        <img src="../assests/updates.png" alt="Image 1">
-                    </div>
-                </a>
-                <a href="../cards/batches.html" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
-                    <div class="card">
-                        <h2>Batch Details</h2>
-                        <img src="../assests/batch.png" alt="Image 2">
-                    </div>
-                </a>
-                <a href="../cards/time.html" class="card-link" onclick="showCardPreloader('../cards/time.html')">
-                    <div class="card">
-                        <h2>TimeSheet</h2>
-                        <img src="../assests/time.png" alt="Image 4">
-                    </div>
-                </a>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="emp-id">Employee ID</label>
+                <div class="emp-id-container">
+                    <span>TYP</span>
+                    <input type="text" id="emp-id" name="emp-id" required autofocus="on" placeholder="1234" pattern="\d{4}" maxlength="4" oninput="validateEmpID(this)">
+                </div>
             </div>
-        </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your Password" oninput="validatePassword(this)">
+                <p id="password-error" class="error-message">Password should be at least 8 characters.</p>
+            </div>
+            <button type="submit">Login</button>
+        </form>
     </div>
 
-   <script>window.onload = function () {
-    var pageLoader = document.getElementById('page-loader');
-    pageLoader.style.display = 'none';
-}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloader = document.getElementById('page-preloader');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 1000);
 
-// Function to update time and date
-function updateTimeAndDate() {
-    const datetimeElement = document.getElementById('datetime');
-    const now = new Date();
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                if (!validateForm()) {
+                    return;
+                }
 
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        hour12: true
-    };
-    const formattedDateTime = now.toLocaleString('en-US', options);
+                const submitPreloader = document.getElementById('submit-preloader');
+                submitPreloader.style.display = 'flex';
 
-    datetimeElement.textContent = formattedDateTime;
-}
+                setTimeout(() => {
+                    submitPreloader.style.display = 'none';
+                    sessionStorage.setItem('loggedIn', true);
+                    window.location.href = 'Homepage.html';
+                }, 2000);
+            });
+        });
 
-// Update time and date every second
-setInterval(updateTimeAndDate, 1000);
-window.onload = function () {
-    setTimeout(function () {
-        document.getElementById('page-loader').style.display = 'none';
-    }, 1000);
-};
-</script>
+        function validateEmpID(input) {
+            const pattern = /^\d{0,4}$/;
+            if (!pattern.test(input.value)) {
+                input.value = input.value.slice(0, -1);
+            }
+        }
+
+        function validatePassword(input) {
+            const passwordError = document.getElementById('password-error');
+            if (input.value.length < 8) {
+                input.classList.add('input-error');
+                passwordError.style.display = 'block';
+            } else {
+                input.classList.remove('input-error');
+                passwordError.style.display = 'none';
+            }
+        }
+
+        function validateForm() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.value.length < 8) {
+                passwordInput.classList.add('input-error');
+                document.getElementById('password-error').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+
+        window.onload = function () {
+            sessionStorage.removeItem('loggedIn');
+
+            if (window.history && window.history.pushState) {
+                window.history.pushState({ page: "login" }, "", "");
+
+                window.onpopstate = function (event) {
+                    if (event.state && event.state.page === "login") {
+                        window.history.replaceState(null, "", "");
+                    }
+                };
+            }
+        };
+    </script>
 </body>
 
 </html>

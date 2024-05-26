@@ -16,7 +16,6 @@ body {
   max-width: 350px;
   width: 100%;
   margin-left: -25px;
-
 }
 
 h2 {
@@ -41,16 +40,35 @@ h2 {
   color: #9662BB;
 }
 
-.input-group input {
-  width: 90%;
+.input-group .emp-id-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-group .emp-id-container span {
   padding: 10px;
   font-size: 16px;
-  border-radius: 5px;
+  background-color: #eaeaea;
   border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #9d5dd2d8;
+}
+
+.input-group .emp-id-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #9d5dd2d8;
+  width: 100%;
 }
 
 .input-group input:focus {
@@ -101,40 +119,63 @@ button:hover {
   /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
 }
 
-#page-preloader img
- {
+#page-preloader img {
   width: 100px;
   border-radius: 50%;
   margin-left: 15px;
   margin-top: -40px;
 }
-#submit-preloader img{
+
+#submit-preloader img {
   width: 100px;
   border-radius: 50%;
   margin-left: -70px;
   margin-top: -50px;
 }
 
-
-
-
-#page-preloader p
- {
+#page-preloader p {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   color: #9662BB;
   font-size: 1.2rem;
   margin-top: 140px;
-  margin-left:-163px;
+  margin-left: -163px;
 }
-#submit-preloader p{
+
+#submit-preloader p {
   font-family: 'Poppins', sans-serif;
   font-weight: 800;
   color: #9662BB;
   font-size: 1.2rem;
   margin-top: 140px;
-  margin-left:-100px;
+  margin-left: -100px;
 }
+
 #submit-preloader {
   display: none;
+}
+
+.error-message {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: red;
+  font-size: 0.8rem;
+  display: none;
+  margin-top: 5px;
+}
+
+.input-error {
+  border-color: red;
+}
+.paasword-input{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #9d5dd2d8;
+  width: 94%;
 }

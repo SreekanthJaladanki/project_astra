@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="../CSS/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
     <div id="page-preloader">
-        <img src="../assests/preloader3.gif" alt="Loading...">
+        <img src="../assests/preloader6.gif" alt="Loading...">
         <p>Loading while you wait...</p>
     </div>
     <div id="submit-preloader">
-        <img src="../assests/Hourglass.gif" alt="Submitting..." >
-        <p>Logging in... </p>
+        <img src="../assests/Hourglass.gif" alt="Submitting...">
+        <p>Logging in...</p>
     </div>
 
     <div class="login-container">
@@ -27,43 +27,79 @@
         <form id="login-form">
             <div class="input-group">
                 <label for="emp-id">Employee ID</label>
-                <input type="text" id="emp-id" name="emp-id" required autofocus="on" placeholder="Enter your Employee ID">
+                <div class="emp-id-container">
+                    <span>TYP</span>
+                    <input type="text" id="emp-id" name="emp-id" required autofocus="on" placeholder="1234" pattern="\d{4}" maxlength="4" oninput="validateEmpID(this)">
+                </div>
             </div>
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" required placeholder="Enter your Password">
+                <input class="paasword-input" type="password" id="password" name="password" required placeholder="Enter your Password" oninput="validatePassword(this)">
+                <p id="password-error" class="error-message">Password should be at least 8 characters.</p>
             </div>
             <button type="submit">Login</button>
         </form>
     </div>
-
     <script>
-        window.addEventListener('load', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const preloader = document.getElementById('page-preloader');
-            setTimeout(function () {
+            setTimeout(() => {
                 preloader.style.display = 'none';
-            }, 1000);
-        });
-
-        document.getElementById('login-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const submitPreloader = document.getElementById('submit-preloader');
-            submitPreloader.style.display = 'flex';
-
-            setTimeout(function () {
-                submitPreloader.style.display = 'none';
-                sessionStorage.setItem('loggedIn', true);
-                window.location.href = 'Homepage.html';
             }, 2000);
+    
+            const loginForm = document.getElementById('login-form');
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                if (!validateForm()) {
+                    return;
+                }
+    
+                const submitPreloader = document.getElementById('submit-preloader');
+                submitPreloader.style.display = 'flex';
+    
+                setTimeout(() => {
+                    submitPreloader.style.display = 'flex';
+                    sessionStorage.setItem('loggedIn', true);
+                    window.location.href = 'Homepage.html';
+                }, 1000);
+            });
         });
-
+    
+        function validateEmpID(input) {
+            const pattern = /^\d{0,4}$/;
+            if (!pattern.test(input.value)) {
+                input.value = input.value.slice(0, -1);
+            }
+        }
+    
+        function validatePassword(input) {
+            const passwordError = document.getElementById('password-error');
+            if (input.value.length < 8) {
+                input.classList.add('input-error');
+                passwordError.style.display = 'block';
+            } else {
+                input.classList.remove('input-error');
+                passwordError.style.display = 'none';
+            }
+        }
+    
+        function validateForm() {
+            const passwordInput = document.getElementById('password');
+            if (passwordInput.value.length < 8) {
+                passwordInput.classList.add('input-error');
+                document.getElementById('password-error').style.display = 'block';
+                return false;
+            }
+            return true;
+        }
+    
         window.onload = function () {
             sessionStorage.removeItem('loggedIn');
-
+    
             if (window.history && window.history.pushState) {
                 window.history.pushState({ page: "login" }, "", "");
-
+    
                 window.onpopstate = function (event) {
                     if (event.state && event.state.page === "login") {
                         window.history.replaceState(null, "", "");
@@ -72,6 +108,7 @@
             }
         };
     </script>
+    
 </body>
 
 </html>
