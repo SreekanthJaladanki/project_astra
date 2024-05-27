@@ -1,4 +1,3 @@
-
 window.addEventListener('load', function () {
     const preloader = document.getElementById('preloader');
     preloader.style.display = 'flex';
@@ -12,23 +11,33 @@ function showFields() {
     var loginLogoutFields = document.getElementById("loginLogoutFields");
     var workFromHomeTaskDiv = document.getElementById("workFromHomeTaskDiv");
     var halfDayReasonDiv = document.getElementById("halfDayReasonDiv");
+    var incubationDetailsDiv = document.getElementById("incubationDetailsDiv");
 
     if (status === "Leave") {
         loginLogoutFields.style.display = "none";
         workFromHomeTaskDiv.style.display = "none";
         halfDayReasonDiv.style.display = "none";
+        incubationDetailsDiv.style.display = "none";
     } else if (status === "Work from Home") {
         loginLogoutFields.style.display = "none";
         workFromHomeTaskDiv.style.display = "block";
         halfDayReasonDiv.style.display = "none";
+        incubationDetailsDiv.style.display = "none";
     } else if (status === "Half Day") {
         loginLogoutFields.style.display = "block";
         workFromHomeTaskDiv.style.display = "none";
         halfDayReasonDiv.style.display = "block";
+        incubationDetailsDiv.style.display = "none";
+    } else if (status === "Incubation") {
+        loginLogoutFields.style.display = "none";
+        workFromHomeTaskDiv.style.display = "none";
+        halfDayReasonDiv.style.display = "none";
+        incubationDetailsDiv.style.display = "block";
     } else {
         loginLogoutFields.style.display = "block";
         workFromHomeTaskDiv.style.display = "none";
         halfDayReasonDiv.style.display = "none";
+        incubationDetailsDiv.style.display = "none";
     }
 }
 
@@ -54,6 +63,7 @@ function validateFields() {
     const logout = document.getElementById("logout").value;
     const workFromHomeTask = document.getElementById("workFromHomeTask").value;
     const halfDayReason = document.getElementById("halfDayReason").value;
+    const incubationDetails = document.getElementById("incubationDetails").value;
 
     if (!selectDate || !status) {
         return false;
@@ -68,6 +78,10 @@ function validateFields() {
     }
     
     if (status === "Half Day" && (!login || !logout || !halfDayReason)) {
+        return false;
+    }
+
+    if (status === "Incubation" && !incubationDetails) {
         return false;
     }
 
