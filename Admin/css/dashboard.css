@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Start of nav bar  */
@@ -11,7 +12,7 @@
     border: 1px solid gainsboro;
     display: flex;
     justify-content: space-around;
-    box-shadow: 2px 2px 5px gainsboro;
+    box-shadow: 2px 2px 15px gainsboro;
 }
 .logocont{
     width: 12%;
@@ -71,39 +72,43 @@
 
 
 .sidebar {
-    position: fixed;
-    left: 0;
-    top: 10.2vh;
-    height: 100%;
-    width: 17%;
-    background-color: #333;
-    padding-top: 20px;
-    box-shadow: 2px 2px 5px gainsboro;
-  }
+  position: fixed;
+  left: 0;
+  top: 10.2vh;
+  height: 100%;
+  width: 17%;
+  background-color: #333;
+  padding-top: 20px;
+  box-shadow: 2px 2px 5px gainsboro;
+}
+.sidebar a{
+  text-decoration: none;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+.sidebar li {
+  padding: 15px 20px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+.sidebar li i{
+  margin-right: 10%;
+  font-size: 1.4rem;
+}
 
-  .sidebar li {
-    padding: 15px 20px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .sidebar li i{
-    margin-right: 10%;
-  }
+.sidebar li:hover {
+  background-color: #838181;
+}
 
-  .sidebar li:hover {
-    background-color: #838181;
-  }
-
-  .sidebar li.active {
-    background-color: #8689CE;
-  }
+.sidebar li.active {
+  background-color: #8689CE;
+}
 
 
 
@@ -154,15 +159,13 @@
   
   /* First Section */
   .firstSection {
-    margin-top: 15px;
     width: 100%;
     height: 20vh;
-    /* border: 1px solid; */
     display: flex;
     justify-content: space-between;
   }
   .firstSection .leftSect{
-    width: 49%;
+    width: 100%;
     height: 100%;
   }
   .leftSect .dashboardHome div{
@@ -182,14 +185,14 @@
   }
   .sectiondiv{
     width: 100%;
-    height: 48%;
-    margin-top: 3%;
+    height: 90%;
+    margin-top: 1.6%;
     display: flex;
     justify-content: space-between;
   }
-  .sectiondiv .employee,.companies{
-    width: 48%;
-    height: 95%;
+  .sectiondiv .employee{
+    width: 24%;
+    height: 80%;
     border-radius: 5px;
   }
   .sectiondiv .employee{
@@ -198,84 +201,26 @@
     justify-content: space-between;
     align-items: center;
   }
-  .sectiondiv .employee p,h1{
+  .text{
     color: white;
     font-family: sans-serif ;
-    margin-left: 10%;
+    margin-left: 5%;
+  }
+  .text h1{
+    font-size: 2.5rem;
   }
   #icon{
     background-color: white;
-    width: 18%;
+    width: 20%;
     border-radius: 5px;
-    height: 70%;
+    height: 65%;
     margin-right: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    color: #3047BB;
   }
-  .sectiondiv .companies{
-    background-color: #FF8D08;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .sectiondiv .companies p,h1{
-    color: white;
-    font-family: sans-serif ;
-    margin-left: 10%;
-  }
- 
-  .firstSection .rightSect{
-    width: 49%;
-    height: 100%;
-  }
-  .rightSect .dashboardHome{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .rightSect .dashboardHome section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .rightSect .dashboardHome .admin{
-    width: 48%;
-    height: 85%;
-    background-color: #1666D9;
-    border-radius: 5px;
-  }
-  .rightSect .dashboardHome .employee{
-    width: 48%;
-    height: 85%;
-    background-color: #E4E7EC;
-    border-radius: 5px;
-  }
-
-  .rightSect .sectiondiv{
-    width: 100%;
-    height: 48%;
-    margin-top: 3%;
-    display: flex;
-    justify-content: space-between;
-  }
-  .rightSect .sectiondiv section{
-    width: 48%;
-    height: 95%;
-    border-radius: 5px;
-    box-shadow: 2px 2px 15px gainsboro;
-  }
-  .rightSect .sectiondiv .employee{
-    background-color: #DC3546;
-    box-shadow: 2px 2px 50px gainsboro;
-  }
-  .rightSect .sectiondiv .companies{
-    background-color: #00882E;
-  }
-
+  
   /* End first section */
 
 /* Graph Section */
@@ -360,5 +305,9 @@
   }
 
 /* Graph Section End */
+
+
+
+
 
   /* End of main section */

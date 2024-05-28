@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard 1</title>
-    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
       rel="stylesheet"
@@ -17,7 +18,6 @@
     <nav class="navbar">
         <div class="logocont">
             <h1>Dashboard</h1>
-    
         </div>
         <div class="searchcont">
             <div class="searchbar">
@@ -31,105 +31,93 @@
 
 
     <aside class="sidebar">
-    <ul>
-        <li class="active">
-            <i class="fa-solid fa-house-user" ></i>
-            Dashboard
-        </li>
-        <li>
-            <i class="fa-solid fa-users"></i>
-            Employees
-        </li>
-        <li>
-            <i class="fa-regular fa-folder-open"></i>
-            Leaves
-        </li>
-        <li>
-            <i class="fa-solid fa-user-pen"></i>
-            Review
-        </li>
-        <li>
-            <i class="fa-solid fa-clipboard-list"></i>
-            Report
-        </li>
-        <li>
-            <i class="fa-solid fa-sliders"></i>
-            Manage
-        </li>
-        <li>
-            <i class="fa-solid fa-gear"></i>
-            Setting
-        </li>
-    </ul>
+        <ul>
+            <a href="./dashboard.html">
+                <li class="active">
+                    <i class="fa-solid fa-house-user" ></i>
+                    <p>Dashboard</p>
+                </li>
+            </a>
+            <a href="./employee.html">
+                <li>
+                    <i class="fa-solid fa-users" style="margin-right: 9%;"></i>
+                    <p>Employees</p>
+                </li>
+            </a>
+            <a href="./leaves.html">
+                <li>
+                    <i class="fa-regular fa-folder-open"></i>
+                    <p>Leaves</p>
+                </li>
+            </a>
+            <a href="./report.html">
+                <li>
+                    <i class="fa-solid fa-book" style="margin-right:13%;"></i>
+                    <p>Report</p>
+                </li>
+            </a>
+            <a href="./review.html">
+                <li>
+                    <i class="fa-solid fa-user-pen" style="margin-right: 9%;"></i>
+                    <p>Review</p>
+                </li>
+            </a>
+            <a href="./manage.html">
+                <li>
+                    <i class="fa-solid fa-sliders" style="margin-right: 12%;"></i>
+                    <p>Manage</p>
+                </li>
+            </a>
+            <a href="./setting.html">
+                <li>
+                    <i class="fa-solid fa-gear" style="margin-right: 12%;"></i>
+                    <p>Setting</p>
+                </li>
+            </a>
+        </ul>
     </aside>
 
     <main class="mainCont">
-        <div class="innerheader">
-            <section class="leftCont">
-                <div class="imgCont"></div>
-                <div>Welcome to Admin</div>
-            </section>
-            <section class="rightCont">
-                <div>Fri, 5 may 2024</div>
-            </section>
-        </div>
-
         <div class="firstSection">
             <section class="leftSect">
-                    <section class="dashboardHome">
-                        <div><i class="fa-solid fa-house" style="margin-right: 10px;"></i>Home / Dashboard</div>
-                        <div style="text-align: end;">Admin Dashboard</div>
-                    </section>
                     <section class="sectiondiv">
                         <div class="employee">
-                            <div>
+                            <div class="text">
                                 <p style="width: 150px;">Total Employee</p>
                                 <h1>700</h1>
                             </div>
                             <div id="icon">
-                                <i class="fa-solid fa-users"></i>
+                                <i class="fa-solid fa-users" style="color: #3047BB; "></i>
                             </div>
                         </div>
-                        <div class="companies">
-                            <div>
+                        <div class="employee" style="background-color: #FF8D08;">
+                            <div class="text">
                                 <p>Present</p>
                                 <h1>700</h1>
                             </div>
                             <div id="icon">
-                                <i class="fa-solid fa-building" style="color: #FF8D08;"></i>
+                                <i class="fa-solid fa-building" style="color: #FF8D08; "></i>
+                            </div>
+                        </div>
+                        <div class="employee" style="background-color: #DC3546;">
+                            <div class="text">
+                                <p style=" width: 150px;">Work from home</p>
+                                <h1>700</h1>
+                            </div>
+                            <div id="icon">
+                                <i class="fa-regular fa-folder-open" style="color: #DC3546;"></i>
+                            </div>
+                        </div>
+                        <div class="employee" style="background-color: #00882E;">
+                            <div class="text">
+                                <p>Leaves</p>
+                                <h1>700</h1>
+                            </div>
+                            <div id="icon">
+                                <i class="fa-solid fa-sack-dollar" style="color: #00882E;"></i>
                             </div>
                         </div>
                     </section>
-            </section>
-            <section class="rightSect">
-                <div class="dashboardHome">
-                    <section class="admin" style="color: white;">
-                        Admin Dashboard
-                    </section>
-                    <section class="employee">
-                        Employee Dashboard
-                    </section>
-                </div>
-                <div class="sectiondiv">
-                    <section class="employee">
-                        <div>
-                            <p style=" width: 150px;">Work from home</p>
-                            <h1>700</h1>
-                        </div>
-                        <div id="icon">
-                            <i class="fa-regular fa-folder-open" style="color: #DC3546;"></i>
-                        </div>
-                    </section>
-                    <section class="companies">
-                        <div>
-                            <p>Leaves</p>
-                            <h1>700</h1>
-                        </div>
-                        <div id="icon">
-                            <i class="fa-solid fa-sack-dollar" style="color: #00882E;"></i>
-                        </div>
-                    </section>
-                </div>
             </section>
         </div>
 
@@ -149,7 +137,7 @@
             </section>
             <section class="barCont">
                 <header>TOTAL EMPLOYEES</header>
-                <div id="piechart_3d" style=" height: 270px;"></div>
+                <!-- <div id="piechart_3d" style=" height: 270px;"></div> -->
             </section>
         </div>
 
@@ -163,11 +151,10 @@
             function drawChart() {
               var data = google.visualization.arrayToDataTable([
                 ['Task', 'Hours per Day'],
-                ['Work',     11],
-                ['Eat',      2],
-                ['Commute',  2],
-                ['Watch TV', 2],
-                ['Sleep',    7]
+                ['Present',64],
+                ['work from home', 22],
+                ['Absent',  2],
+                ['Incubation', 2]    
               ]);
       
               var options = {

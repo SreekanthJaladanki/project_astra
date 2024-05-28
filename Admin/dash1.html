@@ -1,63 +1,84 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Demo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@100;100&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="dash1.css" />
-  </head>
-  <body>
-    <h2 class="chart-heading">Popular Programming Languages</h2>
-    <div class="programming-stats">
-      <div class="chart-container">
-        <canvas class="my-chart"></canvas>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    <style>
+      body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    }
 
-      <div class="details">
-        <ul></ul>
-      </div>
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.employee-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.employee-card img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.employee-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-info h2 {
+    margin: 0;
+    color: #333;
+}
+
+.employee-info p {
+    margin: 5px 0;
+    color: #666;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee List</h1>
+        <div class="employee-card">
+            <img src="employee1.jpg" alt="Employee Photo">
+            <div class="employee-info">
+                <h2>John Doe</h2>
+                <p>Employee ID: 12345</p>
+                <p>Email: john.doe@example.com</p>
+            </div>
+        </div>
+        <div class="employee-card">
+            <img src="employee2.jpg" alt="Employee Photo">
+            <div class="employee-info">
+                <h2>Jane Smith</h2>
+                <p>Employee ID: 67890</p>
+                <p>Email: jane.smith@example.com</p>
+            </div>
+        </div>
+        <!-- Add more employee cards as needed -->
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="dash1.js"></script>
-  </body>
-</html> -->
-
-
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-
-        var options = {
-          title: 'My Daily Activities',
-          is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
-  </body>
+</body>
 </html>
