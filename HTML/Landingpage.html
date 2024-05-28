@@ -38,10 +38,10 @@
             </div>
         </div>
     </div>
-    <div id="loader" style="display: none;">
+    <!-- <div id="loader" style="display: none;">
         <img src="../assests/Hourglass.gif" alt="Loading...">
         <p>Register yourself and then login....</p>
-    </div>
+    </div> -->
     <div class="background-overlay"></div>
     <script>
         window.addEventListener('load', function () {
@@ -52,17 +52,21 @@
         });
 
         document.getElementById('register-btn').addEventListener('click', function() {
-            showLoader();
-            setTimeout(function() {
-                window.location.href = 'register.html';
-            }, 2000);
+              // showLoader();
+           
+            window.location.href = 'register.html';
+            // setTimeout(function()
+            //  {
+            //     window.location.href = 'register.html';
+            // }, 1000);
         });
 
         document.getElementById('login-btn').addEventListener('click', function() {
-            showLoader();
-            setTimeout(function() {
-                window.location.href = 'login.html';
-            }, 2000);
+            // showLoader();
+            window.location.href = 'login.html';
+            // setTimeout(function() {
+            
+            // }, 1000);
         });
 
         function showLoader() {
