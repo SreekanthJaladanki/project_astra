@@ -10,8 +10,16 @@ mongoose.connect('mongodb://localhost:27017/formDB', {
 
 // Define a schema and model for the form data
 const formSchema = new mongoose.Schema({
-    name: String,
-    email: String,
+    name: { type: String, required: true },
+    empId: { type: String, required: true },
+    officialMail: { type: String, required: true },
+    personalMail: { type: String, required: true },
+    phoneNumber: { type: String, required: true },
+    designation: { type: String, required: true },
+    subject: { type: String, required: true },
+    dateofjoining: { type: Date, required: true },
+    dateofbirth: { type: Date, required: true },
+    password: { type: String, required: true }
 });
 
 const FormData = mongoose.model('FormData', formSchema);
@@ -30,7 +38,15 @@ app.get('/', (req, res) => {
 app.post('/submit', (req, res) => {
     const formData = new FormData({
         name: req.body.name,
-        email: req.body.email,
+        empId: req.body.empId,
+        officialMail: req.body.officialMail,
+        personalMail: req.body.personalMail,
+        phoneNumber: req.body.phoneNumber,
+        designation: req.body.designation,
+        subject: req.body.subject,
+        dateofjoining: req.body.dateofjoining,
+        dateofbirth: req.body.dateofBirth,
+        password: req.body.password
     });
 
     formData.save((err) => {
