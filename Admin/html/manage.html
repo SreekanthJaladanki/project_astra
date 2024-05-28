@@ -14,18 +14,8 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logocont">
-            <h1>Dashboard</h1>
-    
-        </div>
-        <div class="searchcont">
-            <div class="searchbar">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" class="search-input">
-            </div>
-        </div>
-        <div class="notification">
-        </div>
+        <div class="logocont">Dashboard</div>
+        <div id="datetime"></div>
     </nav>
 
 
@@ -39,7 +29,7 @@
             </a>
             <a href="./employee.html">
                 <li>
-                    <i class="fa-solid fa-users" style="margin-right: 9%;"></i>
+                    <i class="fa-solid fa-users" ></i>
                     <p>Employees</p>
                 </li>
             </a>
@@ -51,30 +41,60 @@
             </a>
             <a href="./report.html">
                 <li>
-                    <i class="fa-solid fa-book" style="margin-right:13%;"></i>
+                    <i class="fa-solid fa-book" ></i>
                     <p>Report</p>
                 </li>
             </a>
             <a href="./review.html">
                 <li>
-                    <i class="fa-solid fa-user-pen" style="margin-right: 9%;"></i>
+                    <i class="fa-solid fa-user-pen" ></i>
                     <p>Review</p>
                 </li>
             </a>
             <a href="./manage.html">
                 <li class="active">
-                    <i class="fa-solid fa-sliders" style="margin-right: 12%;"></i>
+                    <i class="fa-solid fa-sliders" ></i>
                     <p>Manage</p>
                 </li>
             </a>
             <a href="./setting.html">
                 <li>
-                    <i class="fa-solid fa-gear" style="margin-right: 12%;"></i>
+                    <i class="fa-solid fa-gear" ></i>
                     <p>Setting</p>
                 </li>
             </a>
         </ul>
     </aside>
+
+<script>
+    // Function to update time and date
+function updateTimeAndDate() {
+    const datetimeElement = document.getElementById('datetime');
+    const now = new Date();
+
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+    const formattedDateTime = now.toLocaleString('en-US', options);
+
+    datetimeElement.textContent = formattedDateTime;
+}
+
+// Update time and date every second
+setInterval(updateTimeAndDate, 1000);
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById('page-loader').style.display = 'none';
+    }, 1000);
+};
+</script>
 
 </body>
 </html>

@@ -108,3 +108,85 @@
 }
 
 /*End of Aside bar  */
+
+
+/* Main Section */
+
+.mainCont {
+  /* margin-top: 10.2vh; */
+  margin-left: 17%;
+  padding: 20px;
+  height: 100%;
+  background-color: #F7F8FA;
+  /* border: 1px solid; */
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* text-align: center; */
+}
+
+label {
+  /* display: block; */
+  margin-bottom: 10px;
+  margin-left: 30px;
+}
+
+.text,
+.date{
+  width: 20%;
+  padding: 10px;
+  margin-bottom: 20px;
+  /* text-align: center; */
+}
+
+button {
+  width: 15%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #8689CE;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+button:hover {
+  background: #535596;
+}
+
+.hidden {
+  display: none;
+}
+
+/* #employeeDetails {
+  text-align: center;
+  margin-top: 20px;
+} */
+
+#leaveList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+canvas {
+  width: 200px !important;
+  height: 200px !important;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
