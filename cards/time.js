@@ -87,3 +87,17 @@ function validateFields() {
 
     return true;
 }
+function validateAndSubmit(event) {
+    event.preventDefault();
+    if (!validateFields()) {
+        alert("Please fill all the fields.");
+        return;
+    }
+    const submitPreloader = document.getElementById('submit-preloader');
+    submitPreloader.style.display = 'flex';
+    setTimeout(function () {
+        submitPreloader.style.display = 'none';
+        // ("Form submitted successfully!");
+        window.location.href = 'Thankyou.html'; // Redirect to Thankyou.html
+    }, 1000);
+}

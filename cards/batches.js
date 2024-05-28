@@ -21,13 +21,9 @@ function showSubmitPreloader() {
     submitPreloader.style.display = 'flex';
     setTimeout(function () {
         submitPreloader.style.display = 'none';
-        showSuccessMessage();
+        // alert('Form submitted successfully!');
+        window.location.href = 'Thankyou.html'; // Redirect to Thankyou.html
     }, 1000);
-}
-
-function showSuccessMessage() {
-    alert('Form submitted successfully!');
-    // Here you can also redirect the user or perform any other action after successful submission
 }
 
 function showRefreshPreloader() {
