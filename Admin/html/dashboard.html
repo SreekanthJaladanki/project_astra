@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard 1</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logocont">
+            <h1>Dashboard</h1>
+        </div>
+        <div class="searchcont">
+            <div class="searchbar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" class="search-input">
+            </div>
+        </div>
+        <div class="notification">
+        </div>
+    </nav>
+
+
+    <aside class="sidebar">
+        <ul>
+            <a href="./dashboard.html">
+                <li class="active">
+                    <i class="fa-solid fa-house-user" ></i>
+                    <p>Dashboard</p>
+                </li>
+            </a>
+            <a href="./employee.html">
+                <li>
+                    <i class="fa-solid fa-users" style="margin-right: 9%;"></i>
+                    <p>Employees</p>
+                </li>
+            </a>
+            <a href="./leaves.html">
+                <li>
+                    <i class="fa-regular fa-folder-open"></i>
+                    <p>Leaves</p>
+                </li>
+            </a>
+            <a href="./report.html">
+                <li>
+                    <i class="fa-solid fa-book" style="margin-right:13%;"></i>
+                    <p>Report</p>
+                </li>
+            </a>
+            <a href="./review.html">
+                <li>
+                    <i class="fa-solid fa-user-pen" style="margin-right: 9%;"></i>
+                    <p>Review</p>
+                </li>
+            </a>
+            <a href="./manage.html">
+                <li>
+                    <i class="fa-solid fa-sliders" style="margin-right: 12%;"></i>
+                    <p>Manage</p>
+                </li>
+            </a>
+            <a href="./setting.html">
+                <li>
+                    <i class="fa-solid fa-gear" style="margin-right: 12%;"></i>
+                    <p>Setting</p>
+                </li>
+            </a>
+        </ul>
+    </aside>
+
+    <main class="mainCont">
+        <div class="firstSection">
+            <section class="leftSect">
+                    <section class="sectiondiv">
+                        <div class="employee">
+                            <div class="text">
+                                <p style="width: 150px;">Total Employee</p>
+                                <h1>700</h1>
+                            </div>
+                            <div id="icon">
+                                <i class="fa-solid fa-users" style="color: #3047BB; "></i>
+                            </div>
+                        </div>
+                        <div class="employee" style="background-color: #FF8D08;">
+                            <div class="text">
+                                <p>Present</p>
+                                <h1>700</h1>
+                            </div>
+                            <div id="icon">
+                                <i class="fa-solid fa-building" style="color: #FF8D08; "></i>
+                            </div>
+                        </div>
+                        <div class="employee" style="background-color: #DC3546;">
+                            <div class="text">
+                                <p style=" width: 150px;">Work from home</p>
+                                <h1>700</h1>
+                            </div>
+                            <div id="icon">
+                                <i class="fa-regular fa-folder-open" style="color: #DC3546;"></i>
+                            </div>
+                        </div>
+                        <div class="employee" style="background-color: #00882E;">
+                            <div class="text">
+                                <p>Leaves</p>
+                                <h1>700</h1>
+                            </div>
+                            <div id="icon">
+                                <i class="fa-solid fa-sack-dollar" style="color: #00882E;"></i>
+                            </div>
+                        </div>
+                    </section>
+            </section>
+        </div>
+
+        <div class="graphSection">
+            <section class="pieCont">
+                <header>TOTAL EMPLOYEES</header>
+                <!-- <div class="programming-stats">
+                    <div class="chart-container">
+                      <canvas class="my-chart" width="700" height="600" style="display: block; box-sizing: border-box; height: 200px; width: 220px;"></canvas>
+                    </div>
+                    <div class="details">
+                      <ul></ul>
+                    </div>
+                  </div> -->
+                  <div id="piechart_3d" style=" height: 270px;"></div>
+                  
+            </section>
+            <section class="barCont">
+                <header>TOTAL EMPLOYEES</header>
+                <!-- <div id="piechart_3d" style=" height: 270px;"></div> -->
+            </section>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="dash1.js"></script>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Present',64],
+                ['work from home', 22],
+                ['Absent',  2],
+                ['Incubation', 2]    
+              ]);
+      
+              var options = {
+                title: 'My Daily Activities',
+                is3D: true,
+              };
+      
+              var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+              chart.draw(data, options);
+            }
+          </script>
+
+    </main>
+
+
+</body>
+</html>

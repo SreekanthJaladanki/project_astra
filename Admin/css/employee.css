@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Start of nav bar  */
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10vh;
+    border: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 2px 2px 5px gainsboro;
+    z-index: 100;
+    background-color: #fff;
+}
+.logocont{
+    width: 12%;
+    height: 100%;
+    color: #8689CE;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logocont h1{
+    color: #8689CE;
+}
+.searchcont{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.searchbar {
+    position: relative;
+    width: 65%;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    color: #7a7cbd;
+    transform: translateY(-50%);
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 7px 40px 6px 20px;
+    border: 1px solid #a9aae4;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+  }
+
+.notification{
+    width: 13%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notification .imgCont{
+    width: 29%;
+    height: 80%;
+    border: 1px solid;
+    border-radius: 50%;
+}
+/* End of nav bar  */
+
+/* Aside bar  */
+
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 10.2vh;
+  height: 100%;
+  width: 17%;
+  background-color: #333;
+  padding-top: 20px;
+  box-shadow: 2px 2px 5px gainsboro;
+}
+.sidebar a{
+  text-decoration: none;
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  transition: background-color 0.3s ease;
+}
+.sidebar li i{
+  margin-right: 10%;
+  font-size: 1.4rem;
+}
+
+.sidebar li:hover {
+  background-color: #838181;
+}
+
+.sidebar li.active {
+  background-color: #8689CE;
+}
+
+
+
+/*End of Aside bar  */
+
+
+/* Main Section */
+
+  .mainCont {
+      margin-top: 10.2vh;
+      margin-left: 17%;
+      padding: 20px;
+      height: 100%;
+      background-color: #F7F8FA;
+      /* border: 1px solid; */
+  }
+
+  .mainCont .card{
+    width: 98%;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 1%;
+    height: 15vh;
+    background-color: #fff;
+    box-shadow: 2px 2px 8px gainsboro;
+  }
+
+  .mainCont .card section{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+  }
+  .mainCont a{
+    text-decoration: none;
+    color: #595bb8;
+  }
+
+  .imgCont{
+    width: 7%;
+    height: 70%;
+    
+  }
+  .imgCont img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+
+
+/* Main Section ended */
