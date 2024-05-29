@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+
+
 }
 
 .navbar {
@@ -37,6 +39,9 @@ body {
     align-items: center;
     height: calc(100vh - 80px);
     background-color: white;
+    background-image: url(/assests/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container-card {
