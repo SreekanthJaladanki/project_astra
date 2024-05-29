@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="page-loader" id="page-preloader">
-    <img src="../assests/preloader6.gif" alt="Loading...">
+    <img src="./assests/preloader6.gif" alt="Loading...">
     <p>Loading...</p>
   </div>
 
@@ -65,7 +65,7 @@
           </select> -->
           <div class="input-group">
             <label for="date-of-birth">Date of Birth:</label>
-            <input type="date" id="date-of-birth" name="date-of-birth" required>
+            <input type="date" id="date-of-birth" name="date-of-birth" required style="width: 99%;">
           </div>
         </div>
         <div class="input-group">
@@ -76,7 +76,7 @@
       <div class="form-row">
         <div class="input-group">
           <label for="password">Password:</label>
-          <input type="password" id="password" name="password" required placeholder="Enter your password">
+          <input type="password" id="password" name="password" required placeholder="Enter your password" style="width: 47%;">
         </div>
         <!-- <div class="input-group">
           <label for="password">Password:</label>
@@ -90,7 +90,7 @@
   </div>
   
   <div class="loader" id="submit-loader">
-    <img src="../assests/Hourglass.gif" alt="Submitting...">
+    <img src="./assests/Hourglass.gif" alt="Submitting...">
     <p>Processing your registration...</p>
   </div>
 
@@ -105,7 +105,7 @@
 
     document.getElementById("register-form").addEventListener("submit", function (event) {
       event.preventDefault();
-      alert("Registration Successful!");
+      // alert("Registration Successful!");
       const submitLoader = document.getElementById("submit-loader");
       submitLoader.style.display = "block";
       setTimeout(function () {
