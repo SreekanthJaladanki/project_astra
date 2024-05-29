@@ -88,5 +88,46 @@ body {
     transition: background-color 0.5s ease;
 }
 
+     /* Media Queries pixel 7*/
+    
+    @media only screen and (width: 412px) {
+        .navbar {
+            height: 40px;
+            padding: 5px;
+        }
+        .landing-content h1{
+            width: 424px;
         
-   
+            margin-left: -509px;
+            margin-top: -20px;
+        }
+
+      
+    }
+     /* Media Queries iphone 14 pro max*/
+     @media only screen and (width: 430px) {
+        body{
+            overflow-y: hidden;
+        }
+        .navbar {
+            height: 40px;
+            padding: 5px;
+        }
+        .landing-content h1{
+            width: 424px;
+        
+            margin-left: -490px;
+            margin-top: -20px;
+            position: relative;
+        }
+        #videotag {
+            min-width: 100%;
+            min-height: 100%;
+            position: fixed;
+            right: 0;
+            left: 0;
+            bottom: 300px;
+            z-index: -1;
+        }
+
+    }

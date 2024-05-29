@@ -156,3 +156,30 @@ span.turn {
       transform: rotateX(360deg)
   }
 }
+
+@media only screen and (width: 412px){
+
+  #del-countdown{
+    
+    margin-left: -100px;
+  }
+  #preloader img{
+    margin-top: -600px;
+    margin-left: -11px;
+  }
+  #preloader p{
+    margin-top: -400px;
+  }
+}
+@media only screen and (width: 430px) {
+  #del-countdown{
+    margin-left: -50px;
+  }
+  #preloader img{
+    margin-top: -600px;
+    margin-left: -11px;
+  }
+  #preloader p{
+    margin-top: -400px;
+  }
+}

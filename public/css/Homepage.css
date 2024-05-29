@@ -2,6 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+
+
 }
 
 .navbar {
@@ -37,6 +39,9 @@ body {
     align-items: center;
     height: calc(100vh - 80px);
     background-color: white;
+    background-image: url(/assests/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container-card {
@@ -137,4 +142,89 @@ body {
     color: #9662BB;
     margin-left: -60px;
     margin-top: -440px;
+}
+
+ 
+@media only screen and (width: 412px) {
+    .navbar {
+        height: 80px;
+        padding: 5px 15px; 
+        display: flex;
+        flex-direction: column;
+        width: 98%;
+        margin-left: -1px;
+    
+
+    }
+    .container-card {
+       
+        padding: 10px;
+        width: 100%;
+        margin-top: 530px;
+        
+       
+    }
+
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+         margin-left: 30px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+    #page-loader img {
+        margin-left: 25px;
+    }
+    #loader-text{
+        margin-top: -750px;
+    }
+        
+}
+@media only screen and (width: 430px) {
+    .navbar {
+        height: 80px;
+        padding: 5px 15px; 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    
+
+    }
+    .container-card {
+       
+        padding: 10px;
+        width: 100%;
+        margin-top: 600px;
+        margin-left: 5px;
+        
+       
+    }
+
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 81%;
+         margin-left: 18px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+    #page-loader img {
+        margin-left: 25px;
+    }
+    #loader-text{
+        margin-top: -750px;
+    }
+        
 }

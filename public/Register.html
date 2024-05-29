@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Page</title>
-  <link rel="stylesheet" href="../CSS/Register.css">
+  <link rel="stylesheet" href="./css/Register.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 </head>
 <body>
   <div class="page-loader" id="page-preloader">
-    <img src="../assests/preloader6.gif" alt="Loading...">
+    <img src="./assests/preloader6.gif" alt="Loading...">
     <p>Loading...</p>
   </div>
 
@@ -55,14 +55,18 @@
       </div>
       <div class="form-row">
         <div class="input-group">
-          <label for="subject">Subject:</label>
+          <!-- <label for="subject">Subject:</label>
           <select id="subject" name="subject" required>
-            <option value="">Select a Subject</option>
+           
             <option value="devops">Devops</option>
             <option value="frontend-development">Frontend Development</option>
             <option value="java-programming">Java Programming</option>
             <option value="manual-testing">Manual Testing</option>
-          </select>
+          </select> -->
+          <div class="input-group">
+            <label for="date-of-birth">Date of Birth:</label>
+            <input type="date" id="date-of-birth" name="date-of-birth" required style="width: 99%;">
+          </div>
         </div>
         <div class="input-group">
           <label for="date-of-joining">Date of Joining:</label>
@@ -71,13 +75,13 @@
       </div>
       <div class="form-row">
         <div class="input-group">
-          <label for="date-of-birth">Date of Birth:</label>
-          <input type="date" id="date-of-birth" name="date-of-birth" required>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required placeholder="Enter your password" style="width: 47%;">
         </div>
-        <div class="input-group">
+        <!-- <div class="input-group">
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required placeholder="Enter your password">
-        </div>
+        </div> -->
       </div>
       <div class="buttons">
         <button type="submit">Register</button>
@@ -86,7 +90,7 @@
   </div>
   
   <div class="loader" id="submit-loader">
-    <img src="../assests/Hourglass.gif" alt="Submitting...">
+    <img src="./assests/Hourglass.gif" alt="Submitting...">
     <p>Processing your registration...</p>
   </div>
 
@@ -101,7 +105,7 @@
 
     document.getElementById("register-form").addEventListener("submit", function (event) {
       event.preventDefault();
-      alert("Registration Successful!");
+      // alert("Registration Successful!");
       const submitLoader = document.getElementById("submit-loader");
       submitLoader.style.display = "block";
       setTimeout(function () {
