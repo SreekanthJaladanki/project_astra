@@ -7,13 +7,17 @@
 
 /* Start of nav bar  */
 .navbar{
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 9vh;
   border: 1px solid gainsboro;
   color: #8689CE;
   display: flex;
   justify-content:space-between ;
-  box-shadow: 2px 2px 5px gainsboro;
+  /* box-shadow: 2px 2px 5px gainsboro; */
+  z-index: 10;
+  background-color: #fff;
 }
 .logocont{
   width: 20%;
@@ -43,6 +47,7 @@ display: flex;
   width: 100%;
   background-color: #333;
   box-shadow: 2px 2px 5px gainsboro;
+  z-index: 10;
 }
 .sidebar a{
   text-decoration: none;
@@ -87,8 +92,11 @@ display: flex;
 /* Start of main section */
   
 .mainCont {
-  margin-top: 12vh;
+  /* margin-top: 15vh; */
+  position: relative;
+  top: 23vh;
   height: 100%;
+  z-index: 1;
   }
   .dataSection{
     margin: auto;
@@ -117,10 +125,8 @@ display: flex;
     height: 200px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect*/
 }
-.flip1{
-  width: 600px;
-
-  
+#flip1{
+  width: 515px;
   height: 200px;
 }
 
@@ -128,7 +134,7 @@ display: flex;
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
@@ -137,7 +143,7 @@ display: flex;
     transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.dataSection .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -148,14 +154,58 @@ display: flex;
     font-size: 24px;
     color: white;
     border: 1px solid #ccc;
-    /* border-radius: 10px; */
+    /* border-radius: 20px; */
 }
 
 .flip-card-front {
-    background-color: #ff6347;
+  /* background-color: #8689CE; */
+  /* background-color: #333; */
+  background: linear-gradient(to right bottom, #aba0e4, #5CC2DD);
+}
+.flip-card-back ul{
+  text-align: justify;
 }
 
 .flip-card-back {
-    background-color: #4CAF50;
+    /* background-color: #4CAF50; */
+    background: linear-gradient(to right bottom, #868f96, #596164);
+    background-color: black;
     transform: rotateY(180deg);
+}
+
+
+
+
+
+.dataSection1{
+  margin: auto;
+  width: 80%;
+  height: 64vh;
+}
+.dataSection1 section{
+  width: 100%;
+  height: 50%;
+  /* border: 1px solid red;   */
+  text-align: center;
+}
+
+.dataSection1 .flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: white;
+  border: 1px solid #ccc;
+  /* border-radius: 20px; */
+}
+.dataSection1 .flip-card-front {
+  background: linear-gradient(to right bottom, #aba0e4, #5CC2DD);
+}
+.dataSection1 .flip-card-back {
+  background: #fff;
+  border: 5px solid #aba0e4;
 }
