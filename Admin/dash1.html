@@ -3,82 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee List</title>
-    <style>
-      body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    }
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-h1 {
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-}
-
-.employee-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.employee-card img {
-    border-radius: 50%;
-    margin-right: 20px;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-}
-
-.employee-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.employee-info h2 {
-    margin: 0;
-    color: #333;
-}
-
-.employee-info p {
-    margin: 5px 0;
-    color: #666;
-}
-    </style>
+    <title>Employee Details</title>
+    <link rel="stylesheet" href="./css/dash1.css">
 </head>
 <body>
     <div class="container">
-        <h1>Employee List</h1>
-        <div class="employee-card">
-            <img src="employee1.jpg" alt="Employee Photo">
-            <div class="employee-info">
-                <h2>John Doe</h2>
-                <p>Employee ID: 12345</p>
-                <p>Email: john.doe@example.com</p>
+        <h1>Employee Details</h1>
+        <form id="employeeForm">
+            <label for="employeeId">Employee ID:</label>
+            <input type="text" id="employeeId" name="employeeId" required>
+
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" required>
+
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" required>
+
+            <button type="submit">Get Details</button>
+        </form>
+        <div id="employeeDetails" class="hidden">
+            <h2>Details for Employee ID: <span id="empIdDisplay"></span></h2>
+            <p>Name: <span id="empName"></span></p>
+            <p>Position: <span id="empPosition"></span></p>
+            <div class="charts">
+                <canvas id="chart1"></canvas>
+                <canvas id="chart2"></canvas>
+                <canvas id="chart3"></canvas>
             </div>
         </div>
-        <div class="employee-card">
-            <img src="employee2.jpg" alt="Employee Photo">
-            <div class="employee-info">
-                <h2>Jane Smith</h2>
-                <p>Employee ID: 67890</p>
-                <p>Email: jane.smith@example.com</p>
-            </div>
-        </div>
-        <!-- Add more employee cards as needed -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dash1.js"></script>
 </body>
 </html>
