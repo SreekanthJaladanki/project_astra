@@ -88,142 +88,46 @@ body {
     transition: background-color 0.5s ease;
 }
 
-     /* Media Queries */
-     @media only screen and (max-width: 768px) {
-        .navbar {
-            height: 50px;
-            padding: 5px 10px;
-        }
-
-        .dashboard-name {
-            font-size: 20px;
-        }
-
-        #datetime {
-            font-size: 14px;
-        }
-
-        .container-card {
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-            align-content: center;
-        }
-
-        .cards-row {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card {
-            width: 90%;
-            margin: 10px 0;
-        }
-    }
-
-    @media only screen and (max-width: 480px) {
+     /* Media Queries pixel 7*/
+    
+    @media only screen and (width: 412px) {
         .navbar {
             height: 40px;
             padding: 5px;
         }
-
-        .dashboard-name {
-            font-size: 18px;
+        .landing-content h1{
+            width: 424px;
+        
+            margin-left: -509px;
+            margin-top: -20px;
         }
 
-        #datetime {
-            font-size: 12px;
+      
+    }
+     /* Media Queries iphone 14 pro max*/
+     @media only screen and (width: 430px) {
+        body{
+            overflow-y: hidden;
+        }
+        .navbar {
+            height: 40px;
+            padding: 5px;
+        }
+        .landing-content h1{
+            width: 424px;
+        
+            margin-left: -490px;
+            margin-top: -20px;
+            position: relative;
+        }
+        #videotag {
+            min-width: 100%;
+            min-height: 100%;
+            position: fixed;
+            right: 0;
+            left: 0;
+            bottom: 300px;
+            z-index: -1;
         }
 
-        .container-card {
-            width: 95%;
-        }
-
-        .cards-row {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .card {
-            width: 100%;
-            margin: 10px 0;
-        }
     }
-/*  Media Queries for Pixel 7 and iPhone 14 Pro Max */
-@media only screen and (max-width: 412px) {
-    body {
-        overflow-y: scroll; 
-    }
-
-    .navbar {
-        height: 40px;
-        padding: 5px;
-    }
-
-    .dashboard-name {
-        font-size: 16px;
-    }
-
-    #datetime {
-        font-size: 12px;
-    }
-
-    .container-card {
-        width: 95%;
-    }
-
-    .cards-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 100%;
-        margin: 10px 0;
-        margin-left: -13px;
-    }
-}
-
-@media only screen and (max-width: 430px) {
-    body {
-        overflow-y: scroll; 
-    }
-
-    .navbar {
-        height: 45px;
-        padding: 5px;
-    }
-
-    .dashboard-name {
-        font-size: 16px;
-    }
-
-    #datetime {
-        font-size: 12px;
-    }
-
-    .container-card {
-        width: 95%;
-    }
-
-    .cards-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 100%;
-        margin: 10px 0;
-        margin-left: -14px;
-    }
-    
-    #loader-text{
-        margin-bottom: 200px;
-        margin-left: 10px;
-    }
-    
-    #page-loader img{
-        margin-left: 70px;
-    }
-}      
-   

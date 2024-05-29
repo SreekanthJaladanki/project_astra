@@ -139,141 +139,88 @@ body {
     margin-left: -60px;
     margin-top: -440px;
 }
-   /* Media Queries */
-   @media only screen and (max-width: 768px) {
+
+ 
+@media only screen and (width: 412px) {
     .navbar {
-        height: 50px;
-        padding: 5px 10px;
-    }
-
-    .dashboard-name {
-        font-size: 20px;
-    }
-
-    #datetime {
-        font-size: 14px;
-    }
-
-    .container-card {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        align-content: center;
-    }
-
-    .cards-row {
+        height: 80px;
+        padding: 5px 15px; 
+        display: flex;
         flex-direction: column;
-        align-items: center;
-    }
+        width: 98%;
+        margin-left: -1px;
+    
 
-    .card {
-        width: 90%;
-        margin: 10px 0;
     }
-}
-
-@media only screen and (max-width: 480px) {
-    .navbar {
-        height: 40px;
-        padding: 5px;
-    }
-
-    .dashboard-name {
-        font-size: 18px;
-    }
-
-    #datetime {
-        font-size: 12px;
-    }
-
     .container-card {
-        width: 95%;
-    }
-
-    .cards-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
+       
+        padding: 10px;
         width: 100%;
-        margin: 10px 0;
+        margin-top: 530px;
+        
+       
     }
-}
-/*  Media Queries for Pixel 7 and iPhone 14 Pro Max */
-@media only screen and (max-width: 412px) {
-body {
-    overflow-y: scroll; 
-}
 
-.navbar {
-    height: 40px;
-    padding: 5px;
-}
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.dashboard-name {
-    font-size: 16px;
+    .card {
+        width: 80%;
+         margin-left: 30px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+    #page-loader img {
+        margin-left: 25px;
+    }
+    #loader-text{
+        margin-top: -750px;
+    }
+        
 }
+@media only screen and (width: 430px) {
+    .navbar {
+        height: 80px;
+        padding: 5px 15px; 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+    
 
-#datetime {
-    font-size: 12px;
-}
+    }
+    .container-card {
+       
+        padding: 10px;
+        width: 100%;
+        margin-top: 600px;
+        margin-left: 5px;
+        
+       
+    }
 
-.container-card {
-    width: 95%;
-}
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.cards-row {
-    flex-direction: column;
-    align-items: center;
-}
-
-.card {
-    width: 100%;
-    margin: 10px 0;
-    margin-left: -13px;
-}
-}
-
-@media only screen and (max-width: 430px) {
-body {
-    overflow-y: scroll; 
-}
-
-.navbar {
-    height: 45px;
-    padding: 5px;
-}
-
-.dashboard-name {
-    font-size: 16px;
-}
-
-#datetime {
-    font-size: 12px;
-}
-
-.container-card {
-    width: 95%;
-}
-
-.cards-row {
-    flex-direction: column;
-    align-items: center;
-}
-
-.card {
-    width: 100%;
-    margin: 10px 0;
-    margin-left: -14px;
-}
-
-#loader-text{
-    margin-bottom: 200px;
-    margin-left: 10px;
-}
-
-#page-loader img{
-    margin-left: 70px;
-}
+    .card {
+        width: 81%;
+         margin-left: 18px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+    #page-loader img {
+        margin-left: 25px;
+    }
+    #loader-text{
+        margin-top: -750px;
+    }
+        
 }

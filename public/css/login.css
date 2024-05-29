@@ -179,3 +179,25 @@ button:hover {
   color: #9d5dd2d8;
   width: 94%;
 }
+@media only screen and (width: 430px){
+  .login-container{
+    margin-left: 5px;
+  }
+  #page-preloader img{
+    margin-left: 90px;
+  }
+  #submit-preloader img{
+    margin-left: 40px;
+  }
+}
+@media only screen and (width: 412px){
+  .login-container{
+    margin-left: -1px;
+  }
+  #page-preloader img{
+    margin-left: 90px;
+  }
+  #submit-preloader img{
+    margin-left: 40px;
+  }
+}

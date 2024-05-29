@@ -1,402 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="../CSS/Landing.css">
-    <link rel="stylesheet" href="./countdown.css">
+    <title>Interactive Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            background-size: cover;
-            background-repeat: no-repeat;
-            overflow-y: hidden;
-            background-color: black;
-            position: relative;
-            z-index: 2;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Homepage.css">
+   <style>
 
-        #videotag {
-            min-width: 100%;
-            min-height: 100%;
-            position: fixed;
-            right: 0;
-            left: 0;
-            bottom: 0;
-            z-index: -1;
-        }
-
-        .landing-page {
-          
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .landing-content {
-            text-align: center;
-            color: #fff;
-            margin-top: -310px;
-        }
-
-        .landing-page .landing-content .buttons #login-btn {
-            margin-left: 30px;
-            width: 120px;
-        }
-
-        .landing-page .landing-content .buttons #register-btn {
-            width: 120px;
-            margin-left: -558px;
-        }
-
-        .landing-content h1 {
-            font-size: 4.2rem;
-            letter-spacing: 2.5px;
-            margin-left: -536px;
-            width: 920px;
-        }
-
-        .landing-content p {
-            font-size: 1.2rem;
-            margin-top: -10px;
-            margin-left: -559px;
-        }
-
-        .buttons button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 20px;
-            background-color: #007bff;
-            color: #fff;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .buttons button:hover {
-            background-color: green;
-        }
-
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* background-color: rgba(0, 0, 0, 0.5); */
-            z-index: -1;
-            transition: background-color 0.5s ease;
-        }
-
-        #preloader, #loader {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            /* background-color: rgba(255, 255, 255, 0.6); */
-            display: flex;
-            background-color: white;
-            justify-content: center;
-            align-items: center;
-            /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
-        }
-
-        #preloader img {
-            width: 100px;
-            border-radius: 50%;
-            margin-left: -10px;
-        }
-
-        #loader img {
-            width: 100px;
-            border-radius: 50%;
-            margin-left: 50px;
-            margin-top: -100px;
-        }
-
-        #preloader p {
-            margin-top: 170px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: #9662BB;
-            font-size: 1.2rem;
-            margin-left: -160px;
-        }
-
-        #loader p {
-            margin-top: 90px;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            color: #9662BB;
-            font-size: 1.2rem;
-            margin-left: -210px;
-        }
-
-        h1 {
-            color: #fff;
-            text-align: center;
-            font-size: 35px;
-            letter-spacing: 10px;
-        }
-
-        #del-countdown {
-            width: 650px;
-            margin: 15% auto;
-            height: 190px;
-            margin-top: 63px;
-            position: relative;
-            z-index: 2;
-            margin-top: 50px;
-        }
-
-        #clock {
-            margin-left: 118px;
-        }
-
-        #clock span {
-            float: left;
-            text-align: center;
-            font-size: 84px;
-            margin: 0 2.5%;
-            color: #fff;
-            padding: 20px;
-            width: 20%;
-            border-radius: 20px;
-            box-sizing: border-box;
-            margin-left: -4px;
-            align-content: center;
-        }
-
-        #clock span:nth-child(1) {
-            background: #fa5559;
-            height: 90px;
-            width: 90px;
-            font-size: 3.1rem;
-            align-content: center;
-        }
-
-        #clock span:nth-child(2) {
-            background: #26c2b9;
-            height: 90px;
-            width: 90px;
-            font-size: 3.1rem;
-            align-content: center;
-        }
-
-        #clock span:nth-child(3) {
-            background: #f6bc58;
-            height: 90px;
-            width: 90px;
-            font-size: 3.1rem;
-            align-content: center;
-        }
-
-        #clock span:nth-child(4) {
-            background: #2dcb74;
-            height: 90px;
-            width: 90px;
-            font-size: 3.1rem;
-            align-content: center;
-        }
-
-        #clock:after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        #units span {
-            float: left;
-            width: 25%;
-            text-align: center;
-            margin-top: 30px;
-            color: #ddd;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.7);
-        }
-
-        #days {
-            margin-left: 78px;
-        }
-
-        #hours {
-            margin-left: -60px;
-        }
-
-        #min {
-            margin-left: -68px;
-        }
-
-        #sec {
-            margin-left: -61px;
-        }
-
-        span.turn {
-            animation: turn 0.7s ease forwards;
-        }
-
-        @keyframes turn {
-            0% {
-                transform: rotateX(0deg)
-            }
-            100% {
-                transform: rotateX(360deg)
-            }
-        }
-       
-     
-
-@media only screen and (max-width: 412px){
-   /* pixel7 */
-    #del-countdown{
-        margin-left: -100px;
-    }
-    .landing-content h1{
-    border: 2px solid white;
-    width: 435px;
-        margin-left: -503px;
-    }
-    #videotag{
-        min-width: 100%;
-            min-height: 100%;
-            position: fixed;
-            right: 0;
-            left: 0;
-            bottom: 322px;
-            z-index: -1;
-    }
-    body{
-        overflow-y: hidden;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
+.navbar {
+    height: 70px;
+   
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; 
+    border-radius: 15px;
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+
+}
+
+#datetime {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dashboard-name {
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    background-color: white;
+}
+
+.container-card {
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    border-radius: 50px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    border-radius: 25px;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    width: 64%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -11px;
+    justify-content: space-around;
+}
+
+.cards-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 77%;
+    height: 77%;
+    transition: box-shadow 0.3s ease;
+}
+
+
+
+.card h2 {
+    color: #9662BB;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 15px;
+    height: 71%;
+    width: 85%;
+}
+
+#datetime {
+    font-size: 18px;
+    color: white;
+}
+
+/* Page Loader */
+#page-loader {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#page-loader img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+#loader-text {
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #9662BB;
+    margin-left: -60px;
+    margin-top: -440px;
+}
+
+ 
+@media only screen and (width: 412px) {
+    .navbar {
+        height: 80px;
+        padding: 5px 15px; 
+        display: flex;
+        flex-direction: column;
+        width: 98%;
+        margin-left: -1px;
     
 
+    }
+    .container-card {
+       
+        padding: 10px;
+        width: 100%;
+        margin-top: 530px;
+        
+       
+    }
+
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 75%;
+         margin-left: 9px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+        
+}
+@media only screen and (width: 430px) {
+    .navbar {
+        height: 80px;
+        padding: 5px 15px; 
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        
+    
+
+    }
+    .container-card {
+       
+        padding: 10px;
+        width: 59%;
+        margin-top: 200px;
+        margin-left: -190px;
+        
+       
+    }
+
+    .cards-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 81%;
+         margin-left: 9px;
+    }
+    body{
+        overflow-y: scroll;
+    }
+        
+}
 
 
-    </style>
+
+
+
+
+
+
+   </style>
+  
 </head>
+
 <body>
-    <div id="preloader">
-        <img src="../assests/preloader2.gif" alt="Loading...">
-        <p>Loading while you wait....</p>
+    <div id="page-loader">
+        
+        <img src="../assests/preloader5.gif" alt="Loading...">
+        <p id="loader-text">Loading while you wait...</p>
+        
     </div>
-    <div id="del-countdown">
-        <h1>COMING SOON!!!</h1>
-        <div id="clock"></div>
-        <div id="units">
-            <span id="days">Days</span>
-            <span id="hours">Hours</span>
-            <span id="min">Minutes</span>
-            <span id="sec">Seconds</span>
-        </div>
-        <video src="../assests/background.mp4" id="videotag" loop muted autoplay></video>
-        <div class="landing-page">
-            <div class="landing-content">
-                <h1>Welcome to Team Astra</h1>
-                <p>Building Bridges to Tech Brilliance!</p>
-                <div class="buttons">
-                    <button id="register-btn">Register</button>
-                    <button id="login-btn">Login</button>
-                </div>
+
+    <div class="navbar">
+        <div class="dashboard-name">Dashboard</div>
+        <div id="datetime"></div>
+    </div>
+
+    <div class="dashboard">
+        <div class="container-card">
+            <div class="cards-row">
+                <a href="../cards/updates.html" class="card-link" onclick="showCardPreloader('../cards/updates.html')">
+                    <div class="card">
+                        <h2>Daily Updates</h2>
+                        <img src="../assests/updates.png" alt="Image 1">
+                    </div>
+                </a>
+                <a href="../cards/batches.html" class="card-link" onclick="showCardPreloader('../cards/batches.html')">
+                    <div class="card">
+                        <h2>Batch Details</h2>
+                        <img src="../assests/batch.png" alt="Image 2">
+                    </div>
+                </a>
+                <a href="../cards/time.html" class="card-link" onclick="showCardPreloader('../cards/time.html')">
+                    <div class="card">
+                        <h2>TimeSheet</h2>
+                        <img src="../assests/time.png" alt="Image 4">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-    <div class="background-overlay"></div>
-    <script>
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
-            setTimeout(function () {
-                preloader.style.display = 'none';
-            }, 1000);
-        });
 
-        document.getElementById('register-btn').addEventListener('click', function() {
-            window.location.href = 'register.html';
-        });
+   <script>window.onload = function () {
+    var pageLoader = document.getElementById('page-loader');
+    pageLoader.style.display = 'none';
+}
 
-        document.getElementById('login-btn').addEventListener('click', function() {
-            window.location.href = 'login.html';
-        });
+// Function to update time and date
+function updateTimeAndDate() {
+    const datetimeElement = document.getElementById('datetime');
+    const now = new Date();
 
-        function showLoader() {
-            const loader = document.getElementById('loader');
-            loader.style.display = 'flex';
-        }
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true
+    };
+    const formattedDateTime = now.toLocaleString('en-US', options);
 
-        function decreaseOpacity() {
-            var overlay = document.querySelector('.background-overlay');
-            var opacity = parseFloat(window.getComputedStyle(overlay).getPropertyValue('opacity'));
-            if (opacity > 0) {
-                opacity -= 0.1;
-                overlay.style.opacity = opacity;
-                setTimeout(decreaseOpacity, 100);
-            }
-        }
-    </script>
-    <script>
-        function updateTimer(deadline) {
-            var time = deadline - new Date();
-            return {
-                'days': Math.floor(time / (1000 * 60 * 60 * 24)),
-                'hours': Math.floor((time / (1000 * 60 * 60)) % 24),
-                'minutes': Math.floor((time / 1000 / 60) % 60),
-                'seconds': Math.floor((time / 1000) % 60),
-                'total': time
-            };
-        }
+    datetimeElement.textContent = formattedDateTime;
+}
 
-        function animateClock(span) {
-            span.className = "turn";
-            setTimeout(function () {
-                span.className = "";
-            }, 700);
-        }
-
-        function startTimer(id, deadline) {
-            var timerInterval = setInterval(function () {
-                var clock = document.getElementById(id);
-                var timer = updateTimer(deadline);
-
-                clock.innerHTML = '<span>' + timer.days + '</span>'
-                    + '<span>' + timer.hours + '</span>'
-                    + '<span>' + timer.minutes + '</span>'
-                    + '<span>' + timer.seconds + '</span>';
-
-                //animations
-                var spans = clock.getElementsByTagName("span");
-                animateClock(spans[3]);
-                if (timer.seconds == 59) animateClock(spans[2]);
-                if (timer.minutes == 59 && timer.seconds == 59) animateClock(spans[1]);
-                if (timer.hours == 23 && timer.minutes == 59 && timer.seconds == 59) animateClock(spans[0]);
-
-                //check for end of timer
-                if (timer.total < 1) {
-                    clearInterval(timerInterval);
-                    clock.innerHTML = '<span>0</span><span>0</span><span>0</span><span>0</span>';
-                }
-            }, 1000);
-        }
-
-        window.onload = function () {
-            var deadline = new Date("May 31, 2024 10:00:00");
-            startTimer("clock", deadline);
-        };
-    </script>
+// Update time and date every second
+setInterval(updateTimeAndDate, 1000);
+window.onload = function () {
+    setTimeout(function () {
+        document.getElementById('page-loader').style.display = 'none';
+    }, 1000);
+};
+</script>
 </body>
-</html>
 
+</html>
