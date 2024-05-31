@@ -8,6 +8,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+.navbar {
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+}
 
 .register-container {
   width: 800px;
@@ -19,6 +24,11 @@ body {
   position: relative;
   z-index: 2;
   margin-top: -12px;
+}
+
+.register-container h2 {
+  margin-top: 0;
+  color: #333;
 }
 
 ::placeholder {
