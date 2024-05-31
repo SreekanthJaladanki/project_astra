@@ -33,6 +33,7 @@ h2 {
   color: #9662BB;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
+  margin-top: -10px;
 }
 
 .form-row {
@@ -61,15 +62,30 @@ input:focus, select:focus {
   font-weight: 700;
 }
 
-.input-group input, .input-group select {
+.input-group input  {
   padding: 8px;
   border-radius: 10px;
   border: 1px solid #ccc;
   color: #a46fcfd8;
+  
+  
+}
+.input-group .date-of-birth{
+width: 98%;
+}
+.input-group select{
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: #a46fcfd8;
+  width: 100%;
+}
+.input-group input[type="password"]{
+  width: 46%;
 }
 
 .buttons {
-  margin-top: 25px;
+  margin-top: 45px;
   text-align: center;
 }
 
@@ -127,3 +143,136 @@ opacity: 0.9;
   font-size: 1.2rem;
   margin-left: -30px;
 }
+
+/* Media query for screen width 412px pixel 7 */
+@media (width: 412px) {
+  body{
+    overflow-y: scroll;
+  }
+  .register-container {
+    width: 76%;
+    padding: 20px;
+    height: 93%;
+    margin-top: 0;
+    margin-left: -2px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 3px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .input-group {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .input-group input {
+    width: 90%;
+    padding: 8px;
+    font-size: 1rem;
+  }
+  .input-group select{
+    width: 95%;
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .input-group input[type="date"],
+
+  .input-group input[type="email"],
+  .input-group input[type="text"],
+  .input-group input[type="tel"] {
+    width: 90%;
+  }
+  .input-group input[type="password"]{
+    width: 91%;
+  }
+ 
+  
+
+  .buttons button{
+   
+    font-size: 1rem;
+
+  }
+  
+
+  .loader, .page-loader {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loader img, .page-loader img {
+    width: 100px;
+    margin-left: 0;
+  }
+
+  .loader p, .page-loader p {
+    font-size: 1rem;
+    margin-left: 0;
+  }
+}
+
+
+/* iphone14 pro max */
+@media (width: 430px) {
+  .register-container {
+    width: 77%;
+    padding: 20px;
+    margin-top: 0;
+    margin-left: 1px;
+    height: 93%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 9px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .input-group {
+    margin-right: 0;
+    margin-bottom: 13px;
+    width: 100%;
+  }
+
+  .input-group input, .input-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .input-group input[type="date"],
+  .input-group input[type="password"],
+  .input-group input[type="email"],
+  .input-group input[type="tel"],
+  .input-group input[type="text"] {
+    width: 93%;
+  }
+
+  .buttons button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  .buttons{
+margin-top: -1px;
+height: 60%;
+
+  }
+}
+
+
+
+

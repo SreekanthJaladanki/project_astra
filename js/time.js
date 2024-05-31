@@ -98,6 +98,7 @@ function validateAndSubmit(event) {
     setTimeout(function () {
         submitPreloader.style.display = 'none';
         // ("Form submitted successfully!");
-        window.location.href = 'Thankyou.html'; // Redirect to Thankyou.html
+        // window.location.href = 'Thankyou.html';
+         // Redirect to Thankyou.html
     }, 1000);
 }

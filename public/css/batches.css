@@ -102,7 +102,7 @@ input[type="submit"]:hover {
     margin-top: -80px;
 }
 
-#submit-preloader p {
+#submit-preloader div p {
     margin-left: -140px;
     padding-right: 100px;
     color: #9662BB;
@@ -117,19 +117,62 @@ input[type="submit"]:hover {
     font-size: 1.2rem;
     font-weight: 800;
 }
-/* @media only screen and (width: 430px){
-    .login-container{
-      margin-left: 5px;
-    }
-    #page-preloader img{
-      margin-left: 90px;
-    }
-    #submit-preloader img{
-      margin-left: 40px;
-    }
-  } */
+/* iphone14 pro max */
+@media only screen and (width: 430px){
+   form{
+    width: 80%;
+    height: 46%;
+   }
+   .form-group input{
+    width: 100%;
+   }
+   #refresh-preloader p{
+    margin-top: -100px;
+    margin-left: -120px;
+   }
+   #refresh-preloader img {
+    margin-top: -340px;
+    margin-left: 38px;
+   }
+   #submit-preloader img{
+    margin-top: -340px;
+    margin-left: 237px;
+   }
+   #submit-preloader div p{
+    margin-top: -105px;
+    margin-left: -143px;
+    height: 87px;
+    width: 290px; 
+   }
+  }
+  /* pixel 7 */
   @media only screen and (width: 412px){
-    input[type="text"]{
-
-    }
+    form{
+        width: 80%;
+        height: 46%;
+       }
+       .form-group input{
+        width: 100%;
+       }
+       h1{
+        margin-left: 10px;
+       }
+       #refresh-preloader p{
+        margin-top: -100px;
+        margin-left: -120px;
+       }
+       #refresh-preloader img {
+        margin-top: -340px;
+        margin-left: 38px;
+       }
+       #submit-preloader img{
+        margin-top: -340px;
+        margin-left: 237px;
+       }
+       #submit-preloader div p{
+        margin-top: -105px;
+        margin-left: -143px;
+        height: 87px;
+        width: 290px; 
+       }
   }

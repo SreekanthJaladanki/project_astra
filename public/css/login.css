@@ -181,13 +181,17 @@ button:hover {
 }
 @media only screen and (width: 430px){
   .login-container{
-    margin-left: 5px;
+    margin-left: 0px;
   }
   #page-preloader img{
     margin-left: 90px;
   }
   #submit-preloader img{
-    margin-left: 40px;
+    margin-left: 10px;
+    margin-top: -201px;
+  }
+  #submit-preloader p{
+    margin-top: 9px;
   }
 }
 @media only screen and (width: 412px){
@@ -198,6 +202,10 @@ button:hover {
     margin-left: 90px;
   }
   #submit-preloader img{
-    margin-left: 40px;
+    margin-left: 10px;
+    margin-top: -201px;
+  }
+  #submit-preloader p{
+    margin-top: 9px;
   }
 }

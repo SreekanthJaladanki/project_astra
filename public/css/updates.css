@@ -250,3 +250,96 @@ button {
 #preloader.refresh-loader img {
     content: url('../assests/preloader1.gif');
 }
+@media (max-width: 430px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    .row label,
+    .row select,
+    .row input,
+    .row button {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+    }
+
+    #addedTasks .task-row {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #addedTasks .task-row select {
+        width: 100%;
+    }
+
+    button,
+    #submitbutn {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 412px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    .row label,
+    .row select,
+    .row input,
+    .row button {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+    }
+
+    #addedTasks .task-row {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #addedTasks .task-row select {
+        width: 100%;
+    }
+
+    button,
+    #submitbutn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #preloader, #preloader p, #preloader img {
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+}
