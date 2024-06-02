@@ -1,9 +1,10 @@
 body {
-    /* height: 100vh; */
+    height: 100vh;
     margin: 20px;
     box-sizing: border-box;
     align-content: center;
     background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    overflow-y: hidden;
 }
 
 .container {
@@ -13,10 +14,30 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 85%;
     margin: 0 auto;
-    height: 550px;
+    height: 450px;
+    margin-top: 40px;
     /* border: 1px solid red; */
    
 }
+.navbar {
+    background-color: white;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0px 0px 8px 8px;
+    margin-top: -80px;
+    width: 103%;
+    margin-left: -20px;
+  }
+  
+  .navbar h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #9662BB;
+    font-weight: 700;
+  }
 
 .row {
     display: flex;
@@ -78,8 +99,9 @@ body {
     flex-direction: column;
     column-gap: 10px;
     /* border: 2px+ solid rgb(55, 255, 0); */
-    height:300px;
+    height:200px;
     overflow-y: scroll;
+
 }
 /* #addedTasks::-webkit-scrollbar{
     display: none;
@@ -186,6 +208,7 @@ button {
     font-size: 0.9rem;
     font-weight: 700;
     font-style: normal;
+   
 }
 
 .container h1 {
@@ -204,7 +227,7 @@ button {
     font-size: 0.9rem;
     font-weight: bold;
     color: white;
-    margin-top: 20px;
+    margin-top: 36px;
     margin-left: 30rem;
 }
 
@@ -251,40 +274,69 @@ button {
     content: url('../assests/preloader1.gif');
 }
 @media (max-width: 430px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
     .container {
         max-width: 100%;
-        padding: 10px;
+        padding: 15px;
         height: auto;
         margin: 0 auto;
+        margin-top: 20px;
+    }
+    #datelabel {
+        margin-left: -250px;
     }
 
     .row {
         flex-direction: column;
         margin: 20px auto;
     }
+    body{
+        overflow-x: hidden;
+    }
+    .navbar{
+        width: 114%;
+        margin-top: -110px;
+     
+    }
 
     .row label,
     .row select,
-    .row input,
-    .row button {
+    .row input
+     {
         width: 100%;
         text-align: left;
+        margin: 10px 0;
+    }
+    .row button{
+        width: 100%;
+        text-align: center;
         margin: 10px 0;
     }
 
     #addedTasks .task-row {
         flex-direction: column;
-        margin: 10px 0;
+        margin: 15px 0;
     }
 
     .input-1,
     .input-2 {
-        width: 100%;
+        width: 68%;
         margin: 10px 0;
+        margin-left: -10px;
+    }
+    .input-2 {
+        width: 68%;
+        margin: 10px 0;
+        margin-left: -10px;
+        margin-top: -4px;
     }
 
     #addedTasks .task-row select {
-        width: 100%;
+        width: 72%;
+        margin-left: -11px;
+        margin-top: -10px;
     }
 
     button,
@@ -292,25 +344,55 @@ button {
         width: 100%;
         margin: 10px 0;
     }
+   
+    .remove-task{
+        margin-top: -58px;
+        margin-left: 298px;
+    }
+    #preloader img{
+        margin-left: -28px;
+        margin-top: -70px;
+    }
+    #preloader p{
+        margin-left: -21px;
+    }
+    #addedTasks{
+        height: 150px;
+    }
 }
 
 @media (max-width: 412px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
     .container {
         max-width: 100%;
         padding: 10px;
         height: auto;
         margin: 0 auto;
+        margin-top: 25px;
     }
 
     .row {
         flex-direction: column;
         margin: 20px auto;
     }
+     .navbar{
+        width: 114%;
+        margin-top: -140px;
+     
+    }
+    .row button{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
 
     .row label,
     .row select,
-    .row input,
-    .row button {
+    .row input
+    {
         width: 100%;
         text-align: left;
         margin: 10px 0;
@@ -323,8 +405,9 @@ button {
 
     .input-1,
     .input-2 {
-        width: 100%;
+        width: 68%;
         margin: 10px 0;
+        margin-left: -10px;
     }
 
     #addedTasks .task-row select {
@@ -342,4 +425,6 @@ button {
         align-items: center;
         text-align: center;
     }
+
+    
 }
