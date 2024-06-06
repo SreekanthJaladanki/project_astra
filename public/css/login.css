@@ -5,7 +5,7 @@ body {
   animation: gradientAnimation 5s ease infinite;
   margin: 0;
   padding: 0;
- 
+  font-family: 'Poppins', sans-serif;
 }
 
 @keyframes gradientAnimation {
@@ -29,6 +29,7 @@ body {
   margin-left: -25px;
   margin: auto;
   margin-top: 120px;
+  font-family: 'Poppins', sans-serif;
 }
 .navbar {
   background-color: white;
@@ -45,6 +46,8 @@ body {
   font-size: 1.8rem;
   color: #9662BB;
   font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-left: -9px;
 }
 
 h2 {
