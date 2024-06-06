@@ -3,12 +3,14 @@ body {
     margin: 20px;
     box-sizing: border-box;
     align-content: center;
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
     overflow-y: hidden;
+    background-color: white;
 }
 
 .container {
-    background-color: white;
+
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -20,7 +22,7 @@ body {
    
 }
 .navbar {
-    background-color: white;
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     border-bottom: 2px solid #ddd;
     box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -30,12 +32,13 @@ body {
     margin-top: -80px;
     width: 103%;
     margin-left: -20px;
+   
   }
   
   .navbar h2 {
     margin: 0;
     font-size: 1.8rem;
-    color: #9662BB;
+    color: white;
     font-weight: 700;
   }
 
@@ -49,7 +52,7 @@ body {
 }
 
 .row label {
-    color: #9662BB;
+    color: white;
     margin-right: 10px;
     font-size: 18px;
     font-family: "Poppins", sans-serif;
