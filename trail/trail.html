@@ -9,26 +9,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-   <style>
+<style>
 body {
-    /* height: 100vh; */
+    height: 100vh;
     margin: 20px;
     box-sizing: border-box;
     align-content: center;
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
+    overflow-y: hidden;
+    background-color: white;
 }
 
 .container {
-    background-color: white;
+
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 85%;
     margin: 0 auto;
-    height: 550px;
+    height: 450px;
+    margin-top: 40px;
     /* border: 1px solid red; */
    
 }
+.navbar {
+    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 10px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0px 0px 8px 8px;
+    margin-top: -80px;
+    width: 103%;
+    margin-left: -20px;
+   
+  }
+  
+  .navbar h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 700;
+  }
 
 .row {
     display: flex;
@@ -40,7 +64,7 @@ body {
 }
 
 .row label {
-    color: #9662BB;
+    color: white;
     margin-right: 10px;
     font-size: 18px;
     font-family: "Poppins", sans-serif;
@@ -90,8 +114,9 @@ body {
     flex-direction: column;
     column-gap: 10px;
     /* border: 2px+ solid rgb(55, 255, 0); */
-    height:300px;
+    height:200px;
     overflow-y: scroll;
+
 }
 /* #addedTasks::-webkit-scrollbar{
     display: none;
@@ -189,15 +214,17 @@ body {
 }
 
 button {
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
     height: 35px;
     width: 100px;
     border: none;
     border-radius: 10px;
-    color: white;
+    color: #9662BB;
     font-size: 0.9rem;
     font-weight: 700;
     font-style: normal;
+    background-color: white;
+   
 }
 
 .container h1 {
@@ -215,8 +242,8 @@ button {
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: bold;
-    color: white;
-    margin-top: 20px;
+    color: #9662BB;                     
+    margin-top: 36px;
     margin-left: 30rem;
 }
 
@@ -262,6 +289,281 @@ button {
 #preloader.refresh-loader img {
     content: url('../assests/preloader1.gif');
 }
+@media (max-width: 430px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    .container {
+        max-width: 100%;
+        padding: 15px;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    #datelabel {
+        margin-left: -250px;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+    body{
+        overflow-x: hidden;
+    }
+    .navbar{
+        width: 114%;
+        margin-top: -110px;
+     
+    }
+
+    .row label,
+    .row select,
+    .row input
+     {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+    }
+    .row button{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #addedTasks .task-row {
+        flex-direction: column;
+        margin: 15px 0;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 68%;
+        margin: 10px 0;
+        margin-left: -10px;
+    }
+    .input-2 {
+        width: 68%;
+        margin: 10px 0;
+        margin-left: -10px;
+        margin-top: -4px;
+    }
+
+    #addedTasks .task-row select {
+        width: 72%;
+        margin-left: -11px;
+        margin-top: -10px;
+    }
+
+    button,
+    #submitbutn {
+        width: 100%;
+        margin: 10px 0;
+    }
+   
+    .remove-task{
+        margin-top: -58px;
+        margin-left: 298px;
+    }
+    #preloader img{
+        margin-left: -28px;
+        margin-top: -70px;
+    }
+    #preloader p{
+        margin-left: -21px;
+    }
+    #addedTasks{
+        height: 150px;
+    }
+}
+
+@media (max-width: 412px) {
+    body{
+        font-family: 'Poppins', sans-serif;
+    }
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 25px;
+        margin-left: 12px;
+    }
+    #datelabel{
+        margin-left: -221px;
+    }
+
+    .row {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+     .navbar{
+        width: 114%;
+        margin-top: -111px;
+     
+    }
+    .row button{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+
+    .row label,
+    .row select,
+    .row input
+    {
+        width: 100%;
+        text-align: left;
+        margin: 10px 0;
+    }
+
+    #addedTasks .task-row {
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 68%;
+        margin: 10px 0;
+        margin-left: -10px;
+    }
+
+    #addedTasks .task-row select {
+        width: 100%;
+    }
+
+    button,
+    #submitbutn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #preloader, #preloader p, #preloader img {
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    
+}
+@media (max-width: 375px) {
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+        padding: 15px;
+        width: 90%;
+        height: auto;
+        margin-left: -10px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .navbar h2 {
+        font-size: 1.6rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+    }
+
+    .row label,
+    .row select {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .additional-tasks {
+        margin-left: 0;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #submitbutn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .container h1 {
+        margin-left: 0;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    #addedTasks .task-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    #addedTasks .task-row select {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .navbar h2 {
+        font-size: 1.4rem;
+    }
+
+    .row {
+        margin-top: 40px;
+    }
+
+    .row label,
+    .row select {
+        font-size: 0.9rem;
+    }
+
+    .additional-tasks {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .input-1,
+    .input-2 {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #submitbutn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .container h1 {
+        font-size: 1rem;
+    }
+
+    #addedTasks .task-row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    #addedTasks .task-row select {
+        width: 100%;
+        margin-top: 0;
+    }
+}
 
 
 
@@ -270,7 +572,20 @@ button {
 
 
 
-   </style> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
 </head>
 
 <body>
@@ -279,9 +594,12 @@ button {
         <img src="./assests/preloader1.gif" alt="Loading...">
         <p>Loading, please wait...</p>
     </div>
+    <header class="navbar">
+        <h2>Daily Updates</h2>
+    </header>
 
     <div class="container">
-        <h1>Daily Updates</h1>
+        <!-- <h1>Daily Updates</h1> -->
         <div class="row">
             <label for="selectDate" id="datelabel">Select Date:</label>
             <input type="date" id="selectDate" name="selectDate" required>

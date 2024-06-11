@@ -202,15 +202,16 @@ body {
 }
 
 button {
-    background: linear-gradient(to right bottom, #78A7DD, #9662BB);
+    /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
     height: 35px;
     width: 100px;
     border: none;
     border-radius: 10px;
-    color: white;
+    color: #9662BB;
     font-size: 0.9rem;
     font-weight: 700;
     font-style: normal;
+    background-color: white;
    
 }
 
@@ -229,7 +230,7 @@ button {
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: bold;
-    color: white;
+    color: #9662BB;                     
     margin-top: 36px;
     margin-left: 30rem;
 }
@@ -300,7 +301,7 @@ button {
     }
     .navbar{
         width: 114%;
-        margin-top: -110px;
+        margin-top: -151px;
      
     }
 
@@ -372,8 +373,12 @@ button {
         max-width: 100%;
         padding: 10px;
         height: auto;
-        margin: 0 auto;
-        margin-top: 25px;
+        /* margin: 0 auto; */
+        margin-top: 35px;
+        margin-left: -10px;
+    }
+    #datelabel{
+        margin-left: -221px;
     }
 
     .row {
@@ -382,7 +387,7 @@ button {
     }
      .navbar{
         width: 114%;
-        margin-top: -140px;
+        margin-top: -136px;
      
     }
     .row button{
@@ -431,3 +436,173 @@ button {
 
     
 }
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px;
+    }
+    .navbar {
+        padding: 10px 0;
+    }
+    .navbar h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5px;
+    }
+    .container h1 {
+        text-align: center;
+        margin-left: 0;
+    }
+    .navbar h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5px;
+    }
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+    .container h1 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .navbar h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5px;
+    }
+    .container {
+        padding: 15px;
+        margin: 10px;
+        margin-left: 3px;
+        margin-top: 20px;
+       
+    }
+    .container h1 {
+        text-align: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+    .navbar h2 {
+        font-size: 1rem;
+    }
+    #datelabel{
+        font-size: 1rem;
+        margin-left: 4px;
+    }
+    .navbar{
+        margin-top: -21px;
+    }
+    .row #selectDate {
+        color: #9662BB;
+        margin-top: -10px;
+    }
+    .row label{
+        margin-top: -10px;
+    }
+    .row select{
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5px;
+    }
+    .container {
+        padding: 15px;
+        margin: 10px;
+        margin-left: 3px;
+        margin-top: 20px;
+       
+    }
+    .container h1 {
+        text-align: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+    .navbar h2 {
+        font-size: 1rem;
+    }
+    #datelabel{
+        font-size: 1rem;
+        margin-left: 4px;
+    }
+    .navbar{
+        margin-top: -175px;
+    }
+    .row #selectDate {
+        color: #9662BB;
+        margin-top: -10px;
+    }
+    .row label{
+        margin-top: -10px;
+    }
+    .row select{
+        margin-top: -10px;
+    }
+}
+@media (max-width: 360px) {
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5px;
+    }
+    .container {
+        padding: 15px;
+        margin: 10px;
+        margin-left: 3px;
+        margin-top: 20px;
+       
+    }
+    .container h1 {
+        text-align: center;
+        font-size: 1.2rem;
+        color: white;
+    }
+    .navbar h2 {
+        font-size: 1rem;
+    }
+    #datelabel{
+        font-size: 1rem;
+        margin-left: 4px;
+    }
+    .navbar{
+        margin-top: -72px;
+    }
+    .row #selectDate {
+        color: #9662BB;
+        margin-top: -10px;
+    }
+    .row label{
+        margin-top: -10px;
+    }
+    .row select{
+        margin-top: -10px;
+    }
+}
+
