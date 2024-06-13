@@ -5,6 +5,9 @@ body {
     /* background: linear-gradient(to right bottom, #78a7dd, #9662bb); */
     overflow-y: hidden;
     background-color: white;
+    background-image: url("../assests/homepage_background1-transformed.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {

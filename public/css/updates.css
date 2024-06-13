@@ -6,6 +6,9 @@ body {
     /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
     overflow-y: hidden;
     background-color: white;
+    background-image: url("../assests/homepage_background1-transformed.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
