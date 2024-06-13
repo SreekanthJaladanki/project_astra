@@ -203,7 +203,20 @@ body {
     outline: none;
     box-shadow: 0 0 5px rgba(128, 0, 128, 0.5);
 }
-
+#submitbutn:hover {
+    background-color: #000000; 
+    color: white;
+}
+#submitbutn {
+    background-color: #ffffff; /* Green background */
+    color:  #9662BB; /* White text */
+    padding: 15px 20px; /* Padding */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer/hand icon */
+    font-size: 16px; /* Increase font size */
+    border-radius: 10px;
+    width: 150px;
+}
 button {
     /* background: linear-gradient(to right bottom, #78A7DD, #9662BB); */
     height: 35px;
