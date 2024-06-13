@@ -9,8 +9,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-    
 </head>
 
 <body>
@@ -24,15 +22,15 @@
     </header>
 
     <div class="container">
-        <!-- <h1>Daily Updates</h1> -->
         <div class="row">
-            <label for="selectDate" id="datelabel">Select Date:</label>
-            <input type="date" id="selectDate" name="selectDate" required>
+            <label for="currentDate" id="datelabel">Date:</label>
+            <input type="text" id="currentDate" name="currentDate" readonly>
             <label for="employee">Employee:</label>
             <select id="employee" required>
                 <option value="0">Select Employee</option>
                 <option value="Trainer">Trainer</option>
                 <option value="Trainee">Trainee</option>
+                <option value="HR">HR</option>
             </select>
             <label for="task">Task:</label>
             <select id="task" required>
@@ -60,96 +58,95 @@
     <div id="errorMessage" style="color: red; display: none;">Please fill in all fields.</div>
 
     <script>
-     
-    window.addEventListener('load', function () {
-        const preloader = document.getElementById('preloader');
-        setTimeout(function () {
-            preloader.style.display = 'none';
-        }, 1000); // Display preloader for 1 second
-    });
-
-    function addTask() {
-        const employeeSelect = document.getElementById("employee");
-        const taskSelect = document.getElementById("task");
-        const selectedEmployee = employeeSelect.value;
-        const selectedTask = taskSelect.value;
-
-        const addedTasksContainer = document.getElementById("addedTasks");
-        const taskRow = document.createElement("div");
-        taskRow.classList.add("task-row");
-
-        const employeeInput = document.createElement("input");
-        employeeInput.type = "text";
-        employeeInput.classList.add("input-1")
-        employeeInput.value = selectedEmployee;
-        employeeInput.readOnly = true;
-        taskRow.appendChild(employeeInput);
-
-        const taskInput = document.createElement("input");
-        taskInput.type = "text";
-        taskInput.classList.add("input-2");
-        taskInput.value = selectedTask;
-        taskInput.readOnly = true;
-        taskRow.appendChild(taskInput);
-
-        if (selectedTask === "Taking batches") {
-            const batchesSelect = document.createElement("select");
-            batchesSelect.name = "batches";
-            batchesSelect.classList.add("batches-select");
-            const optionValues = ["Select Batches", 1, 2, 3, 4, 5];
-            optionValues.forEach((value) => {
-                const option = document.createElement("option");
-                option.value = value;
-                option.textContent = value;
-                batchesSelect.appendChild(option);
-            });
-            taskRow.appendChild(batchesSelect);
-        }
-
-        const removeButton = document.createElement("span");
-        removeButton.classList.add("remove-task");
-        removeButton.innerHTML = "&#10060;";
-        removeButton.onclick = function () {
-            taskRow.remove();
-        };
-        taskRow.appendChild(removeButton);
-
-        addedTasksContainer.appendChild(taskRow);
-    }
-
-    function submitForm(event) {
-        const selectDate = document.getElementById("selectDate");
-        const employee = document.getElementById("employee");
-        const task = document.getElementById("task");
-
-        const addedTasksContainer = document.getElementById("addedTasks");
-        const taskRows = addedTasksContainer.getElementsByClassName("task-row");
-        let tasks = "";
-
-        for (let i = 0; i < taskRows.length; i++) {
-            const row = taskRows[i];
-            const task = row.children[1].value;
-            const batches = task === "Onlineclass" ? row.children[2].value : null;
-            tasks = (row.children[2].value);
-        }
-
-        if (!selectDate.value || employee.value == 0 || !employee.value || !task.value || task.value == 0 || tasks == "--Select Batches--") {
-            alert("Please fill in all fields.");
-            event.preventDefault(); // Prevent form submission if fields are missing
-        } else {
+        window.addEventListener('load', function () {
             const preloader = document.getElementById('preloader');
-            preloader.classList.remove('refresh-loader');
-            preloader.classList.add('submit-loader');
-            preloader.style.display = 'flex';
-            setTimeout(() => {
+            setTimeout(function () {
                 preloader.style.display = 'none';
-                // alert("Form submitted successfully!");
-                window.location.href = 'Thankyou.html'; // Redirect to thank you page
             }, 1000); // Display preloader for 1 second
+
+            // Set current date
+            const currentDate = new Date().toISOString().split('T')[0];
+            document.getElementById('currentDate').value = currentDate;
+        });
+
+        function addTask() {
+            const employeeSelect = document.getElementById("employee");
+            const taskSelect = document.getElementById("task");
+            const selectedEmployee = employeeSelect.value;
+            const selectedTask = taskSelect.value;
+
+            const addedTasksContainer = document.getElementById("addedTasks");
+            const taskRow = document.createElement("div");
+            taskRow.classList.add("task-row");
+
+            const employeeInput = document.createElement("input");
+            employeeInput.type = "text";
+            employeeInput.classList.add("input-1")
+            employeeInput.value = selectedEmployee;
+            employeeInput.readOnly = true;
+            taskRow.appendChild(employeeInput);
+
+            const taskInput = document.createElement("input");
+            taskInput.type = "text";
+            taskInput.classList.add("input-2");
+            taskInput.value = selectedTask;
+            taskInput.readOnly = true;
+            taskRow.appendChild(taskInput);
+
+            if (selectedTask === "Taking batches") {
+                const batchesSelect = document.createElement("select");
+                batchesSelect.name = "batches";
+                batchesSelect.classList.add("batches-select");
+                const optionValues = ["Select Batches", 1, 2, 3, 4, 5];
+                optionValues.forEach((value) => {
+                    const option = document.createElement("option");
+                    option.value = value;
+                    option.textContent = value;
+                    batchesSelect.appendChild(option);
+                });
+                taskRow.appendChild(batchesSelect);
+            }
+
+            const removeButton = document.createElement("span");
+            removeButton.classList.add("remove-task");
+            removeButton.innerHTML = "&#10060;";
+            removeButton.onclick = function () {
+                taskRow.remove();
+            };
+            taskRow.appendChild(removeButton);
+
+            addedTasksContainer.appendChild(taskRow);
         }
-    }
 
+        function submitForm(event) {
+            const employee = document.getElementById("employee");
+            const task = document.getElementById("task");
 
+            const addedTasksContainer = document.getElementById("addedTasks");
+            const taskRows = addedTasksContainer.getElementsByClassName("task-row");
+            let tasks = "";
+
+            for (let i = 0; i < taskRows.length; i++) {
+                const row = taskRows[i];
+                const task = row.children[1].value;
+                const batches = task === "Onlineclass" ? row.children[2].value : null;
+                tasks = (row.children[2].value);
+            }
+
+            if (employee.value == 0 || !employee.value || !task.value || task.value == 0 || tasks == "--Select Batches--") {
+                alert("Please fill in all fields.");
+                event.preventDefault(); // Prevent form submission if fields are missing
+            } else {
+                const preloader = document.getElementById('preloader');
+                preloader.classList.remove('refresh-loader');
+                preloader.classList.add('submit-loader');
+                preloader.style.display = 'flex';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    window.location.href = 'Thankyou.html'; // Redirect to thank you page
+                }, 1000); // Display preloader for 1 second
+            }
+        }
     </script>
 </body>
 
