@@ -43,7 +43,7 @@
         }
 
         window.onload = function () {
-            var deadline = new Date("June 30, 2024 10:00:00");
+            var deadline = new Date("July 1, 2024 10:00:00");
             startTimer("clock", deadline);
         };
    
